@@ -31,10 +31,6 @@ struct GameView: View {
 					
 				}
 				.frame(width: 30, height: 40)
-				//				RoundedRectangle(cornerRadius: 10)
-				//					.frame(width: 30, height: 5)
-				//					.offset(y: 10)
-				
 			}
 			
 			HStack{

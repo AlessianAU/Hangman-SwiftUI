@@ -7,18 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B62383C027601039002A1929 /* fyguhij.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62383BF27601039002A1929 /* fyguhij.swift */; };
+		B638C294275F4C9D00BAF610 /* HelperViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638C293275F4C9D00BAF610 /* HelperViews.swift */; };
+		B63DED77275E0FD500466F46 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63DED76275E0FD500466F46 /* WordList.swift */; };
 		B67098AC275CBA2700CBA442 /* HangmanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67098AB275CBA2700CBA442 /* HangmanApp.swift */; };
 		B67098AE275CBA2700CBA442 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67098AD275CBA2700CBA442 /* ContentView.swift */; };
 		B67098B0275CBA2800CBA442 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B67098AF275CBA2800CBA442 /* Assets.xcassets */; };
 		B67098B3275CBA2800CBA442 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B67098B2275CBA2800CBA442 /* Preview Assets.xcassets */; };
+		B6A5E48F27604EC500150DD8 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5E48E27604EC500150DD8 /* GameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B62383BF27601039002A1929 /* fyguhij.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fyguhij.swift; sourceTree = "<group>"; };
+		B638C293275F4C9D00BAF610 /* HelperViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperViews.swift; sourceTree = "<group>"; };
+		B63DED76275E0FD500466F46 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
 		B67098A8275CBA2600CBA442 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67098AB275CBA2700CBA442 /* HangmanApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanApp.swift; sourceTree = "<group>"; };
 		B67098AD275CBA2700CBA442 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B67098AF275CBA2800CBA442 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B67098B2275CBA2800CBA442 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B67098B9275CBA3500CBA442 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B6A5E48E27604EC500150DD8 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +41,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B638C295275F4CD000BAF610 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B67098AD275CBA2700CBA442 /* ContentView.swift */,
+				B6A5E48E27604EC500150DD8 /* GameView.swift */,
+				B638C293275F4C9D00BAF610 /* HelperViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B670989F275CBA2600CBA442 = {
 			isa = PBXGroup;
 			children = (
@@ -52,8 +71,10 @@
 			isa = PBXGroup;
 			children = (
 				B67098AB275CBA2700CBA442 /* HangmanApp.swift */,
-				B67098AD275CBA2700CBA442 /* ContentView.swift */,
+				B638C295275F4CD000BAF610 /* Views */,
+				B63DED76275E0FD500466F46 /* WordList.swift */,
 				B67098AF275CBA2800CBA442 /* Assets.xcassets */,
+				B67098B9275CBA3500CBA442 /* Testing.playground */,
 				B67098B1275CBA2800CBA442 /* Preview Content */,
 			);
 			path = Hangman;
@@ -62,6 +83,7 @@
 		B67098B1275CBA2800CBA442 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				B62383BF27601039002A1929 /* fyguhij.swift */,
 				B67098B2275CBA2800CBA442 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -138,6 +160,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B67098AE275CBA2700CBA442 /* ContentView.swift in Sources */,
+				B63DED77275E0FD500466F46 /* WordList.swift in Sources */,
+				B638C294275F4C9D00BAF610 /* HelperViews.swift in Sources */,
+				B62383C027601039002A1929 /* fyguhij.swift in Sources */,
+				B6A5E48F27604EC500150DD8 /* GameView.swift in Sources */,
 				B67098AC275CBA2700CBA442 /* HangmanApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

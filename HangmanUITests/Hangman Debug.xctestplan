@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "BC74675F-B059-443C-BDE5-E5D0A74775F3",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Hangman.xcodeproj",
+        "identifier" : "B6973A522760C30C0057C134",
+        "name" : "HangmanUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

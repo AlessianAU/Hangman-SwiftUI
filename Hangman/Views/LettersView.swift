@@ -13,6 +13,7 @@ struct LettersView: View {
 	@Binding var gameLetters: [Character]
 	@Binding var correctLetters: [Character]
 	@Binding var incorrectLetters: [Character]
+	@Binding var lives: [String]
 	
 	let columns = [
 		GridItem(),
@@ -33,18 +34,40 @@ struct LettersView: View {
 						if gameLetters.contains(Character(letter)) {
 							print("true")
 							correctLetters.append(Character(letter))
+							if checkLetters() == true {
+								print("game won")
+							}
 						} else {
 							print("false")
 							incorrectLetters.append(Character(letter))
+							withAnimation{
+								if lives.count != 0 {
+									lives.remove(at: lives.count-1)
+								} else if lives.count == 0{
+									print("game over")
+								}
+							}
 						}
-
+						
 					} label: {
 						ZStack{
-							RoundedRectangle(cornerRadius: 10)
-								.frame(width: 40, height: 40)
-							Text(letter)
-								.foregroundColor(.white)
-								.font(.system(size: 25, weight: .medium))
+							if correctLetters.contains(Character(letter)) {
+								LetterButtonView(color: .green)
+							} else if incorrectLetters.contains(Character(letter)){
+								LetterButtonView(color: .red)
+							} else {
+								LetterButtonView(color: .accentColor)
+							}
+							if UIDevice.current.userInterfaceIdiom == .pad {
+								Text(letter)
+									.foregroundColor(.white)
+									.font(.system(size: 40, weight: .medium))
+							} else {
+								Text(letter)
+									.foregroundColor(.white)
+									.font(.system(size: 25, weight: .medium))
+							}
+							
 						}
 						.padding(6)
 						
@@ -53,5 +76,29 @@ struct LettersView: View {
 				}
 			}
 		} .padding(.horizontal, 30)
+	}
+	func checkLetters() -> Bool {
+		if gameLetters == correctLetters {
+			return true
+		} else {
+			return false
+		}
+	}
+}
+
+struct LetterButtonView: View {
+	let color: Color
+	let screen = UIScreen.main.bounds
+	
+	var body: some View {
+		if UIDevice.current.userInterfaceIdiom == .pad {
+			RoundedRectangle(cornerRadius: 20)
+				.frame(width: screen.width / 10, height: screen.width / 10)
+				.foregroundColor(color)
+		} else {
+			RoundedRectangle(cornerRadius: 10)
+				.frame(width: screen.width / 10, height: screen.width / 10)
+				.foregroundColor(color)
+		}
 	}
 }

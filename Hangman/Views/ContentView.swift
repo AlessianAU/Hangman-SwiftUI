@@ -22,6 +22,7 @@ struct ContentView: View {
 				}
 			}
 		}
+		.buttonStyle(.borderless)
 	}
 	static func getLetters() -> Array<Character> {
 		let allWords = WordList.wordList

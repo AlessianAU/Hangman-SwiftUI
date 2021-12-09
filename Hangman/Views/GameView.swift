@@ -13,6 +13,7 @@ struct GameView: View {
 	@State var gameLetters:Array = ContentView.getLetters()
 	@State var correctLetters = [Character]()
 	@State var incorrectLetters = [Character]()
+	@State var lives = ["a","a","a","a","a","a"]
 	
 	var body: some View {
 		VStack {
@@ -25,8 +26,8 @@ struct GameView: View {
 							.font(.system(size: 35, weight: .medium))
 					} else {
 						RoundedRectangle(cornerRadius: 10)
-							.frame(width: 30, height: 5)
-							.offset(y: 10)
+							.frame(width: 25, height: 4)
+							.offset(y: 12)
 					}
 					
 				}
@@ -34,42 +35,44 @@ struct GameView: View {
 			}
 			
 			HStack{
-				ForEach(0..<6) {_ in
+				ForEach(lives, id: \.self) { life in
 					Image(systemName: "heart.fill")
 						.foregroundColor(.red)
 						.padding(.top)
 				}
 			}
+						.frame(height: 60)
 			
 			
 #if DEBUG
-			HStack {
-				Text("Word")
-				ForEach(gameLetters, id: \.self) { letter in
-				Text(String(letter))
+			VStack{
+				HStack {
+					Text("Word")
+					ForEach(gameLetters, id: \.self) { letter in
+						Text(String(letter))
+					}
+					Spacer()
 				}
-				Spacer()
-			}
-
-			
-			HStack {
-				Text("Correct")
-				ForEach(correctLetters, id: \.self) { letter in
-				Text(String(letter))
+				
+				HStack {
+					Text("Correct")
+					ForEach(correctLetters, id: \.self) { letter in
+						Text(String(letter))
+					}
+					Spacer()
 				}
-				Spacer()
-			}
-			
-			HStack {
-				Text("Incorrect")
-				ForEach(incorrectLetters, id: \.self) { letter in
-				Text(String(letter))
+				
+				HStack {
+					Text("Incorrect")
+					ForEach(incorrectLetters, id: \.self) { letter in
+						Text(String(letter))
+					}
+					Spacer()
 				}
-				Spacer()
-			}
+			}.padding()
 #endif
 			Spacer()
-			LettersView(usedLetters: $usedLetters, gameLetters: $gameLetters, correctLetters: $correctLetters, incorrectLetters: $incorrectLetters)
+			LettersView(usedLetters: $usedLetters, gameLetters: $gameLetters, correctLetters: $correctLetters, incorrectLetters: $incorrectLetters, lives: $lives)
 			
 			Spacer()
 			
@@ -87,13 +90,14 @@ struct GameView: View {
 					usedLetters.removeAll()
 					correctLetters.removeAll()
 					incorrectLetters.removeAll()
+					lives = ["a","a","a","a","a","a"]
 				}
 			}
 		}
 	}
 }
 
-struct GameView_Previews: PreviewProvider {
+struct iOSView_Previews: PreviewProvider {
 	static var previews: some View {
 		GameView()
 	}

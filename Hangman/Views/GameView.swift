@@ -15,6 +15,8 @@ struct GameView: View {
 	@State private var incorrectLetters = [Character]()
 	@State private var lives = ["a","a","a","a","a","a","a","a"]
 	
+	@Binding var debugActive: Bool
+	
 	var body: some View {
 		VStack {
 			Spacer()
@@ -47,7 +49,9 @@ struct GameView: View {
 			
 
 #if DEBUG
+			if debugActive == true {
 			DebugView(gameLetters: $gameLetters, correctLetters: $correctLetters, incorrectLetters: $incorrectLetters)
+		}
 #endif
 			Spacer()
 			LettersView(usedLetters: $usedLetters, gameLetters: $gameLetters, correctLetters: $correctLetters, incorrectLetters: $incorrectLetters, lives: $lives)
@@ -77,7 +81,7 @@ struct GameView: View {
 
 struct iOSView_Previews: PreviewProvider {
 	static var previews: some View {
-		GameView()
+		GameView(debugActive: .constant(false))
 	}
 }
 

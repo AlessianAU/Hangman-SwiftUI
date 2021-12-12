@@ -10,10 +10,12 @@ import SwiftUI
 struct ContentView: View {
 	@State private var gameActive = false
 	
+	@State var debugActive = false
+	
 	var body: some View {
 			VStack {
 				if gameActive == true {
-					GameView()
+					GameView(debugActive: $debugActive)
 				} else {
 					Button {
 						gameActive = true
@@ -38,7 +40,7 @@ struct ContentView: View {
 		.toolbar {
 			ToolbarItemGroup(placement: .automatic) {
 				Button{
-
+					debugActive.toggle()
 				} label: {
 					Image(systemName: "gearshape")
 				}

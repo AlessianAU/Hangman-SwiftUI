@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LettersView: View {
-	@State var letters = KeyboardLetters()
+	@State private var letters = KeyboardLetters()
 	@Binding var usedLetters: [String]
 	@Binding var gameLetters: [Character]
 	@Binding var correctLetters: [Character]
@@ -58,6 +58,7 @@ struct LettersView: View {
 							} else {
 								LetterButtonView(color: .accentColor)
 							}
+#if os(iOS)
 							if UIDevice.current.userInterfaceIdiom == .pad {
 								Text(letter)
 									.foregroundColor(.white)
@@ -67,6 +68,12 @@ struct LettersView: View {
 									.foregroundColor(.white)
 									.font(.system(size: 25, weight: .medium))
 							}
+#else
+							Text(letter)
+								.foregroundColor(.white)
+								.font(.system(size: 25, weight: .medium))
+#endif
+							
 							
 						}
 						.padding(6)
@@ -75,7 +82,8 @@ struct LettersView: View {
 					.disabled(usedLetters.contains(letter))
 				}
 			}
-		} .padding(.horizontal, 30)
+		}
+		.padding(.horizontal, 30)
 	}
 	func checkLetters() -> Bool {
 		if gameLetters == correctLetters {
@@ -88,9 +96,11 @@ struct LettersView: View {
 
 struct LetterButtonView: View {
 	let color: Color
-	let screen = UIScreen.main.bounds
 	
 	var body: some View {
+		
+#if os(iOS)
+		let screen = UIScreen.main.bounds
 		if UIDevice.current.userInterfaceIdiom == .pad {
 			RoundedRectangle(cornerRadius: 20)
 				.frame(width: screen.width / 10, height: screen.width / 10)
@@ -100,5 +110,12 @@ struct LetterButtonView: View {
 				.frame(width: screen.width / 10, height: screen.width / 10)
 				.foregroundColor(color)
 		}
+#else
+		RoundedRectangle(cornerRadius: 10)
+			.frame(width: 45, height: 45)
+			.foregroundColor(color)
+#endif
 	}
 }
+
+

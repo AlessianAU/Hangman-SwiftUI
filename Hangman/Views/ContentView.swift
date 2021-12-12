@@ -8,21 +8,47 @@
 import SwiftUI
 
 struct ContentView: View {
-	@State var gameActive = false
+	@State private var gameActive = false
 	
 	var body: some View {
-		VStack {
-			if gameActive == true {
-				GameView()
-			} else {
-				Button {
-					gameActive = true
+			VStack {
+				if gameActive == true {
+					GameView()
+				} else {
+					Button {
+						gameActive = true
+					} label: {
+						ButtonView(buttonLabel: "Start Game", positionBottom: false)
+					}
+				}
+			}
+		
+
+#if os(macOS)
+		.frame(width: 450, height: 600)
+		.buttonStyle(.plain)
+		.onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
+					for window in NSApplication.shared.windows {
+						window.standardWindowButton(.zoomButton)?.isEnabled = false
+					}
+				})
+		
+		
+#endif
+		.toolbar {
+			ToolbarItemGroup(placement: .automatic) {
+				Button{
+
 				} label: {
-					ButtonView(buttonLabel: "Start Game")
+					Image(systemName: "gearshape")
+				}
+				Button{
+
+				} label: {
+					Image(systemName: "list.bullet.rectangle")
 				}
 			}
 		}
-		.buttonStyle(.borderless)
 	}
 	static func getLetters() -> Array<Character> {
 		let allWords = WordList.wordList

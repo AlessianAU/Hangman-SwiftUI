@@ -9,11 +9,11 @@ import SwiftUI
 
 struct GameView: View {
 	@State private var showingAlert = false
-	@State var usedLetters = [String]()
-	@State var gameLetters:Array = ContentView.getLetters()
-	@State var correctLetters = [Character]()
-	@State var incorrectLetters = [Character]()
-	@State var lives = ["a","a","a","a","a","a"]
+	@State private var usedLetters = [String]()
+	@State private var gameLetters:Array = ContentView.getLetters()
+	@State private var correctLetters = [Character]()
+	@State private var incorrectLetters = [Character]()
+	@State private var lives = ["a","a","a","a","a","a","a","a"]
 	
 	var body: some View {
 		VStack {
@@ -30,6 +30,8 @@ struct GameView: View {
 							.offset(y: 12)
 					}
 					
+					
+					
 				}
 				.frame(width: 30, height: 40)
 			}
@@ -43,33 +45,9 @@ struct GameView: View {
 			}
 						.frame(height: 60)
 			
-			
+
 #if DEBUG
-			VStack{
-				HStack {
-					Text("Word")
-					ForEach(gameLetters, id: \.self) { letter in
-						Text(String(letter))
-					}
-					Spacer()
-				}
-				
-				HStack {
-					Text("Correct")
-					ForEach(correctLetters, id: \.self) { letter in
-						Text(String(letter))
-					}
-					Spacer()
-				}
-				
-				HStack {
-					Text("Incorrect")
-					ForEach(incorrectLetters, id: \.self) { letter in
-						Text(String(letter))
-					}
-					Spacer()
-				}
-			}.padding()
+			DebugView(gameLetters: $gameLetters, correctLetters: $correctLetters, incorrectLetters: $incorrectLetters)
 #endif
 			Spacer()
 			LettersView(usedLetters: $usedLetters, gameLetters: $gameLetters, correctLetters: $correctLetters, incorrectLetters: $incorrectLetters, lives: $lives)
@@ -80,7 +58,7 @@ struct GameView: View {
 				print("new game button pressed")
 				showingAlert = true
 			} label: {
-				ButtonView(buttonLabel: "New Game")
+				ButtonView(buttonLabel: "New Game", positionBottom: true)
 			}
 			.alert("Are You Sure", isPresented: $showingAlert) {
 				Button("No", role: .cancel) { print("new game cancelled") }
@@ -90,7 +68,7 @@ struct GameView: View {
 					usedLetters.removeAll()
 					correctLetters.removeAll()
 					incorrectLetters.removeAll()
-					lives = ["a","a","a","a","a","a"]
+					lives = ["a","a","a","a","a","a","a","a"]
 				}
 			}
 		}

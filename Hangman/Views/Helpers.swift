@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct ButtonView: View {
-	let screen = UIScreen.main.bounds
 	var buttonLabel = String()
+	var positionBottom: Bool
 	var body: some View {
+		
+#if os(iOS)
+		let screen = UIScreen.main.bounds
 		ZStack{
 			RoundedRectangle(cornerRadius: 15)
 			Text(buttonLabel)
@@ -19,6 +22,17 @@ struct ButtonView: View {
 		}
 		.frame(width: screen.width - 100, height: 60)
 		.padding()
+#else
+		ZStack{
+			RoundedRectangle(cornerRadius: 15)
+				.foregroundColor(.accentColor)
+			Text(buttonLabel)
+				.font(.system(size: 25, weight: .medium))
+				.foregroundColor(.white)
+		}
+		.frame(width: 405, height: 60)
+		.padding(.bottom, 22)
+#endif
 		
 	}
 }

@@ -40,9 +40,3 @@ struct DebugView: View {
 		}.padding()
 	}
 }
-
-//struct DebugView_Previews: PreviewProvider {
-//    static var previews: some View {
-//		DebugView(gameLetters: $gameLetters, correctLetters: $correctLetters, incorrectLetters: $incorrectLetters)
-//    }
-//}

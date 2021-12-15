@@ -79,7 +79,7 @@ struct GameView: View {
 	}
 }
 
-struct iOSView_Previews: PreviewProvider {
+struct GameView_Previews: PreviewProvider {
 	static var previews: some View {
 		GameView(debugActive: .constant(false))
 	}

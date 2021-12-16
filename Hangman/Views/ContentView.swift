@@ -8,9 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+	@StateObject var vm = LettersModel()
 	@State private var gameActive = false
-	
 	@State var debugActive = false
+	
+	var body: some View {
+		PlatformView(vm: vm, gameActive: $gameActive, debugActive: $debugActive)
+	}
+}
+
+struct ContentView_Previews: PreviewProvider {
+	static var previews: some View {
+		ContentView()
+	}
+}
+
+struct PlatformView: View {
+	@ObservedObject var vm = LettersModel()
+	
+	@Binding var gameActive: Bool
+	@Binding var debugActive: Bool
 	
 	var body: some View {
 		VStack {
@@ -18,7 +35,7 @@ struct ContentView: View {
 #if os(iOS)
 				//				Refactor this
 				NavigationView {
-					GameView(debugActive: $debugActive)
+					GameView(vm: vm, debugActive: $debugActive)
 						.toolbar {
 							ToolbarItemGroup(placement: .automatic) {
 								Button{
@@ -30,57 +47,40 @@ struct ContentView: View {
 						}
 				}
 #else
-					GameView(debugActive: $debugActive)
+				GameView(vm: vm, debugActive: $debugActive)
 #endif
-				} else {
-					Button {
-						gameActive = true
-					} label: {
-						ButtonView(buttonLabel: "Start Game", positionBottom: false)
-					}
+			} else {
+				Button {
+					gameActive = true
+				} label: {
+					ButtonView(buttonLabel: "Start Game", positionBottom: false)
 				}
 			}
-			
-			
+		}
+		
+		
 #if os(macOS)
-				.frame(width: 450, height: 600)
-				.buttonStyle(.plain)
-				.onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
-					for window in NSApplication.shared.windows {
-						window.standardWindowButton(.zoomButton)?.isEnabled = false
-					}
-				})
-			
-			
-#endif
-				.toolbar {
-					ToolbarItemGroup(placement: .automatic) {
-						Button{
-							debugActive.toggle()
-						} label: {
-							Image(systemName: "gearshape")
-						}
-						Button{
-							
-						} label: {
-							Image(systemName: "list.bullet.rectangle")
-						}
-					}
+		.frame(width: 450, height: 600)
+		.buttonStyle(.plain)
+		.onReceive(NotificationCenter.default.publisher(for: NSApplication.willUpdateNotification), perform: { _ in
+			for window in NSApplication.shared.windows {
+				window.standardWindowButton(.zoomButton)?.isEnabled = false
+			}
+		})
+		.toolbar {
+			ToolbarItemGroup(placement: .automatic) {
+				Button{
+					debugActive.toggle()
+				} label: {
+					Image(systemName: "gearshape")
 				}
+				Button{
+					
+				} label: {
+					Image(systemName: "list.bullet.rectangle")
+				}
+			}
 		}
-		static func getLetters() -> Array<Character> {
-			let allWords = WordList.wordList
-			let randomWord : String! = allWords.randomElement()
-			let letters = Array(randomWord)
-			print(letters)
-			print(type(of: letters))
-			return letters
-		}
+#endif
 	}
-	
-	struct ContentView_Previews: PreviewProvider {
-		static var previews: some View {
-			ContentView()
-		}
-	}
-	
+}

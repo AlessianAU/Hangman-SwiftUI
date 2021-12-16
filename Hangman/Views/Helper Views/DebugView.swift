@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct DebugView: View {
-	@Binding var gameLetters: [Character]
-	@Binding var correctLetters: [Character]
-	@Binding var incorrectLetters: [Character]
+	@ObservedObject var vm: LettersModel
+	
+	@State var safe = 0
 	
 	var body: some View {
 		VStack{
 			HStack {
 				Text("Word")
-				ForEach(gameLetters, id: \.self) { letter in
+				ForEach(vm.gameLetters, id: \.self) { letter in
 					Text(String(letter))
 				}
 				Spacer()
@@ -24,7 +24,7 @@ struct DebugView: View {
 
 			HStack {
 				Text("Correct")
-				ForEach(correctLetters, id: \.self) { letter in
+				ForEach(vm.correctLetters, id: \.self) { letter in
 					Text(String(letter))
 				}
 				Spacer()
@@ -32,10 +32,21 @@ struct DebugView: View {
 
 			HStack {
 				Text("Incorrect")
-				ForEach(incorrectLetters, id: \.self) { letter in
+				ForEach(vm.incorrectLetters, id: \.self) { letter in
 					Text(String(letter))
 				}
 				Spacer()
+			}
+			
+			HStack {
+				Text("Functioning Words : \(safe)")
+				Spacer()
+				Button {
+					safe += 1
+				} label: {
+					Image(systemName: "circle.fill")
+				}
+
 			}
 		}.padding()
 	}

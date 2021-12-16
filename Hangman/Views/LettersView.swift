@@ -9,10 +9,7 @@ import SwiftUI
 
 struct LettersView: View {
 	@State private var letters = KeyboardLetters()
-	@Binding var usedLetters: [String]
-	@Binding var gameLetters: [Character]
-	@Binding var correctLetters: [Character]
-	@Binding var incorrectLetters: [Character]
+	@ObservedObject var vm: LettersModel
 	@Binding var lives: [String]
 	
 	let columns = [
@@ -23,23 +20,24 @@ struct LettersView: View {
 		GridItem(),
 		GridItem()
 	]
+	
 	var body: some View {
 		VStack{
 			LazyVGrid(columns: columns){
 				ForEach(letters.allLetters, id: \.self) { letter in
 					Button {
 						print("\(letter) button was pressed")
-						usedLetters.append(letter)
+						vm.usedLetters.append(letter)
 						
-						if gameLetters.contains(Character(letter)) {
+						if vm.gameLetters.contains(Character(letter)) {
 							print("true")
-							correctLetters.append(Character(letter))
+							vm.correctLetters.append(Character(letter))
 							if checkLetters() == true {
 								print("game won")
 							}
 						} else {
 							print("false")
-							incorrectLetters.append(Character(letter))
+							vm.incorrectLetters.append(Character(letter))
 							withAnimation{
 								if lives.count != 0 {
 									lives.remove(at: lives.count-1)
@@ -51,9 +49,9 @@ struct LettersView: View {
 						
 					} label: {
 						ZStack{
-							if correctLetters.contains(Character(letter)) {
+							if vm.correctLetters.contains(Character(letter)) {
 								LetterButtonView(color: .green)
-							} else if incorrectLetters.contains(Character(letter)){
+							} else if vm.incorrectLetters.contains(Character(letter)){
 								LetterButtonView(color: .red)
 							} else {
 								LetterButtonView(color: .accentColor)
@@ -79,14 +77,14 @@ struct LettersView: View {
 						.padding(6)
 						
 					}
-					.disabled(usedLetters.contains(letter))
+					.disabled(vm.usedLetters.contains(letter))
 				}
 			}
 		}
 		.padding(.horizontal, 30)
 	}
 	func checkLetters() -> Bool {
-		if gameLetters == correctLetters {
+		if vm.gameLetters == vm.correctLetters {
 			return true
 		} else {
 			return false

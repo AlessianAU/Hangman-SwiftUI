@@ -24,3 +24,4 @@ A basic hangman game made purely in SwiftUI
 
 - [ ] Custom words
 
+- [ ] Access dictionary definitions of words

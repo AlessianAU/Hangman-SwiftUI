@@ -15,8 +15,8 @@
 		B682DB8D2765B52800FFAC75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67098AD275CBA2700CBA442 /* ContentView.swift */; };
 		B682DB8E2765B52A00FFAC75 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5E48E27604EC500150DD8 /* GameView.swift */; };
 		B682DB8F2765B52B00FFAC75 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5E48E27604EC500150DD8 /* GameView.swift */; };
-		B682DB902765B52D00FFAC75 /* LettersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B15A127606BA60013A443 /* LettersView.swift */; };
-		B682DB912765B52E00FFAC75 /* LettersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B15A127606BA60013A443 /* LettersView.swift */; };
+		B682DB902765B52D00FFAC75 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B15A127606BA60013A443 /* KeyboardView.swift */; };
+		B682DB912765B52E00FFAC75 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68B15A127606BA60013A443 /* KeyboardView.swift */; };
 		B682DB922765B53000FFAC75 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638C293275F4C9D00BAF610 /* Helpers.swift */; };
 		B682DB932765B53100FFAC75 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638C293275F4C9D00BAF610 /* Helpers.swift */; };
 		B682DB942765B55700FFAC75 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682DB512765B2A900FFAC75 /* DebugView.swift */; };
@@ -34,14 +34,14 @@
 		B63DED76275E0FD500466F46 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
 		B6588300276ABB7E007F3983 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		B6670637276ADD7D00C25162 /* HangmanApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HangmanApp.swift; sourceTree = "<group>"; };
-		B667063A276ADDCD00C25162 /* Entitlements (iOS).entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Entitlements (iOS).entitlements"; sourceTree = "<group>"; };
+		B667063C276ADFEB00C25162 /* Entitlements (iOS).entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Entitlements (iOS).entitlements"; sourceTree = "<group>"; };
 		B67098AD275CBA2700CBA442 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B67098B2275CBA2800CBA442 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B682DB512765B2A900FFAC75 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		B682DB6A2765B35500FFAC75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B682DB782765B4B900FFAC75 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B682DB7D2765B4B900FFAC75 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B68B15A127606BA60013A443 /* LettersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersView.swift; sourceTree = "<group>"; };
+		B68B15A127606BA60013A443 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		B6A5E48E27604EC500150DD8 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		B6B3D3C6276099F700A8C689 /* Entitlements (macOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Entitlements (macOS).entitlements"; sourceTree = "<group>"; };
 		B6FBAC572769A3F3002FCC88 /* LettersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersModel.swift; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 			children = (
 				B67098AD275CBA2700CBA442 /* ContentView.swift */,
 				B6A5E48E27604EC500150DD8 /* GameView.swift */,
-				B68B15A127606BA60013A443 /* LettersView.swift */,
+				B68B15A127606BA60013A443 /* KeyboardView.swift */,
 				B6588300276ABB7E007F3983 /* GameOverView.swift */,
 				B65882F9276A9CAC007F3983 /* Helper Views */,
 			);
@@ -90,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				B6B3D3C6276099F700A8C689 /* Entitlements (macOS).entitlements */,
-				B667063A276ADDCD00C25162 /* Entitlements (iOS).entitlements */,
+				B667063C276ADFEB00C25162 /* Entitlements (iOS).entitlements */,
 			);
 			path = Entitlements;
 			sourceTree = "<group>";
@@ -120,8 +120,8 @@
 				B6FBAC5A2769A3FE002FCC88 /* Models */,
 				B682DB9A2765B8C000FFAC75 /* WordLists */,
 				B667063B276ADDE100C25162 /* Entitlements */,
-				B682DB6A2765B35500FFAC75 /* Assets.xcassets */,
 				B67098B1275CBA2800CBA442 /* Preview Content */,
+				B682DB6A2765B35500FFAC75 /* Assets.xcassets */,
 			);
 			path = Hangman;
 			sourceTree = "<group>";
@@ -254,7 +254,7 @@
 				B682DB982765B5C300FFAC75 /* WordList.swift in Sources */,
 				B682DB8C2765B52800FFAC75 /* ContentView.swift in Sources */,
 				B682DB8E2765B52A00FFAC75 /* GameView.swift in Sources */,
-				B682DB902765B52D00FFAC75 /* LettersView.swift in Sources */,
+				B682DB902765B52D00FFAC75 /* KeyboardView.swift in Sources */,
 				B682DB932765B53100FFAC75 /* Helpers.swift in Sources */,
 				B6588301276ABB7E007F3983 /* GameOverView.swift in Sources */,
 			);
@@ -270,7 +270,7 @@
 				B682DB992765B5C300FFAC75 /* WordList.swift in Sources */,
 				B682DB8D2765B52800FFAC75 /* ContentView.swift in Sources */,
 				B682DB8F2765B52B00FFAC75 /* GameView.swift in Sources */,
-				B682DB912765B52E00FFAC75 /* LettersView.swift in Sources */,
+				B682DB912765B52E00FFAC75 /* KeyboardView.swift in Sources */,
 				B682DB922765B53000FFAC75 /* Helpers.swift in Sources */,
 				B6588302276ABB7E007F3983 /* GameOverView.swift in Sources */,
 			);

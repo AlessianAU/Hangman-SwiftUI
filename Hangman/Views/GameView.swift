@@ -52,7 +52,7 @@ struct GameView: View {
 		}
 #endif
 			Spacer()
-			LettersView(vm: vm, lives: $lives)
+			KeyboardView(vm: vm, lives: $lives)
 			
 			Spacer()
 			

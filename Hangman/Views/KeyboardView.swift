@@ -1,5 +1,5 @@
 //
-//  LettersView.swift
+//  KeyboardView.swift
 //  Hangman
 //
 //  Created by Alessia on 8/12/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LettersView: View {
+struct KeyboardView: View {
 	@State private var letters = KeyboardLetters()
 	@ObservedObject var vm: LettersModel
 	@Binding var lives: [String]

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-	@StateObject var vm = Letters()
+	@StateObject var vm = GameLetters()
 	@State private var gameActive = false
 	@State var debugActive = false
 	
@@ -24,7 +24,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct PlatformView: View {
-	@ObservedObject var vm = Letters()
+	@ObservedObject var vm = GameLetters()
 	
 	@Binding var gameActive: Bool
 	@Binding var debugActive: Bool

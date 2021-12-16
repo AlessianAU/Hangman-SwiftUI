@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DebugView: View {
-	@ObservedObject var vm: Letters
+	@ObservedObject var vm: GameLetters
 	
 	@State var safe = 0
 	

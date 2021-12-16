@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameView: View {
-	@ObservedObject var vm: Letters
+	@ObservedObject var vm: GameLetters
 	
 	@State private var showingAlert = false
 	@State private var lives = ["a","a","a","a","a","a","a","a"]
@@ -65,7 +65,7 @@ struct GameView: View {
 			.alert("Are You Sure", isPresented: $showingAlert) {
 				Button("No", role: .cancel) { print("new game cancelled") }
 				Button("Yes") {
-					vm.gameLetters = Letters.getLetters()
+					vm.gameLetters = GameLetters.getLetters()
 					print("new game started")
 					vm.usedLetters.removeAll()
 					vm.correctLetters.removeAll()

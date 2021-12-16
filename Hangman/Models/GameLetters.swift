@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Letters: ObservableObject {
+class GameLetters: ObservableObject {
 	@Published var usedLetters = [String]()
 	@Published var gameLetters:Array = getLetters()
 	@Published var correctLetters = [Character]()

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DebugView: View {
-	@ObservedObject var vm: LettersModel
+	@ObservedObject var vm: Letters
 	
 	@State var safe = 0
 	
@@ -36,17 +36,6 @@ struct DebugView: View {
 					Text(String(letter))
 				}
 				Spacer()
-			}
-			
-			HStack {
-				Text("Functioning Words : \(safe)")
-				Spacer()
-				Button {
-					safe += 1
-				} label: {
-					Image(systemName: "circle.fill")
-				}
-
 			}
 		}.padding()
 	}

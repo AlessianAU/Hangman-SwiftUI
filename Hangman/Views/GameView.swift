@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameView: View {
-	@ObservedObject var vm: LettersModel
+	@ObservedObject var vm: Letters
 	
 	@State private var showingAlert = false
 	@State private var lives = ["a","a","a","a","a","a","a","a"]
@@ -27,13 +27,13 @@ struct GameView: View {
 					} else {
 						RoundedRectangle(cornerRadius: 10)
 							.frame(width: 25, height: 4)
-							.offset(y: 12)
+							.offset(y: 10)
 					}
 					
 					
 					
 				}
-				.frame(width: 30, height: 40)
+				.frame(width: 35, height: 40)
 			}
 			
 			HStack{
@@ -65,7 +65,7 @@ struct GameView: View {
 			.alert("Are You Sure", isPresented: $showingAlert) {
 				Button("No", role: .cancel) { print("new game cancelled") }
 				Button("Yes") {
-					vm.gameLetters = LettersModel.getLetters()
+					vm.gameLetters = Letters.getLetters()
 					print("new game started")
 					vm.usedLetters.removeAll()
 					vm.correctLetters.removeAll()

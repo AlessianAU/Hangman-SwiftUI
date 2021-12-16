@@ -25,8 +25,8 @@
 		B682DB972765B58D00FFAC75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B682DB6A2765B35500FFAC75 /* Assets.xcassets */; };
 		B682DB982765B5C300FFAC75 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63DED76275E0FD500466F46 /* WordList.swift */; };
 		B682DB992765B5C300FFAC75 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63DED76275E0FD500466F46 /* WordList.swift */; };
-		B6FBAC582769A3F3002FCC88 /* LettersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBAC572769A3F3002FCC88 /* LettersModel.swift */; };
-		B6FBAC592769A3F3002FCC88 /* LettersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBAC572769A3F3002FCC88 /* LettersModel.swift */; };
+		B6FBAC582769A3F3002FCC88 /* Letters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBAC572769A3F3002FCC88 /* Letters.swift */; };
+		B6FBAC592769A3F3002FCC88 /* Letters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBAC572769A3F3002FCC88 /* Letters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +44,7 @@
 		B68B15A127606BA60013A443 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		B6A5E48E27604EC500150DD8 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		B6B3D3C6276099F700A8C689 /* Entitlements (macOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Entitlements (macOS).entitlements"; sourceTree = "<group>"; };
-		B6FBAC572769A3F3002FCC88 /* LettersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LettersModel.swift; sourceTree = "<group>"; };
+		B6FBAC572769A3F3002FCC88 /* Letters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Letters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +145,7 @@
 		B6FBAC5A2769A3FE002FCC88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B6FBAC572769A3F3002FCC88 /* LettersModel.swift */,
+				B6FBAC572769A3F3002FCC88 /* Letters.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B682DB952765B55700FFAC75 /* DebugView.swift in Sources */,
-				B6FBAC582769A3F3002FCC88 /* LettersModel.swift in Sources */,
+				B6FBAC582769A3F3002FCC88 /* Letters.swift in Sources */,
 				B6670638276ADD7D00C25162 /* HangmanApp.swift in Sources */,
 				B682DB982765B5C300FFAC75 /* WordList.swift in Sources */,
 				B682DB8C2765B52800FFAC75 /* ContentView.swift in Sources */,
@@ -265,7 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B682DB942765B55700FFAC75 /* DebugView.swift in Sources */,
-				B6FBAC592769A3F3002FCC88 /* LettersModel.swift in Sources */,
+				B6FBAC592769A3F3002FCC88 /* Letters.swift in Sources */,
 				B6670639276ADD7D00C25162 /* HangmanApp.swift in Sources */,
 				B682DB992765B5C300FFAC75 /* WordList.swift in Sources */,
 				B682DB8D2765B52800FFAC75 /* ContentView.swift in Sources */,

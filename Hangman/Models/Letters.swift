@@ -1,5 +1,5 @@
 //
-//  LettersModel.swift
+//  Letters.swift
 //  Hangman
 //
 //  Created by Alessia on 15/12/2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LettersModel: ObservableObject {
+class Letters: ObservableObject {
 	@Published var usedLetters = [String]()
 	@Published var gameLetters:Array = getLetters()
 	@Published var correctLetters = [Character]()

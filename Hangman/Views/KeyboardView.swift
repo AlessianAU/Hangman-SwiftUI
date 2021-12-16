@@ -9,7 +9,7 @@ import SwiftUI
 
 struct KeyboardView: View {
 	@State private var letters = KeyboardLetters()
-	@ObservedObject var vm: LettersModel
+	@ObservedObject var vm: Letters
 	@Binding var lives: [String]
 	
 	let columns = [

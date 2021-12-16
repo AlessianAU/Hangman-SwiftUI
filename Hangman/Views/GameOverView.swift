@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameOverView: View {
-	@ObservedObject var vm = LettersModel()
+	@ObservedObject var vm = Letters()
     var body: some View {
 		ZStack{
 			Color.black

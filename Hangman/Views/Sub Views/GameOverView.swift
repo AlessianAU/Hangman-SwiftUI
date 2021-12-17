@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GameOverView: View {
-	@ObservedObject var vm = GameLetters()
+	@ObservedObject var appData = AppData()
     var body: some View {
 		ZStack{
 			Color.black
@@ -21,7 +21,7 @@ struct GameOverView: View {
 				Text("The Word Was...")
 					.font(.headline)
 				HStack {
-					ForEach(vm.gameLetters, id: \.self) { letter in
+					ForEach(appData.gameLetters, id: \.self) { letter in
 						Text(String(letter))
 					}
 					.font(.system(size: 25, weight: .heavy))
@@ -34,8 +34,8 @@ struct GameOverView: View {
     }
 }
 
-struct GameOverView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameOverView()
-    }
-}
+//struct GameOverView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GameOverView()
+//    }
+//}

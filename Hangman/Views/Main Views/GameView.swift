@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct GameView: View {
-	@ObservedObject var vm: GameLetters
+	@ObservedObject var appData: AppData
+	
 	
 	@State private var showingAlert = false
 	@State private var lives = ["a","a","a","a","a","a","a","a"]
-	
-	@Binding var debugActive: Bool
 	
 	var body: some View {
 		VStack {
 			Spacer()
 			HStack {
-				ForEach(vm.gameLetters, id: \.self) { letter in
+				ForEach(appData.gameLetters, id: \.self) { letter in
 					
-					if vm.correctLetters.contains(letter) {
+					if appData.correctLetters.contains(letter) {
 						Text(String(letter))
 							.font(.system(size: 35, weight: .medium))
 					} else {
@@ -29,30 +28,27 @@ struct GameView: View {
 							.frame(width: 25, height: 4)
 							.offset(y: 10)
 					}
-					
-					
-					
 				}
 				.frame(width: 35, height: 40)
 			}
 			
 			HStack{
-				ForEach(lives, id: \.self) { life in
+				ForEach(lives, id: \.self) {_ in
 					Image(systemName: "heart.fill")
 						.foregroundColor(.red)
 						.padding(.top)
 				}
 			}
-						.frame(height: 60)
+			.frame(height: 60)
 			
-
-#if DEBUG
-			if debugActive == true {
-				DebugView(vm: vm)
-		}
-#endif
+			if appData.debugActive == true {
+				DebugView(appData: appData)
+					.padding(.leading)
+			}
+			
 			Spacer()
-			KeyboardView(vm: vm, lives: $lives)
+			
+			KeyboardView(appData: appData, lives: $lives)
 			
 			Spacer()
 			
@@ -65,11 +61,11 @@ struct GameView: View {
 			.alert("Are You Sure", isPresented: $showingAlert) {
 				Button("No", role: .cancel) { print("new game cancelled") }
 				Button("Yes") {
-					vm.gameLetters = GameLetters.getLetters()
+					appData.gameLetters = AppData.getLetters()
 					print("new game started")
-					vm.usedLetters.removeAll()
-					vm.correctLetters.removeAll()
-					vm.incorrectLetters.removeAll()
+					appData.usedLetters.removeAll()
+					appData.correctLetters.removeAll()
+					appData.incorrectLetters.removeAll()
 					lives = ["a","a","a","a","a","a","a","a"]
 				}
 			}
@@ -79,7 +75,7 @@ struct GameView: View {
 
 //struct GameView_Previews: PreviewProvider {
 //	static var previews: some View {
-//		GameView(vm: vm, debugActive: .constant(false))
+//		GameView(appData: appData, debugActive: .constant(false))
 //	}
 //}
 

@@ -37,6 +37,24 @@ struct ButtonView: View {
 	}
 }
 
+struct ListLabel: View {
+	@State var imageColor: Color = .accentColor
+	@State var imageName: String
+	@State var label: String
+	var body: some View {
+		HStack{
+			Image(systemName: imageName)
+				.padding(6)
+				.foregroundColor(imageColor)
+				.frame(width: 25)
+				.padding(.trailing, 10)
+			Text(label)
+		}
+		.frame(height: 30)
+	}
+}
+
+
 struct KeyboardLetters {
 	let allLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 }

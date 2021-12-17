@@ -9,7 +9,8 @@ import SwiftUI
 
 struct KeyboardView: View {
 	@State private var letters = KeyboardLetters()
-	@ObservedObject var vm: GameLetters
+	@ObservedObject var appData: AppData
+	
 	@Binding var lives: [String]
 	
 	let columns = [
@@ -27,17 +28,27 @@ struct KeyboardView: View {
 				ForEach(letters.allLetters, id: \.self) { letter in
 					Button {
 						print("\(letter) button was pressed")
-						vm.usedLetters.append(letter)
+						appData.usedLetters.append(letter)
 						
-						if vm.gameLetters.contains(Character(letter)) {
+						if appData.gameLetters.contains(Character(letter)) {
+							
+							if appData.hapticFeedback == true {
+								Vibrations.heavyVibration()
+							}
+							
 							print("true")
-							vm.correctLetters.append(Character(letter))
+							appData.correctLetters.append(Character(letter))
 							if checkLetters() == true {
 								print("game won")
 							}
 						} else {
+							
+							if appData.hapticFeedback == true {
+								Vibrations.lightVibration()
+							}
+							
 							print("false")
-							vm.incorrectLetters.append(Character(letter))
+							appData.incorrectLetters.append(Character(letter))
 							withAnimation{
 								if lives.count != 0 {
 									lives.remove(at: lives.count-1)
@@ -49,9 +60,9 @@ struct KeyboardView: View {
 						
 					} label: {
 						ZStack{
-							if vm.correctLetters.contains(Character(letter)) {
+							if appData.correctLetters.contains(Character(letter)) {
 								LetterButtonView(color: .green)
-							} else if vm.incorrectLetters.contains(Character(letter)){
+							} else if appData.incorrectLetters.contains(Character(letter)){
 								LetterButtonView(color: .red)
 							} else {
 								LetterButtonView(color: .accentColor)
@@ -77,14 +88,14 @@ struct KeyboardView: View {
 						.padding(6)
 						
 					}
-					.disabled(vm.usedLetters.contains(letter))
+					.disabled(appData.usedLetters.contains(letter))
 				}
 			}
 		}
 		.padding(.horizontal, 30)
 	}
 	func checkLetters() -> Bool {
-		if vm.gameLetters == vm.correctLetters {
+		if appData.gameLetters == appData.correctLetters {
 			return true
 		} else {
 			return false

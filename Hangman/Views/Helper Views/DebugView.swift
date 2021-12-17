@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DebugView: View {
-	@ObservedObject var vm: GameLetters
+	@ObservedObject var appData: AppData
 	
 	@State var safe = 0
 	
@@ -16,7 +16,7 @@ struct DebugView: View {
 		VStack{
 			HStack {
 				Text("Word")
-				ForEach(vm.gameLetters, id: \.self) { letter in
+				ForEach(appData.gameLetters, id: \.self) { letter in
 					Text(String(letter))
 				}
 				Spacer()
@@ -24,7 +24,7 @@ struct DebugView: View {
 
 			HStack {
 				Text("Correct")
-				ForEach(vm.correctLetters, id: \.self) { letter in
+				ForEach(appData.correctLetters, id: \.self) { letter in
 					Text(String(letter))
 				}
 				Spacer()
@@ -32,7 +32,7 @@ struct DebugView: View {
 
 			HStack {
 				Text("Incorrect")
-				ForEach(vm.incorrectLetters, id: \.self) { letter in
+				ForEach(appData.incorrectLetters, id: \.self) { letter in
 					Text(String(letter))
 				}
 				Spacer()

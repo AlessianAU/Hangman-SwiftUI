@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B60CBD85276C7ADE00A77007 /* PlatformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CBD84276C7ADE00A77007 /* PlatformView.swift */; };
+		B60CBD86276C7ADE00A77007 /* PlatformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CBD84276C7ADE00A77007 /* PlatformView.swift */; };
 		B6588301276ABB7E007F3983 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6588300276ABB7E007F3983 /* GameOverView.swift */; };
 		B6588302276ABB7E007F3983 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6588300276ABB7E007F3983 /* GameOverView.swift */; };
 		B6670638276ADD7D00C25162 /* HangmanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6670637276ADD7D00C25162 /* HangmanApp.swift */; };
@@ -25,11 +27,20 @@
 		B682DB972765B58D00FFAC75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B682DB6A2765B35500FFAC75 /* Assets.xcassets */; };
 		B682DB982765B5C300FFAC75 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63DED76275E0FD500466F46 /* WordList.swift */; };
 		B682DB992765B5C300FFAC75 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63DED76275E0FD500466F46 /* WordList.swift */; };
-		B6FBAC582769A3F3002FCC88 /* GameLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBAC572769A3F3002FCC88 /* GameLetters.swift */; };
-		B6FBAC592769A3F3002FCC88 /* GameLetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBAC572769A3F3002FCC88 /* GameLetters.swift */; };
+		B683CB9A276C4665008C8096 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CB99276C4665008C8096 /* StatisticsView.swift */; };
+		B683CB9B276C4665008C8096 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CB99276C4665008C8096 /* StatisticsView.swift */; };
+		B683CBA0276C5804008C8096 /* Vibrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CB9F276C5804008C8096 /* Vibrations.swift */; };
+		B683CBA1276C5855008C8096 /* Vibrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CB9F276C5804008C8096 /* Vibrations.swift */; };
+		B683CBA5276C66D4008C8096 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CBA4276C66D4008C8096 /* ToolbarView.swift */; };
+		B683CBA6276C6700008C8096 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CBA4276C66D4008C8096 /* ToolbarView.swift */; };
+		B6C7A022276B542500BCE334 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7A021276B542500BCE334 /* SettingsView.swift */; };
+		B6C7A023276B542500BCE334 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7A021276B542500BCE334 /* SettingsView.swift */; };
+		B6FBAC582769A3F3002FCC88 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBAC572769A3F3002FCC88 /* AppData.swift */; };
+		B6FBAC592769A3F3002FCC88 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBAC572769A3F3002FCC88 /* AppData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B60CBD84276C7ADE00A77007 /* PlatformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformView.swift; sourceTree = "<group>"; };
 		B638C293275F4C9D00BAF610 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		B63DED76275E0FD500466F46 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
 		B6588300276ABB7E007F3983 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
@@ -41,10 +52,15 @@
 		B682DB6A2765B35500FFAC75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B682DB782765B4B900FFAC75 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B682DB7D2765B4B900FFAC75 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B683CB98276C3DE9008C8096 /* Hangman--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Hangman--iOS--Info.plist"; sourceTree = "<group>"; };
+		B683CB99276C4665008C8096 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		B683CB9F276C5804008C8096 /* Vibrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibrations.swift; sourceTree = "<group>"; };
+		B683CBA4276C66D4008C8096 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		B68B15A127606BA60013A443 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
 		B6A5E48E27604EC500150DD8 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		B6B3D3C6276099F700A8C689 /* Entitlements (macOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Entitlements (macOS).entitlements"; sourceTree = "<group>"; };
-		B6FBAC572769A3F3002FCC88 /* GameLetters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLetters.swift; sourceTree = "<group>"; };
+		B6C7A021276B542500BCE334 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B6FBAC572769A3F3002FCC88 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +84,8 @@
 		B638C295275F4CD000BAF610 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B67098AD275CBA2700CBA442 /* ContentView.swift */,
-				B6A5E48E27604EC500150DD8 /* GameView.swift */,
-				B68B15A127606BA60013A443 /* KeyboardView.swift */,
-				B6588300276ABB7E007F3983 /* GameOverView.swift */,
+				B683CBA3276C64D8008C8096 /* Main Views */,
+				B683CBA2276C64CF008C8096 /* Sub Views */,
 				B65882F9276A9CAC007F3983 /* Helper Views */,
 			);
 			path = Views;
@@ -81,7 +95,9 @@
 			isa = PBXGroup;
 			children = (
 				B638C293275F4C9D00BAF610 /* Helpers.swift */,
+				B683CBA4276C66D4008C8096 /* ToolbarView.swift */,
 				B682DB512765B2A900FFAC75 /* DebugView.swift */,
+				B683CB9F276C5804008C8096 /* Vibrations.swift */,
 			);
 			path = "Helper Views";
 			sourceTree = "<group>";
@@ -89,6 +105,7 @@
 		B667063B276ADDE100C25162 /* Entitlements */ = {
 			isa = PBXGroup;
 			children = (
+				B683CB98276C3DE9008C8096 /* Hangman--iOS--Info.plist */,
 				B6B3D3C6276099F700A8C689 /* Entitlements (macOS).entitlements */,
 				B667063C276ADFEB00C25162 /* Entitlements (iOS).entitlements */,
 			);
@@ -142,10 +159,31 @@
 			path = WordLists;
 			sourceTree = "<group>";
 		};
+		B683CBA2276C64CF008C8096 /* Sub Views */ = {
+			isa = PBXGroup;
+			children = (
+				B6588300276ABB7E007F3983 /* GameOverView.swift */,
+				B6C7A021276B542500BCE334 /* SettingsView.swift */,
+				B683CB99276C4665008C8096 /* StatisticsView.swift */,
+			);
+			path = "Sub Views";
+			sourceTree = "<group>";
+		};
+		B683CBA3276C64D8008C8096 /* Main Views */ = {
+			isa = PBXGroup;
+			children = (
+				B67098AD275CBA2700CBA442 /* ContentView.swift */,
+				B60CBD84276C7ADE00A77007 /* PlatformView.swift */,
+				B6A5E48E27604EC500150DD8 /* GameView.swift */,
+				B68B15A127606BA60013A443 /* KeyboardView.swift */,
+			);
+			path = "Main Views";
+			sourceTree = "<group>";
+		};
 		B6FBAC5A2769A3FE002FCC88 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B6FBAC572769A3F3002FCC88 /* GameLetters.swift */,
+				B6FBAC572769A3F3002FCC88 /* AppData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,12 +287,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B682DB952765B55700FFAC75 /* DebugView.swift in Sources */,
-				B6FBAC582769A3F3002FCC88 /* GameLetters.swift in Sources */,
+				B6FBAC582769A3F3002FCC88 /* AppData.swift in Sources */,
 				B6670638276ADD7D00C25162 /* HangmanApp.swift in Sources */,
+				B60CBD85276C7ADE00A77007 /* PlatformView.swift in Sources */,
 				B682DB982765B5C300FFAC75 /* WordList.swift in Sources */,
+				B683CBA0276C5804008C8096 /* Vibrations.swift in Sources */,
 				B682DB8C2765B52800FFAC75 /* ContentView.swift in Sources */,
+				B683CBA5276C66D4008C8096 /* ToolbarView.swift in Sources */,
+				B6C7A022276B542500BCE334 /* SettingsView.swift in Sources */,
 				B682DB8E2765B52A00FFAC75 /* GameView.swift in Sources */,
 				B682DB902765B52D00FFAC75 /* KeyboardView.swift in Sources */,
+				B683CB9A276C4665008C8096 /* StatisticsView.swift in Sources */,
 				B682DB932765B53100FFAC75 /* Helpers.swift in Sources */,
 				B6588301276ABB7E007F3983 /* GameOverView.swift in Sources */,
 			);
@@ -265,12 +308,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B682DB942765B55700FFAC75 /* DebugView.swift in Sources */,
-				B6FBAC592769A3F3002FCC88 /* GameLetters.swift in Sources */,
+				B6FBAC592769A3F3002FCC88 /* AppData.swift in Sources */,
 				B6670639276ADD7D00C25162 /* HangmanApp.swift in Sources */,
+				B60CBD86276C7ADE00A77007 /* PlatformView.swift in Sources */,
 				B682DB992765B5C300FFAC75 /* WordList.swift in Sources */,
+				B683CBA1276C5855008C8096 /* Vibrations.swift in Sources */,
 				B682DB8D2765B52800FFAC75 /* ContentView.swift in Sources */,
+				B683CBA6276C6700008C8096 /* ToolbarView.swift in Sources */,
+				B6C7A023276B542500BCE334 /* SettingsView.swift in Sources */,
 				B682DB8F2765B52B00FFAC75 /* GameView.swift in Sources */,
 				B682DB912765B52E00FFAC75 /* KeyboardView.swift in Sources */,
+				B683CB9B276C4665008C8096 /* StatisticsView.swift in Sources */,
 				B682DB922765B53000FFAC75 /* Helpers.swift in Sources */,
 				B6588302276ABB7E007F3983 /* GameOverView.swift in Sources */,
 			);
@@ -410,10 +458,12 @@
 				DEVELOPMENT_TEAM = 8FW6S5Z4LA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Hangman/Entitlements/Hangman--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown ";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -443,10 +493,12 @@
 				DEVELOPMENT_TEAM = 8FW6S5Z4LA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Hangman/Entitlements/Hangman--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown ";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,7 +526,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9SF2TQ5745;
+				DEVELOPMENT_TEAM = 8FW6S5Z4LA;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -504,7 +556,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9SF2TQ5745;
+				DEVELOPMENT_TEAM = 8FW6S5Z4LA;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

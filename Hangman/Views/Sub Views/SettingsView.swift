@@ -9,6 +9,9 @@ import SwiftUI
 
 struct SettingsView: View {
 	@ObservedObject var appData: AppData
+	@ObservedObject var stats: Statistics
+	
+	@State private var showingAlert = false
 	
 	var body: some View {
 		NavigationView {
@@ -16,7 +19,7 @@ struct SettingsView: View {
 				Section {
 					
 					NavigationLink {
-						Text("Words")
+						WordListView(appData: appData)
 					} label: {
 						ListLabel(imageName: "book", label: "Word Packages")
 					}
@@ -36,8 +39,26 @@ struct SettingsView: View {
 						ListLabel(imageName: "ladybug", label: "Debug Mode")
 					}
 				}
-				ListLabel(imageColor: .red,imageName: "trash", label: "Reset Data")
-					.foregroundColor(.red)
+				
+				Button {
+					showingAlert = true
+				} label: {
+					ListLabel(imageColor: .red,imageName: "trash", label: "Reset Data")
+										.foregroundColor(.red)
+				}
+				.alert("Are You Sure", isPresented: $showingAlert) {
+					Button("Cancel", role: .cancel) {}
+					Button("Reset", role: .destructive) {
+						stats.pressed = 0
+						stats.lossed = 0
+						stats.won = 0
+						stats.streaks = 0
+						stats.played = 0
+						print("Stats Reset")
+					}
+				}
+
+				
 			}
 			#if os(iOS)
 			.navigationBarTitle("Settings")

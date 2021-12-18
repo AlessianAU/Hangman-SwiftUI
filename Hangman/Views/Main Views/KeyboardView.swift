@@ -10,6 +10,7 @@ import SwiftUI
 struct KeyboardView: View {
 	@State private var letters = KeyboardLetters()
 	@ObservedObject var appData: AppData
+	@ObservedObject var stats: Statistics
 	
 	@Binding var lives: [String]
 	
@@ -35,14 +36,16 @@ struct KeyboardView: View {
 							if appData.hapticFeedback == true {
 								Vibrations.heavyVibration()
 							}
-							
+							stats.pressed += 1
 							print("true")
 							appData.correctLetters.append(Character(letter))
 							if checkLetters() == true {
+								stats.won += 1
 								print("game won")
 							}
 						} else {
 							
+							stats.pressed += 1
 							if appData.hapticFeedback == true {
 								Vibrations.lightVibration()
 							}
@@ -54,6 +57,7 @@ struct KeyboardView: View {
 									lives.remove(at: lives.count-1)
 								} else if lives.count == 0{
 									print("game over")
+									stats.lossed += 1
 								}
 							}
 						}

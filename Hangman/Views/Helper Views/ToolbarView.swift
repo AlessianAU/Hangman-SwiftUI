@@ -9,36 +9,40 @@ import SwiftUI
 
 struct ToolbarView: View {
 	@ObservedObject var appData: AppData
+	@ObservedObject var stats: Statistics
+	
+	@State var showingSettings : Bool = false
+	@State var showingStatistics : Bool = false
 	
 	var body: some View {
 		
 		Button{
-			appData.showingStatistics.toggle()
+			showingStatistics.toggle()
 		} label: {
 			Image(systemName: "list.bullet.rectangle")
 		}
 #if os(iOS)
-		.sheet(isPresented: $appData.showingStatistics) {
-			StatisticsView()
+		.sheet(isPresented: $showingStatistics) {
+			StatisticsView(stats: stats)
 		}
 #else
-		.popover(isPresented: $appData.showingStatistics) {
-			StatisticsView()
+		.popover(isPresented: $showingStatistics) {
+			StatisticsView(stats: stats)
 		}
 #endif
 		
 		Button {
-			appData.showingSettings.toggle()
+			showingSettings.toggle()
 		} label: {
 			Image(systemName: "gearshape")
 		}
 #if os(iOS)
-		.sheet(isPresented: $appData.showingSettings) {
-			SettingsView(appData: appData)
+		.sheet(isPresented: $showingSettings) {
+			SettingsView(appData: appData, stats: stats)
 		}
 #else
-		.popover(isPresented: $appData.showingSettings) {
-			SettingsView(appData: appData)
+		.popover(isPresented: $showingSettings) {
+			SettingsView(appData: appData, stats: stats)
 		}
 #endif
 	}

@@ -41,6 +41,7 @@ struct ListLabel: View {
 	@State var imageColor: Color = .accentColor
 	@State var imageName: String
 	@State var label: String
+	
 	var body: some View {
 		HStack{
 			Image(systemName: imageName)

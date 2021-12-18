@@ -16,11 +16,8 @@ class AppData: ObservableObject {
 	@Published var hapticFeedback : Bool = true
 	@Published var debugActive : Bool = false
 	
-	@Published var showingSettings : Bool = false
-	@Published var showingStatistics : Bool = false
-	
 	static func getLetters() -> Array<Character> {
-		let allWords = WordList.wordList
+		let allWords = WordList.aquaticAnimals
 		let randomWord : String! = allWords.randomElement()
 		let letters = Array(randomWord)
 		print(letters)

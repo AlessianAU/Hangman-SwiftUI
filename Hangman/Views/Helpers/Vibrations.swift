@@ -25,13 +25,13 @@ struct Vibrations {
 #endif
 	}
 	
-	static func rappidVibration() {
-#if os(iOS)
-		for _ in 0..<3 {
-			let impact = UIImpactFeedbackGenerator(style: .heavy)
-			impact.impactOccurred()
-		}
-#endif
-	}
+//	static func rappidVibration() {
+//#if os(iOS)
+//		for _ in 0..<3 {
+//			let impact = UIImpactFeedbackGenerator(style: .heavy)
+//			impact.impactOccurred()
+//		}
+//#endif
+//	}
 }
 

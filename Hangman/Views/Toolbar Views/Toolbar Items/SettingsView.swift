@@ -23,9 +23,7 @@ struct SettingsView: View {
 					} label: {
 						ListLabel(imageName: "book", label: "Word Packages")
 					}
-					
-					
-					
+						
 #if os(iOS)
 					if UIDevice.current.userInterfaceIdiom == .phone {
 						Toggle(isOn: $appData.hapticFeedback) {
@@ -52,7 +50,7 @@ struct SettingsView: View {
 						stats.pressed = 0
 						stats.lossed = 0
 						stats.won = 0
-						stats.streaks = 0
+						stats.currentWinStreak = 0
 						stats.played = 0
 						print("Stats Reset")
 					}

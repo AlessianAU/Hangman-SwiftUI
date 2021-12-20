@@ -16,10 +16,18 @@ struct PlatformView: View {
 			
 #if os(iOS)
 			NavigationView {
-				GameView(appData: appData, stats: stats)
+				GameOverView(appData: appData, stats: stats)
 					.toolbar {
+						
 						ToolbarItemGroup(placement: .navigationBarTrailing) {
-							ToolbarView(appData: appData, stats: stats)
+							if appData.gameOver != true {
+								ToolbarMainView(appData: appData, stats: stats)
+							}
+						}
+						ToolbarItemGroup(placement: .navigationBarLeading) {
+							if appData.gameOver != true {
+								ToolbarSubView(appData: appData, stats: stats)
+							}
 						}
 					}
 			}
@@ -41,7 +49,7 @@ struct PlatformView: View {
 		})
 		.toolbar {
 			ToolbarItemGroup(placement: .automatic) {
-				ToolbarView(appData: appData, stats: stats)
+				ToolbarMainView(appData: appData, stats: stats)
 			}
 		}
 #endif

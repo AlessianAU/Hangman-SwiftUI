@@ -12,7 +12,6 @@ struct GameView: View {
 	@ObservedObject var stats: Statistics
 	
 	@State private var showingAlert = false
-	@State private var lives = ["a","a","a","a","a","a","a","a"]
 	
 #if os(iOS)
 	let screen = UIScreen.main.bounds
@@ -29,31 +28,19 @@ struct GameView: View {
 					} else {
 						if appData.correctLetters.contains(letter) {
 							Text(String(letter))
-#if os(iOS)
-								.font(.system(size: screen.width * 0.08, weight: .medium))
-#else
 								.font(.system(size: 35, weight: .medium))
-#endif
 						} else {
 							RoundedRectangle(cornerRadius: 10)
-#if os(iOS)
-								.frame(width: screen.width - 350, height: 4)
-#else
 								.frame(width: 25, height: 4)
-#endif
 								.offset(y: 9)
 						}
 					}
 				}
-#if os(iOS)
-				.frame(width: screen.width - 350, height: 40)
-#else
 				.frame(width: 35, height: 40)
-#endif
 			}
 			
 			HStack{
-				ForEach(lives, id: \.self) {_ in
+				ForEach(appData.lives, id: \.self) {_ in
 					Image(systemName: "heart.fill")
 						.foregroundColor(.red)
 						.padding(.top)
@@ -68,7 +55,7 @@ struct GameView: View {
 			
 			Spacer()
 			
-			KeyboardView(appData: appData, stats: stats, lives: $lives)
+			KeyboardView(appData: appData, stats: stats)
 			
 			Spacer()
 			
@@ -76,12 +63,12 @@ struct GameView: View {
 				print("new game button pressed")
 				showingAlert = true
 			} label: {
-				ButtonView(buttonLabel: "New Game", positionBottom: true)
+				ButtonView(buttonLabel: "New Game")
 			}
 			.alert("Are You Sure", isPresented: $showingAlert) {
 				Button("No", role: .cancel) { print("new game cancelled") }
 				Button("Yes") {
-					if (appData.correctLetters != appData.gameLetters) && (lives == []){
+					if (appData.correctLetters != appData.gameLetters) && (appData.lives == []){
 						stats.lossed += 1
 					}
 					appData.gameLetters = AppData.getLetters()
@@ -89,7 +76,7 @@ struct GameView: View {
 					appData.usedLetters.removeAll()
 					appData.correctLetters.removeAll()
 					appData.incorrectLetters.removeAll()
-					lives = ["a","a","a","a","a","a","a","a"]
+					appData.lives = ["a","a","a","a","a","a","a","a"]
 					stats.lossed += 1
 				}
 			}

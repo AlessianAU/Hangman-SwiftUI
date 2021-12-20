@@ -36,7 +36,7 @@ struct StatisticsLabel: View {
 	var imageColor: Color = .accentColor
 	var imageName: String
 	var label: String
-	var statisticAmount: Int = 0
+	var statisticAmount: Int
 	
 	
 	var body: some View {
@@ -63,7 +63,16 @@ struct StatisticsList: View {
 				StatisticsLabel(imageName: "xmark.diamond", label: "Games Lost", statisticAmount: stats.lossed)
 			}
 			Section {
-				StatisticsLabel(imageName: "flame", label: "Win Streak", statisticAmount: stats.streaks)
+				StatisticsLabel(imageName: "flame", label: "Current Win Streak", statisticAmount: stats.currentWinStreak)
+				StatisticsLabel(imageName: "crown", label: "Longest Win Streak", statisticAmount: stats.longestWinStreak)
+			}
+			Section {
+				StatisticsLabel(imageName: "exclamationmark.circle", label: "Current Loss Streak", statisticAmount: stats.currentLossStreak)
+				StatisticsLabel(imageName: "xmark.octagon", label: "Longest Loss Streak", statisticAmount: stats.longestLossStreak)
+			}
+			Section {
+				StatisticsLabel(imageName: "timer", label: "Average Time", statisticAmount: stats.averageTime)
+				StatisticsLabel(imageName: "clock", label: "Total Time Played", statisticAmount: stats.totalTime)
 			}
 			Section {
 				StatisticsLabel(imageName: "keyboard", label: "Total Buttons Pressed", statisticAmount: stats.pressed)

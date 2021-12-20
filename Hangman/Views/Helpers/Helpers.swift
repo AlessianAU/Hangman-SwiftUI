@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ButtonView: View {
 	var buttonLabel = String()
-	var positionBottom: Bool
 	var body: some View {
 		
 #if os(iOS)

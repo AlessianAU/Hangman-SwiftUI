@@ -1,5 +1,5 @@
 //
-//  ToolbarView.swift
+//  ToolbarMainView.swift
 //  Hangman (iOS)
 //
 //  Created by Alessia on 17/12/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ToolbarView: View {
+struct ToolbarMainView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
 	
@@ -47,6 +47,8 @@ struct ToolbarView: View {
 #endif
 	}
 }
+
+//struct ToolbarShopView
 
 //struct ToolbarView_Previews: PreviewProvider {
 //    static var previews: some View {

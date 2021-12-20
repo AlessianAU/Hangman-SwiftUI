@@ -12,8 +12,6 @@ struct KeyboardView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
 	
-	@Binding var lives: [String]
-	
 	let columns = [
 		GridItem(),
 		GridItem(),
@@ -53,10 +51,11 @@ struct KeyboardView: View {
 							print("false")
 							appData.incorrectLetters.append(Character(letter))
 							withAnimation{
-								if lives.count != 0 {
-									lives.remove(at: lives.count-1)
-								} else if lives.count == 0{
+								if appData.lives.count != 1 {
+									appData.lives.remove(at: appData.lives.count-1)
+								} else if appData.lives.count == 1{
 									print("game over")
+									appData.gameOver = true
 									stats.lossed += 1
 								}
 							}

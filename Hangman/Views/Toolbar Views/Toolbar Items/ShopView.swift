@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct ShopView: View {
+	@ObservedObject var stats: Statistics
+	
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+		NavigationView {
+			List {
+				Button {
+					stats.purchase(amount: 10)
+				} label: {
+					StatisticsLabel(imageName: "", label: "Spend 10", statisticAmount: 10)
+				}
+
+			}
+				.navigationBarTitle("Item Store")
+		}
     }
 }
 
-struct ShopView_Previews: PreviewProvider {
-    static var previews: some View {
-        ShopView()
-    }
-}
+//struct ShopView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ShopView()
+//    }
+//}

@@ -11,37 +11,34 @@ struct ToolbarMainView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
 	
-	@State var showingSettings : Bool = false
-	@State var showingStatistics : Bool = false
-	
 	var body: some View {
 		
 		Button{
-			showingStatistics.toggle()
+			appData.showingStatistics.toggle()
 		} label: {
 			Image(systemName: "list.bullet.rectangle")
 		}
 #if os(iOS)
-		.sheet(isPresented: $showingStatistics) {
+		.sheet(isPresented: $appData.showingStatistics) {
 			StatisticsView(stats: stats)
 		}
 #else
-		.popover(isPresented: $showingStatistics) {
+		.popover(isPresented: $appData.showingStatistics) {
 			StatisticsView(stats: stats)
 		}
 #endif
 		
 		Button {
-			showingSettings.toggle()
+			appData.showingSettings.toggle()
 		} label: {
 			Image(systemName: "gearshape")
 		}
 #if os(iOS)
-		.sheet(isPresented: $showingSettings) {
+		.sheet(isPresented: $appData.showingSettings) {
 			SettingsView(appData: appData, stats: stats)
 		}
 #else
-		.popover(isPresented: $showingSettings) {
+		.popover(isPresented: $appData.showingSettings) {
 			SettingsView(appData: appData, stats: stats)
 		}
 #endif
@@ -52,21 +49,21 @@ struct ToolbarSubView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
 	
-	@State var showingShop : Bool = false
-	
 	var body: some View {
 		Button{
-			showingShop.toggle()
+			appData.showingShop.toggle()
 		} label: {
-			Image(systemName: "bag")
+			Image(systemName: "dollarsign.circle")
+			Text(String(stats.defaults.integer(forKey: "CurrentMoney")))
+				.offset(x: -5)
 		}
 #if os(iOS)
-		.sheet(isPresented: $showingShop) {
-			ShopView()
+		.sheet(isPresented: $appData.showingShop) {
+			ShopView(stats: stats)
 		}
 #else
-		.popover(isPresented: $showingShop) {
-			ShopView()
+		.popover(isPresented: $appData.showingShop) {
+			ShopView(stats: stats)
 		}
 #endif
 	}

@@ -49,7 +49,7 @@ struct GameView: View {
 			}
 			.frame(height: 60)
 			
-			if appData.debugActive == true {
+			if appData.debugViewActive == true {
 				DebugView(appData: appData, gameData: gameData)
 					.padding(.leading)
 			}

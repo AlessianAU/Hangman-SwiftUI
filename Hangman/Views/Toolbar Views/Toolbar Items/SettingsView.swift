@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
+	@State private var showingAlert = false
 	
 	var body: some View {
 		NavigationView {
@@ -21,7 +22,7 @@ struct SettingsView: View {
 					} label: {
 						ListLabel(imageName: "book", label: "Word Packages")
 					}
-						
+					
 #if os(iOS)
 					if UIDevice.current.userInterfaceIdiom == .phone {
 						Toggle(isOn: $appData.hapticFeedback) {
@@ -30,20 +31,50 @@ struct SettingsView: View {
 					}
 #endif
 				}
+#if DEBUG
 				Section {
 					Toggle(isOn: $appData.debugActive) {
 						ListLabel(imageName: "ladybug", label: "Debug Mode")
 					}
+						if appData.debugActive {
+							NavigationLink {
+								DebugOptions(appData: appData, stats: stats)
+							} label: {
+								ListLabel(imageName: "ant", label: "Debug Options")
+						}
+					}
 				}
-
+#endif
+				Section {
+					Button {
+						showingAlert = true
+					} label: {
+						ListLabel(imageColor: .red,imageName: "trash", label: "Reset All Data")
+							.foregroundColor(.red)
+					}
+					.alert("Are You Sure? This is PERMINENT", isPresented: $showingAlert) {
+						Button("Cancel", role: .cancel) {}
+						Button("Reset", role: .destructive) {
+							stats.defaults.set(0, forKey: "ButtonsPressed")
+							stats.defaults.set(0, forKey: "GamesLost")
+							stats.defaults.set(0, forKey: "GamesWon")
+							stats.defaults.set(0, forKey: "CurrentWinStreak")
+							stats.defaults.set(0, forKey: "GamesPlayed")
+							stats.defaults.set(0, forKey: "CurrentMoney")
+							stats.defaults.set(0, forKey: "MoneyObtained")
+							print("Stats Reset")
+						}
+					}
+				}
+				
 				
 			}
-			#if os(iOS)
+#if os(iOS)
 			.navigationBarTitle("Settings")
-//			.navigationBarHidden(true)
-			#else
+			//			.navigationBarHidden(true)
+#else
 			.listStyle(.inset)
-			#endif
+#endif
 		}
 	}
 }

@@ -40,10 +40,16 @@ struct KeyboardView: View {
 								Vibrations.heavyVibration()
 							}
 							
+							stats.increment(key: "CurrentMoney")
+							stats.increment(key: "MoneyObtained")
 							print("true")
 							appData.correctLetters.append(Character(letter))
 							
 							if checkLetters() == true {
+								var num = stats.defaults.integer(forKey: "CurrentMoney")
+								num += 4
+								stats.defaults.set(num, forKey: "CurrentMoney")
+								stats.defaults.set(num, forKey: "MoneyObtained")
 								stats.increment(key: "GamesWon")
 								print("game won")
 							}
@@ -64,7 +70,7 @@ struct KeyboardView: View {
 									print("game over")
 									appData.gameOver = true
 									
-									stats.increment(key: "ButtonsPressed")
+									stats.increment(key: "GamesLost")
 								}
 							}
 						}
@@ -110,10 +116,8 @@ struct KeyboardView: View {
 		let correctLettersSet: Set<Character> = Set<Character>(appData.correctLetters)
 		
 		if gameLettersSet == correctLettersSet {
-			print("check letters true")
 			return true
 		} else {
-			print("check letters false")
 			return false
 		}
 	}

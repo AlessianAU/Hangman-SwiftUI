@@ -15,4 +15,10 @@ class Statistics: ObservableObject {
 		num += 1
 		defaults.set(num, forKey: key)
 	}
+	
+	func purchase(amount: Int) {
+		var num = defaults.integer(forKey: "CurrentMoney")
+		num -= amount
+		defaults.set(num, forKey: "CurrentMoney")
+	}
 }

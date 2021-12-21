@@ -35,7 +35,7 @@ struct PlatformView: View {
 			
 			.navigationViewStyle(.stack)
 #else
-			GameView(appData: appData, stats: stats)
+			GameView(appData: appData, stats: stats, gameData: gameData)
 #endif
 		}
 		

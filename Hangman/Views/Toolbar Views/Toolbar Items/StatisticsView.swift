@@ -56,13 +56,16 @@ struct StatisticsLabel: View {
 struct StatisticsList: View {
 	@ObservedObject var stats: Statistics
 	
-	@State private var showingAlert = false
 	var body: some View {
 		List {
 			Section{
 				StatisticsLabel(imageName: "123.rectangle", label: "Games Played", statisticAmount: stats.defaults.integer(forKey: "GamesPlayed"))
 				StatisticsLabel(imageName: "checkmark.seal", label: "Games Won", statisticAmount: stats.defaults.integer(forKey: "GamesWon"))
 				StatisticsLabel(imageName: "xmark.diamond", label: "Games Lost", statisticAmount: stats.defaults.integer(forKey: "GamesLost"))
+			}
+			Section {
+				StatisticsLabel(imageName: "bag.circle", label: "Money Spent", statisticAmount: stats.defaults.integer(forKey: "MoneySpent"))
+				StatisticsLabel(imageName: "dollarsign.circle", label: "Money Obtained", statisticAmount: stats.defaults.integer(forKey: "MoneyObtained"))
 			}
 			Section {
 				StatisticsLabel(imageName: "flame", label: "Current Win Streak*", statisticAmount: stats.defaults.integer(forKey: "CurrentWinStreak"))
@@ -78,25 +81,6 @@ struct StatisticsList: View {
 			}
 			Section {
 				StatisticsLabel(imageName: "keyboard", label: "Total Buttons Pressed", statisticAmount: stats.defaults.integer(forKey: "ButtonsPressed"))
-			}
-			Section {
-				Button {
-					showingAlert = true
-				} label: {
-					ListLabel(imageColor: .red,imageName: "trash", label: "Reset Statistics")
-										.foregroundColor(.red)
-				}
-				.alert("Are You Sure", isPresented: $showingAlert) {
-					Button("Cancel", role: .cancel) {}
-					Button("Reset", role: .destructive) {
-						stats.defaults.set(0, forKey: "ButtonsPressed")
-						stats.defaults.set(0, forKey: "GamesLost")
-						stats.defaults.set(0, forKey: "GamesWon")
-						stats.defaults.set(0, forKey: "CurrentWinStreak")
-						stats.defaults.set(0, forKey: "GamesPlayed")
-						print("Stats Reset")
-					}
-				}
 			}
 		}
 	}

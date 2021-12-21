@@ -10,13 +10,14 @@ import SwiftUI
 struct PlatformView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
+	@ObservedObject var gameData: GameData
 	
 	var body: some View {
 		VStack {
 			
 #if os(iOS)
 			NavigationView {
-				GameOverView(appData: appData, stats: stats)
+				GameOverView(appData: appData, gameData: gameData, stats: stats)
 					.toolbar {
 						
 						ToolbarItemGroup(placement: .navigationBarTrailing) {

@@ -11,8 +11,6 @@ struct SettingsView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
 	
-	@State private var showingAlert = false
-	
 	var body: some View {
 		NavigationView {
 			List {
@@ -35,24 +33,6 @@ struct SettingsView: View {
 				Section {
 					Toggle(isOn: $appData.debugActive) {
 						ListLabel(imageName: "ladybug", label: "Debug Mode")
-					}
-				}
-				
-				Button {
-					showingAlert = true
-				} label: {
-					ListLabel(imageColor: .red,imageName: "trash", label: "Reset Data")
-										.foregroundColor(.red)
-				}
-				.alert("Are You Sure", isPresented: $showingAlert) {
-					Button("Cancel", role: .cancel) {}
-					Button("Reset", role: .destructive) {
-						stats.pressed = 0
-						stats.lossed = 0
-						stats.won = 0
-						stats.currentWinStreak = 0
-						stats.played = 0
-						print("Stats Reset")
 					}
 				}
 

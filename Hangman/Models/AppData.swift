@@ -10,7 +10,6 @@ import Foundation
 class AppData: ObservableObject {
 	
 	@Published var usedLetters = [String]()
-	@Published var gameLetters:Array = getLetters()
 	@Published var correctLetters = [Character]()
 	@Published var incorrectLetters = [Character]()
 	
@@ -28,4 +27,9 @@ class AppData: ObservableObject {
 		print(letters)
 		return letters
 	}
+}
+
+class GameData: ObservableObject, Identifiable {
+	@Published var id = UUID()
+	@Published var gameLetters:Array = AppData.getLetters()
 }

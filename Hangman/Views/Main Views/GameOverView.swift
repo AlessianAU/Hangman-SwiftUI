@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct GameOverView: View {
-	@ObservedObject var appData = AppData()
-	@ObservedObject var stats = Statistics()
+	@ObservedObject var appData: AppData
+	@ObservedObject var gameData: GameData
+	@ObservedObject var stats: Statistics
+	
 	
     var body: some View {
 		if appData.gameOver == false {
-			GameView(appData: appData, stats: stats)
+			GameView(appData: appData, stats: stats, gameData: gameData)
 		} else if appData.gameOver == true {
 			ZStack{
 				Color.black
@@ -26,7 +28,7 @@ struct GameOverView: View {
 					Text("The Word Was...")
 						.font(.system(size: 25))
 					HStack {
-						ForEach(appData.gameLetters, id: \.self) { letter in
+						ForEach(gameData.gameLetters, id: \.self) { letter in
 							Text(String(letter))
 						}
 						.font(.system(size: 40, weight: .heavy))
@@ -35,13 +37,14 @@ struct GameOverView: View {
 					Spacer()
 					Button {
 						appData.gameOver.toggle()
-						appData.gameLetters = AppData.getLetters()
+						gameData.gameLetters = AppData.getLetters()
 						print("new game started")
 						appData.usedLetters.removeAll()
 						appData.correctLetters.removeAll()
 						appData.incorrectLetters.removeAll()
 						appData.lives = ["a","a","a","a","a","a","a","a"]
-						stats.lossed += 1
+						
+						stats.increment(key: "GamesPlayed")
 					} label: {
 						ButtonView(buttonLabel: "Try Again")
 							.foregroundColor(.accentColor)
@@ -53,8 +56,8 @@ struct GameOverView: View {
     }
 }
 
-struct GameOverView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameOverView()
-    }
-}
+//struct GameOverView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GameOverView()
+//    }
+//}

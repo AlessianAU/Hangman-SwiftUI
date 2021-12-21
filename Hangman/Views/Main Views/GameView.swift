@@ -10,6 +10,7 @@ import SwiftUI
 struct GameView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
+	@ObservedObject var gameData: GameData
 	
 	@State private var showingAlert = false
 	
@@ -21,7 +22,7 @@ struct GameView: View {
 		VStack {
 			Spacer()
 			HStack {
-				ForEach(appData.gameLetters, id: \.self) { letter in
+				ForEach(gameData.gameLetters, id: \.self) { letter in
 					if letter == " " {
 						Text(" ")
 							.frame(width: 15)
@@ -49,13 +50,13 @@ struct GameView: View {
 			.frame(height: 60)
 			
 			if appData.debugActive == true {
-				DebugView(appData: appData)
+				DebugView(appData: appData, gameData: gameData)
 					.padding(.leading)
 			}
 			
 			Spacer()
 			
-			KeyboardView(appData: appData, stats: stats)
+			KeyboardView(appData: appData, stats: stats, gameData: gameData)
 			
 			Spacer()
 			
@@ -68,16 +69,19 @@ struct GameView: View {
 			.alert("Are You Sure", isPresented: $showingAlert) {
 				Button("No", role: .cancel) { print("new game cancelled") }
 				Button("Yes") {
-					if (appData.correctLetters != appData.gameLetters) && (appData.lives == []){
-						stats.lossed += 1
+					if appData.correctLetters != gameData.gameLetters {
+						var num = stats.defaults.integer(forKey: "GamesLost")
+						num += 1
+						stats.defaults.set(num, forKey: "GamesLost")
 					}
-					appData.gameLetters = AppData.getLetters()
+					gameData.gameLetters = AppData.getLetters()
 					print("new game started")
 					appData.usedLetters.removeAll()
 					appData.correctLetters.removeAll()
 					appData.incorrectLetters.removeAll()
 					appData.lives = ["a","a","a","a","a","a","a","a"]
-					stats.lossed += 1
+					
+					stats.increment(key: "GamesPlayed")
 				}
 			}
 		}

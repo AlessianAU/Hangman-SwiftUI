@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DebugView: View {
 	@ObservedObject var appData: AppData
+	@ObservedObject var gameData: GameData
 	
 	@State var safe = 0
 	
@@ -16,7 +17,7 @@ struct DebugView: View {
 		VStack{
 			HStack {
 				Text("Word")
-				ForEach(appData.gameLetters, id: \.self) { letter in
+				ForEach(gameData.gameLetters, id: \.self) { letter in
 					Text(String(letter))
 				}
 				Spacer()

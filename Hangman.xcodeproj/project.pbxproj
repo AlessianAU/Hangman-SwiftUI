@@ -23,6 +23,8 @@
 		B6588302276ABB7E007F3983 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6588300276ABB7E007F3983 /* GameOverView.swift */; };
 		B6670638276ADD7D00C25162 /* HangmanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6670637276ADD7D00C25162 /* HangmanApp.swift */; };
 		B6670639276ADD7D00C25162 /* HangmanApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6670637276ADD7D00C25162 /* HangmanApp.swift */; };
+		B67EDD35277185AD00DA1A91 /* ShopItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67EDD34277185AD00DA1A91 /* ShopItems.swift */; };
+		B67EDD36277185AD00DA1A91 /* ShopItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67EDD34277185AD00DA1A91 /* ShopItems.swift */; };
 		B682DB8C2765B52800FFAC75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67098AD275CBA2700CBA442 /* ContentView.swift */; };
 		B682DB8D2765B52800FFAC75 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67098AD275CBA2700CBA442 /* ContentView.swift */; };
 		B682DB8E2765B52A00FFAC75 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A5E48E27604EC500150DD8 /* GameView.swift */; };
@@ -65,6 +67,7 @@
 		B667063C276ADFEB00C25162 /* Entitlements (iOS).entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Entitlements (iOS).entitlements"; sourceTree = "<group>"; };
 		B67098AD275CBA2700CBA442 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B67098B2275CBA2800CBA442 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B67EDD34277185AD00DA1A91 /* ShopItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopItems.swift; sourceTree = "<group>"; };
 		B682DB512765B2A900FFAC75 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		B682DB6A2765B35500FFAC75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B682DB782765B4B900FFAC75 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -216,6 +219,7 @@
 				B6FBAC572769A3F3002FCC88 /* AppData.swift */,
 				B6D0B8F0276CAD7D00EEAF0F /* Stastistics.swift */,
 				B63F821A276D70BA005CF14A /* WordListModel.swift */,
+				B67EDD34277185AD00DA1A91 /* ShopItems.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -328,6 +332,7 @@
 				B62E80B4277019560049D47B /* ResetGame.swift in Sources */,
 				B683CBA0276C5804008C8096 /* Vibrations.swift in Sources */,
 				B682DB8C2765B52800FFAC75 /* ContentView.swift in Sources */,
+				B67EDD35277185AD00DA1A91 /* ShopItems.swift in Sources */,
 				B683CBA5276C66D4008C8096 /* ToolbarView.swift in Sources */,
 				B6C7A022276B542500BCE334 /* SettingsView.swift in Sources */,
 				B63F821B276D70BA005CF14A /* WordListModel.swift in Sources */,
@@ -355,6 +360,7 @@
 				B62E80B5277019560049D47B /* ResetGame.swift in Sources */,
 				B683CBA1276C5855008C8096 /* Vibrations.swift in Sources */,
 				B682DB8D2765B52800FFAC75 /* ContentView.swift in Sources */,
+				B67EDD36277185AD00DA1A91 /* ShopItems.swift in Sources */,
 				B683CBA6276C6700008C8096 /* ToolbarView.swift in Sources */,
 				B6C7A023276B542500BCE334 /* SettingsView.swift in Sources */,
 				B63F821C276D70BA005CF14A /* WordListModel.swift in Sources */,

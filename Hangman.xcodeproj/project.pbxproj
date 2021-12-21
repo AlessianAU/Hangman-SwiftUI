@@ -47,6 +47,8 @@
 		B683CBA6276C6700008C8096 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CBA4276C66D4008C8096 /* ToolbarView.swift */; };
 		B6BB196F2771D9B9003B2DCF /* DebugOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB196E2771D9B9003B2DCF /* DebugOptions.swift */; };
 		B6BB19702771D9B9003B2DCF /* DebugOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB196E2771D9B9003B2DCF /* DebugOptions.swift */; };
+		B6BB19732771DF8A003B2DCF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B6BB19722771DF89003B2DCF /* README.md */; };
+		B6BB19742771DF8A003B2DCF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B6BB19722771DF89003B2DCF /* README.md */; };
 		B6C7A022276B542500BCE334 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7A021276B542500BCE334 /* SettingsView.swift */; };
 		B6C7A023276B542500BCE334 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7A021276B542500BCE334 /* SettingsView.swift */; };
 		B6D0B8F1276CAD7D00EEAF0F /* Stastistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D0B8F0276CAD7D00EEAF0F /* Stastistics.swift */; };
@@ -82,6 +84,7 @@
 		B6A5E48E27604EC500150DD8 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		B6B3D3C6276099F700A8C689 /* Entitlements (macOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Entitlements (macOS).entitlements"; sourceTree = "<group>"; };
 		B6BB196E2771D9B9003B2DCF /* DebugOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugOptions.swift; sourceTree = "<group>"; };
+		B6BB19722771DF89003B2DCF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		B6C7A021276B542500BCE334 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B6D0B8F0276CAD7D00EEAF0F /* Stastistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stastistics.swift; sourceTree = "<group>"; };
 		B6FBAC572769A3F3002FCC88 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
@@ -151,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				B67098AA275CBA2700CBA442 /* Hangman */,
+				B6BB19722771DF89003B2DCF /* README.md */,
 				B67098A9275CBA2600CBA442 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -315,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BB19732771DF8A003B2DCF /* README.md in Resources */,
 				B682DB962765B58C00FFAC75 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BB19742771DF8A003B2DCF /* README.md in Resources */,
 				B682DB972765B58D00FFAC75 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,7 +10,6 @@ import SwiftUI
 struct SettingsView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
-	@State private var showingAlert = false
 	@State private var showingSheet = false
 	
 	var body: some View {

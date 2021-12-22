@@ -16,8 +16,19 @@ struct ShopView: View {
 				Button {
 					stats.purchase(amount: 10)
 				} label: {
-					StatisticsLabel(imageName: "", label: "Spend 10", statisticAmount: 10)
+					StatisticsLabel(imageName: "dollarsign.circle", label: "Spend 10", statisticAmount: 10)
 				}
+				NavigationLink {
+					Text("")
+				} label: {
+					ListLabel(imageName: "book", label: "Word Packs")
+				}
+				NavigationLink {
+					Text("")
+				} label: {
+					ListLabel(imageName: "questionmark.circle", label: "Hints")
+				}
+
 
 			}
 				.navigationBarTitle("Item Store")

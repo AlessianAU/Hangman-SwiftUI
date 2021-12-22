@@ -10,23 +10,22 @@ import SwiftUI
 struct PlatformView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
-	@ObservedObject var gameData: GameData
 	
 	var body: some View {
 		VStack {
 			
 #if os(iOS)
 			NavigationView {
-				GameOverView(appData: appData, gameData: gameData, stats: stats)
+				GameOverView(appData: appData, stats: stats)
 					.toolbar {
 						
 						ToolbarItemGroup(placement: .navigationBarTrailing) {
-							if appData.gameOver != true {
+							if appData.gameOver == 0 {
 								ToolbarMainView(appData: appData, stats: stats)
 							}
 						}
 						ToolbarItemGroup(placement: .navigationBarLeading) {
-							if appData.gameOver != true {
+							if appData.gameOver == 0 {
 								ToolbarSubView(appData: appData, stats: stats)
 							}
 						}
@@ -35,7 +34,7 @@ struct PlatformView: View {
 			
 			.navigationViewStyle(.stack)
 #else
-			GameView(appData: appData, stats: stats, gameData: gameData)
+			GameView(appData: appData, stats: stats)
 #endif
 		}
 		

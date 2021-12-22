@@ -10,10 +10,9 @@ import SwiftUI
 struct ContentView: View {
 	@StateObject var appData = AppData()
 	@StateObject var stats = Statistics()
-	@StateObject var gameData = GameData()
 	
 	var body: some View {
-		PlatformView(appData: appData, stats: stats, gameData: gameData)
+		PlatformView(appData: appData, stats: stats)
 	}
 }
 

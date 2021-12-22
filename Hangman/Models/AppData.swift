@@ -9,6 +9,7 @@ import Foundation
 
 class AppData: ObservableObject {
 	
+	@Published var gameLetters:Array = AppData.getLetters()
 	@Published var usedLetters = [String]()
 	@Published var correctLetters = [Character]()
 	@Published var incorrectLetters = [Character]()
@@ -24,7 +25,7 @@ class AppData: ObservableObject {
 	@Published var showingStatistics : Bool = false
 	@Published var showingShop : Bool = false
 	
-	@Published var gameOver : Bool = false
+	@Published var gameOver : Int = 0
 	
 	static func getLetters() -> Array<Character> {
 		let allWords = WordList.aquaticAnimals
@@ -33,9 +34,4 @@ class AppData: ObservableObject {
 		print(letters)
 		return letters
 	}
-}
-
-class GameData: ObservableObject, Identifiable {
-	@Published var id = UUID()
-	@Published var gameLetters:Array = AppData.getLetters()
 }

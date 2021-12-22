@@ -9,26 +9,24 @@ import SwiftUI
 
 struct GameOverView: View {
 	@ObservedObject var appData: AppData
-	@ObservedObject var gameData: GameData
 	@ObservedObject var stats: Statistics
 	
-	
     var body: some View {
-		if appData.gameOver == false {
-			GameView(appData: appData, stats: stats, gameData: gameData)
-		} else if appData.gameOver == true {
+		if appData.gameOver == 0 {
+			GameView(appData: appData, stats: stats)
+		} else {
 			ZStack{
 				Color.black
 					.ignoresSafeArea()
 				VStack {
-					Text("Game Over")
+					Text(appData.gameOver == 2 ? "Correct" : "Game Over")
 						.font(.system(size: 45, weight: .bold))
 						.padding(.top, 50)
 					Spacer()
-					Text("The Word Was...")
+					Text(appData.gameOver == 2 ? "The Word Was" : "The Word Was...")
 						.font(.system(size: 25))
 					HStack {
-						ForEach(gameData.gameLetters, id: \.self) { letter in
+						ForEach(appData.gameLetters, id: \.self) { letter in
 							Text(String(letter))
 						}
 						.font(.system(size: 40, weight: .heavy))
@@ -36,17 +34,19 @@ struct GameOverView: View {
 					.padding(.bottom, 100)
 					Spacer()
 					Button {
-						appData.gameOver.toggle()
-						gameData.gameLetters = AppData.getLetters()
-						print("new game started")
+						appData.gameOver = 0
+						appData.gameLetters = AppData.getLetters()
+						print("--new game started--")
 						appData.usedLetters.removeAll()
-						appData.correctLetters.removeAll()
+						if appData.gameLetters.contains(" ") {
+							appData.correctLetters = [" "]
+						} else {
+							appData.correctLetters.removeAll()
+						}
 						appData.incorrectLetters.removeAll()
 						appData.lives = ["a","a","a","a","a","a","a","a"]
-						
-						stats.increment(key: "GamesPlayed")
 					} label: {
-						ButtonView(buttonLabel: "Try Again")
+						ButtonView(buttonLabel: "New Word")
 							.foregroundColor(.accentColor)
 					}
 				}

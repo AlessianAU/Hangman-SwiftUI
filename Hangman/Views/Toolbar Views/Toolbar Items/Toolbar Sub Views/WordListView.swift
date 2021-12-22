@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WordListView: View {
 	@ObservedObject var appData: AppData
+	@ObservedObject var stats: Statistics
 	
 	var body: some View {
 		VStack{
@@ -16,13 +17,16 @@ struct WordListView: View {
 				ForEach(allLists) { list in
 					ListLabel(imageName: list.icon, label: list.name)
 				}
+				Section{
+					Button {
+						appData.showingSettings.toggle()
+						openShop()
+					} label: {
+						ListLabel(imageName: "dollarsign.circle", label: "Open Item Store")
+					}
+				}
 			}
-			Button {
-				appData.showingSettings.toggle()
-				openShop()
-			} label: {
-				ButtonView(buttonLabel: "Open Item Store")
-			}
+			
 		}
 	}
 	func openShop() {

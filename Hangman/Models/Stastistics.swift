@@ -17,8 +17,15 @@ class Statistics: ObservableObject {
 	}
 	
 	func purchase(amount: Int) {
-		var num = defaults.integer(forKey: "CurrentMoney")
-		num -= amount
-		defaults.set(num, forKey: "CurrentMoney")
+		if amount <= defaults.integer(forKey: "CurrentMoney") {
+			
+		var spent = defaults.integer(forKey: "MoneySpent")
+		var current = defaults.integer(forKey: "CurrentMoney")
+		current -= amount
+		spent += amount
+		defaults.set(current, forKey: "CurrentMoney")
+		defaults.set(spent, forKey: "MoneySpent")
+			
+		}
 	}
 }

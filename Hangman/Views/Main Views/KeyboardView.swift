@@ -11,7 +11,6 @@ struct KeyboardView: View {
 	@State private var letters = KeyboardLetters()
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
-	@ObservedObject var gameData: GameData
 	
 	let columns = [
 		GridItem(),
@@ -34,7 +33,7 @@ struct KeyboardView: View {
 						pressed += 1
 						stats.defaults.set(pressed, forKey: "ButtonsPressed")
 						
-						if gameData.gameLetters.contains(Character(letter)) {
+						if appData.gameLetters.contains(Character(letter)) {
 							
 							if appData.hapticFeedback == true {
 								Vibrations.heavyVibration()
@@ -51,6 +50,8 @@ struct KeyboardView: View {
 								stats.defaults.set(num, forKey: "CurrentMoney")
 								stats.defaults.set(num, forKey: "MoneyObtained")
 								stats.increment(key: "GamesWon")
+								stats.increment(key: "GamesPlayed")
+								appData.gameOver = 2
 								print("game won")
 							}
 							
@@ -68,8 +69,9 @@ struct KeyboardView: View {
 									appData.lives.remove(at: appData.lives.count-1)
 								} else if appData.lives.count == 1{
 									print("game over")
-									appData.gameOver = true
+									appData.gameOver = 1
 									
+									stats.increment(key: "GamesPlayed")
 									stats.increment(key: "GamesLost")
 								}
 							}
@@ -112,7 +114,7 @@ struct KeyboardView: View {
 		.padding(.horizontal, 30)
 	}
 	func checkLetters() -> Bool {
-		let gameLettersSet: Set<Character> = Set<Character>(gameData.gameLetters)
+		let gameLettersSet: Set<Character> = Set<Character>(appData.gameLetters)
 		let correctLettersSet: Set<Character> = Set<Character>(appData.correctLetters)
 		
 		if gameLettersSet == correctLettersSet {

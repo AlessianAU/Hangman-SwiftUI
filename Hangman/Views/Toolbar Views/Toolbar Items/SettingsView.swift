@@ -11,6 +11,7 @@ struct SettingsView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
 	@State private var showingAlert = false
+	@State private var showingSheet = false
 	
 	var body: some View {
 		NavigationView {
@@ -18,9 +19,9 @@ struct SettingsView: View {
 				Section {
 					
 					NavigationLink {
-						WordListView(appData: appData)
+						WordListView(appData: appData, stats: stats)
 					} label: {
-						ListLabel(imageName: "book", label: "Word Packages")
+						ListLabel(imageName: "book", label: "Word Packs")
 					}
 					
 #if os(iOS)
@@ -47,24 +48,28 @@ struct SettingsView: View {
 #endif
 				Section {
 					Button {
-						showingAlert = true
+						showingSheet = true
 					} label: {
-						ListLabel(imageColor: .red,imageName: "trash", label: "Reset All Data")
+						ListLabel(imageColor: .red,imageName: "trash", label: "Reset All Data...")
 							.foregroundColor(.red)
 					}
-					.alert("Are You Sure? This is PERMINENT", isPresented: $showingAlert) {
-						Button("Cancel", role: .cancel) {}
-						Button("Reset", role: .destructive) {
-							stats.defaults.set(0, forKey: "ButtonsPressed")
-							stats.defaults.set(0, forKey: "GamesLost")
-							stats.defaults.set(0, forKey: "GamesWon")
-							stats.defaults.set(0, forKey: "CurrentWinStreak")
-							stats.defaults.set(0, forKey: "GamesPlayed")
-							stats.defaults.set(0, forKey: "CurrentMoney")
-							stats.defaults.set(0, forKey: "MoneyObtained")
-							print("Stats Reset")
-						}
+					.sheet(isPresented: $showingSheet) {
+						ResetDataView(appData: appData, stats: stats, showingSheet: $showingSheet)
 					}
+//					.alert("Are You Sure? This is PERMINENT", isPresented: $showingAlert) {
+//						Button("Cancel", role: .cancel) {}
+//						Button("Reset", role: .destructive) {
+//							stats.defaults.set(0, forKey: "ButtonsPressed")
+//							stats.defaults.set(0, forKey: "GamesLost")
+//							stats.defaults.set(0, forKey: "GamesWon")
+//							stats.defaults.set(0, forKey: "CurrentWinStreak")
+//							stats.defaults.set(0, forKey: "GamesPlayed")
+//							stats.defaults.set(0, forKey: "CurrentMoney")
+//							stats.defaults.set(0, forKey: "MoneyObtained")
+//							stats.defaults.set(0, forKey: "MoneySpent")
+//							print("Stats Reset")
+//						}
+//					}
 				}
 				
 				

@@ -22,7 +22,7 @@ struct ResetDataView: View {
 			List {
 				Section {
 					ListLabel(imageName: "dollarsign.circle", label: "All Money & Purchased Items")
-				} 
+				}
 				Section {
 					ListLabel(imageName: "book", label: "All Collected Word Packs")
 				}

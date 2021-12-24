@@ -45,10 +45,8 @@ struct KeyboardView: View {
 							appData.correctLetters.append(Character(letter))
 							
 							if checkLetters() == true {
-								var num = stats.defaults.integer(forKey: "CurrentMoney")
-								num += 4
-								stats.defaults.set(num, forKey: "CurrentMoney")
-								stats.defaults.set(num, forKey: "MoneyObtained")
+								stats.increment(key: "CurrentMoney", amount: 4)
+								stats.increment(key: "MoneyObtained", amount: 4)
 								stats.increment(key: "GamesWon")
 								stats.increment(key: "GamesPlayed")
 								appData.gameOver = 2
@@ -109,6 +107,17 @@ struct KeyboardView: View {
 					}
 					.disabled(appData.usedLetters.contains(letter))
 				}
+				Button {
+					
+				} label: {
+					ZStack{
+						LetterButtonView(color: .accentColor)
+						Image(systemName: "questionmark.circle")
+							.foregroundColor(.white)
+							.font(.system(size: 40, weight: .medium))
+					}
+				}
+				
 			}
 		}
 		.padding(.horizontal, 30)

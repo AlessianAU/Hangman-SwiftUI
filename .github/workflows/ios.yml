@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ AlessianAU-ci-testing ]
+    branches: [ main ]
   pull_request:
-    branches: [ AlessianAU-ci-testing ]
+    branches: [ main ]
 
 jobs:
   build-and-test:

@@ -11,7 +11,7 @@ class Statistics: ObservableObject {
 	@Published var defaults = UserDefaults.standard
 	
 //	Increments UserDefaults item by 1
-	func increment(key: String) {
+	func increment(key: String, amount: Int? = 1) {
 		var num = defaults.integer(forKey: key)
 		num += 1
 		defaults.set(num, forKey: key)

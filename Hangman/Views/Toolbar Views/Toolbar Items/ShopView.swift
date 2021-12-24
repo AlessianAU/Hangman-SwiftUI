@@ -15,8 +15,14 @@ struct ShopView: View {
 			List {
 				Button {
 					stats.purchase(amount: 10)
+					stats.increment(key: "Hints")
 				} label: {
 					StatisticsLabel(imageName: "dollarsign.circle", label: "Spend 10", statisticAmount: 10)
+				}
+				Button {
+					stats.purchase(amount: 15)
+				} label: {
+					StatisticsLabel(imageName: "dollarsign.circle", label: "Hint X1", statisticAmount: 15)
 				}
 				NavigationLink {
 					Text("")

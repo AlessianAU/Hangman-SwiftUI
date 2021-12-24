@@ -78,27 +78,13 @@ struct KeyboardView: View {
 					} label: {
 						ZStack{
 							if appData.correctLetters.contains(Character(letter)) {
-								LetterButtonView(color: .green)
+								LetterButtonBackgroundView(color: .green)
 							} else if appData.incorrectLetters.contains(Character(letter)){
-								LetterButtonView(color: .red)
+								LetterButtonBackgroundView(color: .red)
 							} else {
-								LetterButtonView(color: .accentColor)
+								LetterButtonBackgroundView(color: .accentColor)
 							}
-#if os(iOS)
-							if UIDevice.current.userInterfaceIdiom == .pad {
-								Text(letter)
-									.foregroundColor(.white)
-									.font(.system(size: 40, weight: .medium))
-							} else {
-								Text(letter)
-									.foregroundColor(.white)
-									.font(.system(size: 25, weight: .medium))
-							}
-#else
-							Text(letter)
-								.foregroundColor(.white)
-								.font(.system(size: 25, weight: .medium))
-#endif
+							LetterButtonView(letter: letter)
 							
 							
 						}
@@ -111,10 +97,8 @@ struct KeyboardView: View {
 					
 				} label: {
 					ZStack{
-						LetterButtonView(color: .accentColor)
-						Image(systemName: "questionmark.circle")
-							.foregroundColor(.white)
-							.font(.system(size: 40, weight: .medium))
+						LetterButtonBackgroundView(color: .accentColor)
+						LetterButtonView(letter: "", symbol: "questionmark.circle")
 					}
 				}
 				
@@ -122,6 +106,7 @@ struct KeyboardView: View {
 		}
 		.padding(.horizontal, 30)
 	}
+	//	checks if game is won
 	func checkLetters() -> Bool {
 		let gameLettersSet: Set<Character> = Set<Character>(appData.gameLetters)
 		let correctLettersSet: Set<Character> = Set<Character>(appData.correctLetters)
@@ -134,7 +119,7 @@ struct KeyboardView: View {
 	}
 }
 
-struct LetterButtonView: View {
+struct LetterButtonBackgroundView: View {
 	let color: Color
 	
 	var body: some View {
@@ -154,6 +139,53 @@ struct LetterButtonView: View {
 		RoundedRectangle(cornerRadius: 10)
 			.frame(width: 45, height: 45)
 			.foregroundColor(color)
+#endif
+	}
+}
+
+struct LetterButtonView: View {
+	var letter: String
+//	var symbolused: Bool
+	var symbol: String?
+	var body: some View {
+#if os(iOS)
+		if UIDevice.current.userInterfaceIdiom == .pad {
+			Group{
+				if symbol != nil {
+					Image(systemName: symbol!)
+						.foregroundColor(.white)
+						.font(.system(size: 40, weight: .medium))
+				} else {
+				Text(letter)
+					.foregroundColor(.white)
+					.font(.system(size: 40, weight: .medium))
+				}
+			}
+		} else {
+			Group{
+				if symbol != nil {
+					Image(systemName: symbol!)
+						.foregroundColor(.white)
+						.font(.system(size: 25, weight: .medium))
+				} else {
+				Text(letter)
+					.foregroundColor(.white)
+					.font(.system(size: 25, weight: .medium))
+				}
+			}
+		}
+#else
+		Group{
+			if symbol != nil {
+			Image(systemName: symbol!)
+				.foregroundColor(.white)
+				.font(.system(size: 25, weight: .medium))
+			} else {
+			Text(letter)
+				.foregroundColor(.white)
+				.font(.system(size: 25, weight: .medium))
+			}
+		}
 #endif
 	}
 }

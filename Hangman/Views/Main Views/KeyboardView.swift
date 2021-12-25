@@ -12,7 +12,7 @@ struct KeyboardView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
 	
-	@State private var showDialog = false
+	@State private var showHints = false
 	
 	let columns = [
 		GridItem(),
@@ -94,7 +94,7 @@ struct KeyboardView: View {
 				}
 				
 				Button {
-					showDialog.toggle()
+					
 				} label: {
 					ZStack{
 						LetterButtonBackgroundView(color: .accentColor)
@@ -103,16 +103,25 @@ struct KeyboardView: View {
 				}
 				
 				Button {
-					if stats.defaults.integer(forKey: "Hints") >= 0 {
-						stats.subtract(key: "Hints")
-					}
+					showHints.toggle()
 				} label: {
 					ZStack{
 						LetterButtonBackgroundView(color: .accentColor)
 						LetterButtonView(letter: "", symbol: "questionmark.circle")
 					}
 				}
-				.disabled(stats.defaults.integer(forKey: "Hints") <= 0)
+				.alert("Use a Hint? You have \(stats.defaults.integer(forKey: "Hints")) Left",isPresented: $showHints, actions: {
+					Button("No", role: .cancel) { print("hint cancelled") }
+					if stats.defaults.integer(forKey: "Hints") >= 1 {
+						Button("Yes") {
+							stats.subtract(key: "Hints")
+						}
+					} else {
+						Button("Go to Store") {
+							appData.showingShop = true
+						}
+					}
+				})
 			}
 		}
 		

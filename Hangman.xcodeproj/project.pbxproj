@@ -43,6 +43,7 @@
 		B683CBA1276C5855008C8096 /* Vibrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CB9F276C5804008C8096 /* Vibrations.swift */; };
 		B683CBA5276C66D4008C8096 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CBA4276C66D4008C8096 /* ToolbarView.swift */; };
 		B683CBA6276C6700008C8096 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CBA4276C66D4008C8096 /* ToolbarView.swift */; };
+		B694BF2E2776CF0F00F84DA3 /* TextFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694BF2D2776CF0F00F84DA3 /* TextFieldAlert.swift */; };
 		B6BB196F2771D9B9003B2DCF /* DebugOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB196E2771D9B9003B2DCF /* DebugOptions.swift */; };
 		B6BB19702771D9B9003B2DCF /* DebugOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB196E2771D9B9003B2DCF /* DebugOptions.swift */; };
 		B6BB19732771DF8A003B2DCF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B6BB19722771DF89003B2DCF /* README.md */; };
@@ -80,6 +81,7 @@
 		B683CB9F276C5804008C8096 /* Vibrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibrations.swift; sourceTree = "<group>"; };
 		B683CBA4276C66D4008C8096 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		B68B15A127606BA60013A443 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		B694BF2D2776CF0F00F84DA3 /* TextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlert.swift; sourceTree = "<group>"; };
 		B6A5E48E27604EC500150DD8 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		B6B3D3C6276099F700A8C689 /* Entitlements (macOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Entitlements (macOS).entitlements"; sourceTree = "<group>"; };
 		B6BB196E2771D9B9003B2DCF /* DebugOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugOptions.swift; sourceTree = "<group>"; };
@@ -132,7 +134,7 @@
 		B65882F9276A9CAC007F3983 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				B6D6C0B12772B96C009C92AB /* ResetDataView.swift */,
+				B694BF2D2776CF0F00F84DA3 /* TextFieldAlert.swift */,
 				B638C293275F4C9D00BAF610 /* Helpers.swift */,
 				B682DB512765B2A900FFAC75 /* DebugView.swift */,
 				B683CB9F276C5804008C8096 /* Vibrations.swift */,
@@ -223,6 +225,7 @@
 		B6BB19712771DB54003B2DCF /* Toolbar Sub Views */ = {
 			isa = PBXGroup;
 			children = (
+				B6D6C0B12772B96C009C92AB /* ResetDataView.swift */,
 				B6BB196E2771D9B9003B2DCF /* DebugOptions.swift */,
 				B63F8214276D6BB9005CF14A /* WordListView.swift */,
 			);
@@ -359,6 +362,7 @@
 				B683CB9A276C4665008C8096 /* StatisticsView.swift in Sources */,
 				B682DB932765B53100FFAC75 /* Helpers.swift in Sources */,
 				B63F8221276D7404005CF14A /* Lists.swift in Sources */,
+				B694BF2E2776CF0F00F84DA3 /* TextFieldAlert.swift in Sources */,
 				B6D6C0B22772B96C009C92AB /* ResetDataView.swift in Sources */,
 				B62E80AF27700EF10049D47B /* ShopView.swift in Sources */,
 				B6588301276ABB7E007F3983 /* GameOverView.swift in Sources */,
@@ -535,7 +539,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown ";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -573,7 +577,7 @@
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown ";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

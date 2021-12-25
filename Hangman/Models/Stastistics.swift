@@ -10,10 +10,16 @@ import Foundation
 class Statistics: ObservableObject {
 	@Published var defaults = UserDefaults.standard
 	
-//	Increments UserDefaults item by 1
+//	Increments UserDefaults item by amount
 	func increment(key: String, amount: Int? = 1) {
 		var num = defaults.integer(forKey: key)
 		num += 1
+		defaults.set(num, forKey: key)
+	}
+//  Subtracts UserDefaults item by amount
+	func subtract(key: String, amount: Int? = 1) {
+		var num = defaults.integer(forKey: key)
+		num -= 1
 		defaults.set(num, forKey: key)
 	}
 	

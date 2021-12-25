@@ -62,6 +62,7 @@ struct ResetButton: View {
 				stats.defaults.set(0, forKey: "CurrentMoney")
 				stats.defaults.set(0, forKey: "MoneyObtained")
 				stats.defaults.set(0, forKey: "MoneySpent")
+				stats.defaults.set(0, forKey: "Hints")
 				print("Stats Reset")
 				showingSheet.toggle()
 				appData.showingSettings.toggle()

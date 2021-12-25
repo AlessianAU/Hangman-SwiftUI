@@ -13,10 +13,6 @@ struct GameView: View {
 	
 	@State private var showingAlert = false
 	
-#if os(iOS)
-	let screen = UIScreen.main.bounds
-#endif
-	
 	var body: some View {
 		VStack {
 			Spacer()
@@ -49,7 +45,7 @@ struct GameView: View {
 			.frame(height: 60)
 			
 			if appData.debugViewActive == true {
-				DebugView(appData: appData)
+				DebugView(appData: appData, stats: stats)
 					.padding(.leading)
 			}
 			

@@ -9,8 +9,7 @@ import SwiftUI
 
 struct DebugView: View {
 	@ObservedObject var appData: AppData
-	
-	@State var safe = 0
+	@ObservedObject var stats: Statistics
 	
 	var body: some View {
 		VStack{
@@ -35,6 +34,10 @@ struct DebugView: View {
 				ForEach(appData.incorrectLetters, id: \.self) { letter in
 					Text(String(letter))
 				}
+				Spacer()
+			}
+			HStack {
+				Text("Hints Left \(stats.defaults.integer(forKey: "Hints"))")
 				Spacer()
 			}
 		}.padding()

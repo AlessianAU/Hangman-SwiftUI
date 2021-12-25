@@ -12,6 +12,8 @@ struct KeyboardView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
 	
+	@State private var showDialog = false
+	
 	let columns = [
 		GridItem(),
 		GridItem(),
@@ -29,9 +31,7 @@ struct KeyboardView: View {
 						print("\(letter) button was pressed")
 						appData.usedLetters.append(letter)
 						
-						var pressed = stats.defaults.integer(forKey: "ButtonsPressed")
-						pressed += 1
-						stats.defaults.set(pressed, forKey: "ButtonsPressed")
+						stats.increment(key: "ButtonsPressed")
 						
 						if appData.gameLetters.contains(Character(letter)) {
 							
@@ -54,7 +54,6 @@ struct KeyboardView: View {
 							}
 							
 						} else {
-							
 							
 							if appData.hapticFeedback == true {
 								Vibrations.lightVibration()
@@ -93,17 +92,30 @@ struct KeyboardView: View {
 					}
 					.disabled(appData.usedLetters.contains(letter))
 				}
+				
 				Button {
-					
+					showDialog.toggle()
+				} label: {
+					ZStack{
+						LetterButtonBackgroundView(color: .accentColor)
+						LetterButtonView(letter: "", symbol: "magnifyingglass")
+					}
+				}
+				
+				Button {
+					if stats.defaults.integer(forKey: "Hints") >= 0 {
+						stats.subtract(key: "Hints")
+					}
 				} label: {
 					ZStack{
 						LetterButtonBackgroundView(color: .accentColor)
 						LetterButtonView(letter: "", symbol: "questionmark.circle")
 					}
 				}
-				
+				.disabled(stats.defaults.integer(forKey: "Hints") <= 0)
 			}
 		}
+		
 		.padding(.horizontal, 30)
 	}
 	//	checks if game is won
@@ -145,7 +157,6 @@ struct LetterButtonBackgroundView: View {
 
 struct LetterButtonView: View {
 	var letter: String
-//	var symbolused: Bool
 	var symbol: String?
 	var body: some View {
 #if os(iOS)
@@ -156,9 +167,9 @@ struct LetterButtonView: View {
 						.foregroundColor(.white)
 						.font(.system(size: 40, weight: .medium))
 				} else {
-				Text(letter)
-					.foregroundColor(.white)
-					.font(.system(size: 40, weight: .medium))
+					Text(letter)
+						.foregroundColor(.white)
+						.font(.system(size: 40, weight: .medium))
 				}
 			}
 		} else {
@@ -168,22 +179,22 @@ struct LetterButtonView: View {
 						.foregroundColor(.white)
 						.font(.system(size: 25, weight: .medium))
 				} else {
-				Text(letter)
-					.foregroundColor(.white)
-					.font(.system(size: 25, weight: .medium))
+					Text(letter)
+						.foregroundColor(.white)
+						.font(.system(size: 25, weight: .medium))
 				}
 			}
 		}
 #else
 		Group{
 			if symbol != nil {
-			Image(systemName: symbol!)
-				.foregroundColor(.white)
-				.font(.system(size: 25, weight: .medium))
+				Image(systemName: symbol!)
+					.foregroundColor(.white)
+					.font(.system(size: 25, weight: .medium))
 			} else {
-			Text(letter)
-				.foregroundColor(.white)
-				.font(.system(size: 25, weight: .medium))
+				Text(letter)
+					.foregroundColor(.white)
+					.font(.system(size: 25, weight: .medium))
 			}
 		}
 #endif

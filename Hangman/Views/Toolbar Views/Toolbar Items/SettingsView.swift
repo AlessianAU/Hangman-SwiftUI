@@ -55,27 +55,12 @@ struct SettingsView: View {
 					.sheet(isPresented: $showingSheet) {
 						ResetDataView(appData: appData, stats: stats, showingSheet: $showingSheet)
 					}
-//					.alert("Are You Sure? This is PERMINENT", isPresented: $showingAlert) {
-//						Button("Cancel", role: .cancel) {}
-//						Button("Reset", role: .destructive) {
-//							stats.defaults.set(0, forKey: "ButtonsPressed")
-//							stats.defaults.set(0, forKey: "GamesLost")
-//							stats.defaults.set(0, forKey: "GamesWon")
-//							stats.defaults.set(0, forKey: "CurrentWinStreak")
-//							stats.defaults.set(0, forKey: "GamesPlayed")
-//							stats.defaults.set(0, forKey: "CurrentMoney")
-//							stats.defaults.set(0, forKey: "MoneyObtained")
-//							stats.defaults.set(0, forKey: "MoneySpent")
-//							print("Stats Reset")
-//						}
-//					}
 				}
 				
 				
 			}
 #if os(iOS)
 			.navigationBarTitle("Settings")
-			//			.navigationBarHidden(true)
 #else
 			.listStyle(.inset)
 #endif

@@ -36,4 +36,13 @@ class Statistics: ObservableObject {
 			
 		}
 	}
+	//  Calculates the win and loss streaks
+		func streak() {
+			if defaults.integer(forKey: "CurrentWinStreak") < defaults.integer(forKey: "LongestWinStreak") {
+				increment(key: "CurrentWinStreak")
+			} else {
+				increment(key: "CurrentWinStreak")
+				increment(key: "LongestWinStreak")
+			}
+		}
 }

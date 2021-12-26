@@ -65,18 +65,6 @@ struct GameView: View {
 				Button("No", role: .cancel) { print("new game cancelled") }
 				Button("Yes") {
 					appData.gameOver = 1
-					stats.increment(key: "GamesLost")
-					appData.gameLetters = AppData.getLetters()
-					print("--new game started--")
-					appData.usedLetters.removeAll()
-					if appData.gameLetters.contains(" ") {
-						appData.correctLetters = [" "]
-					} else {
-						appData.correctLetters.removeAll()
-					}
-					appData.incorrectLetters.removeAll()
-					appData.lives = ["a","a","a","a","a","a","a","a"]
-					stats.increment(key: "GamesPlayed")
 				}
 			}
 		}

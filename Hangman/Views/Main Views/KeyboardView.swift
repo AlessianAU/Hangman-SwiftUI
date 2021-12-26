@@ -49,8 +49,6 @@ struct KeyboardView: View {
 						if checkLetters() == true {
 							stats.increment(key: "CurrentMoney", amount: 4)
 							stats.increment(key: "MoneyObtained", amount: 4)
-							stats.increment(key: "GamesWon")
-							stats.increment(key: "GamesPlayed")
 							appData.gameOver = 2
 							print("game won")
 						}
@@ -69,9 +67,6 @@ struct KeyboardView: View {
 							} else if appData.lives.count == 1{
 								print("game over")
 								appData.gameOver = 1
-								
-								stats.increment(key: "GamesPlayed")
-								stats.increment(key: "GamesLost")
 							}
 						}
 					}
@@ -116,8 +111,11 @@ struct KeyboardView: View {
 				Button("Cancel", role: .cancel) {}
 				if stats.defaults.integer(forKey: "Hints") >= 1 {
 					Button("Use") {
-						print("hint used, letter was *")
+						print("hint used")
 						stats.subtract(key: "Hints")
+						if useHint() == true {
+							appData.gameOver = 2
+						}
 					}
 				} else {
 					Button("Purchase") {
@@ -145,6 +143,14 @@ struct KeyboardView: View {
 		} else {
 			return false
 		}
+	}
+	
+	func useHint() -> Bool {
+		
+		let difference = appData.gameLetters.difference(from: appData.correctLetters)
+		appData.correctLetters.append(difference.randomElement()!)
+		
+		return checkLetters()
 	}
 }
 

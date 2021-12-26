@@ -34,6 +34,17 @@ struct GameOverView: View {
 					.padding(.bottom, 100)
 					Spacer()
 					Button {
+						
+						if appData.gameOver == 1 {
+							stats.increment(key: "GamesPlayed")
+							stats.increment(key: "GamesLost")
+						} else {
+							stats.increment(key: "GamesPlayed")
+							stats.increment(key: "GamesWon")
+						}
+						
+						
+						
 						appData.gameOver = 0
 						appData.gameLetters = AppData.getLetters()
 						print("--new game started--")

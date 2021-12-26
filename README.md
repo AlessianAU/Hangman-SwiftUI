@@ -15,7 +15,7 @@ A basic hangman game made purely in SwiftUI
 
 - [ ] Selectable word packs
 
-- [ ] Statistics menu
+- [X] Statistics menu
 
 - [ ] Custom words
 

@@ -1,5 +1,5 @@
 
-# Hangman SwiftUI  [![build](https://github.com/AlessianAU/Hangman-SwiftUI/actions/workflows/ios.yml/badge.svg?event=branch_protection_rule)](https://github.com/AlessianAU/Hangman-SwiftUI/actions/workflows/ios.yml)
+# Hangman SwiftUI  [![build](https://github.com/AlessianAU/Hangman-SwiftUI/actions/workflows/ios.yml/badge.svg?branch=main)](https://github.com/AlessianAU/Hangman-SwiftUI/actions/workflows/ios.yml)
 A basic hangman game made purely in SwiftUI
 
 ## Screenshots

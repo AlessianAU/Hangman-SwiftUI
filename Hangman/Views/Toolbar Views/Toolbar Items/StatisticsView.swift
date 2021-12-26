@@ -68,12 +68,12 @@ struct StatisticsList: View {
 				StatisticsLabel(imageName: "dollarsign.circle", label: "Money Obtained", statisticAmount: stats.defaults.integer(forKey: "MoneyObtained"))
 			}
 			Section {
-				StatisticsLabel(imageName: "flame", label: "Current Win Streak*", statisticAmount: stats.defaults.integer(forKey: "CurrentWinStreak"))
-				StatisticsLabel(imageName: "crown", label: "Longest Win Streak*", statisticAmount: stats.defaults.integer(forKey: "LongestWinStreak"))
+				StatisticsLabel(imageName: "flame", label: "Current Win Streak", statisticAmount: stats.defaults.integer(forKey: "CurrentWinStreak"))
+				StatisticsLabel(imageName: "crown", label: "Longest Win Streak", statisticAmount: stats.defaults.integer(forKey: "LongestWinStreak"))
 			}
 			Section {
-				StatisticsLabel(imageName: "exclamationmark.circle", label: "Current Loss Streak*", statisticAmount: stats.defaults.integer(forKey: "CurrentLossStreak"))
-				StatisticsLabel(imageName: "xmark.octagon", label: "Longest Loss Streak*", statisticAmount: stats.defaults.integer(forKey: "LongestLossStreak"))
+				StatisticsLabel(imageName: "exclamationmark.circle", label: "Current Loss Streak", statisticAmount: stats.defaults.integer(forKey: "CurrentLossStreak"))
+				StatisticsLabel(imageName: "xmark.octagon", label: "Longest Loss Streak", statisticAmount: stats.defaults.integer(forKey: "LongestLossStreak"))
 			}
 			Section {
 				StatisticsLabel(imageName: "timer", label: "Average Time*", statisticAmount: 0)

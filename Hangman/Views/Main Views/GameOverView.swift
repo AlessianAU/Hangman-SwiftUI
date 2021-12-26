@@ -38,9 +38,11 @@ struct GameOverView: View {
 						if appData.gameOver == 1 {
 							stats.increment(key: "GamesPlayed")
 							stats.increment(key: "GamesLost")
+							stats.streak(win: false)
 						} else {
 							stats.increment(key: "GamesPlayed")
 							stats.increment(key: "GamesWon")
+							stats.streak(win: true)
 						}
 						
 						

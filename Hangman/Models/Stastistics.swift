@@ -13,13 +13,13 @@ class Statistics: ObservableObject {
 //	Increments UserDefaults item by amount
 	func increment(key: String, amount: Int? = 1) {
 		var num = defaults.integer(forKey: key)
-		num += 1
+		num += amount!
 		defaults.set(num, forKey: key)
 	}
 //  Subtracts UserDefaults item by amount
 	func subtract(key: String, amount: Int? = 1) {
 		var num = defaults.integer(forKey: key)
-		num -= 1
+		num -= amount!
 		defaults.set(num, forKey: key)
 	}
 	

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B60CBD85276C7ADE00A77007 /* PlatformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CBD84276C7ADE00A77007 /* PlatformView.swift */; };
 		B60CBD86276C7ADE00A77007 /* PlatformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CBD84276C7ADE00A77007 /* PlatformView.swift */; };
+		B623593A2777012100687A31 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62359392777012100687A31 /* HintView.swift */; };
+		B623593B2777012100687A31 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62359392777012100687A31 /* HintView.swift */; };
 		B62E80AF27700EF10049D47B /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62E80AE27700EF10049D47B /* ShopView.swift */; };
 		B62E80B027700EF10049D47B /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62E80AE27700EF10049D47B /* ShopView.swift */; };
 		B63F8215276D6BB9005CF14A /* WordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63F8214276D6BB9005CF14A /* WordListView.swift */; };
@@ -60,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		B60CBD84276C7ADE00A77007 /* PlatformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformView.swift; sourceTree = "<group>"; };
+		B62359392777012100687A31 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HintView.swift; path = "Hangman/Views/Toolbar Views/Toolbar Items/HintView.swift"; sourceTree = SOURCE_ROOT; };
 		B62E80AE27700EF10049D47B /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		B638C293275F4C9D00BAF610 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		B63DED76275E0FD500466F46 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
@@ -225,6 +228,7 @@
 		B6BB19712771DB54003B2DCF /* Toolbar Sub Views */ = {
 			isa = PBXGroup;
 			children = (
+				B62359392777012100687A31 /* HintView.swift */,
 				B6D6C0B12772B96C009C92AB /* ResetDataView.swift */,
 				B6BB196E2771D9B9003B2DCF /* DebugOptions.swift */,
 				B63F8214276D6BB9005CF14A /* WordListView.swift */,
@@ -350,6 +354,7 @@
 				B6D0B8F1276CAD7D00EEAF0F /* Stastistics.swift in Sources */,
 				B60CBD85276C7ADE00A77007 /* PlatformView.swift in Sources */,
 				B682DB982765B5C300FFAC75 /* WordList.swift in Sources */,
+				B623593A2777012100687A31 /* HintView.swift in Sources */,
 				B683CBA0276C5804008C8096 /* Vibrations.swift in Sources */,
 				B682DB8C2765B52800FFAC75 /* ContentView.swift in Sources */,
 				B67EDD35277185AD00DA1A91 /* ShopItems.swift in Sources */,
@@ -388,6 +393,7 @@
 				B6C7A023276B542500BCE334 /* SettingsView.swift in Sources */,
 				B63F821C276D70BA005CF14A /* WordListModel.swift in Sources */,
 				B682DB8F2765B52B00FFAC75 /* GameView.swift in Sources */,
+				B623593B2777012100687A31 /* HintView.swift in Sources */,
 				B682DB912765B52E00FFAC75 /* KeyboardView.swift in Sources */,
 				B683CB9B276C4665008C8096 /* StatisticsView.swift in Sources */,
 				B682DB922765B53000FFAC75 /* Helpers.swift in Sources */,

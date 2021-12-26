@@ -9,10 +9,13 @@ import SwiftUI
 
 struct KeyboardView: View {
 	@State private var letters = KeyboardLetters()
+	
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
 	
 	@State private var showHints = false
+	
+	@State private var showingHintShop = false
 	
 	let columns = [
 		GridItem(),
@@ -24,104 +27,109 @@ struct KeyboardView: View {
 	]
 	
 	var body: some View {
-		VStack{
-			LazyVGrid(columns: columns){
-				ForEach(letters.allLetters, id: \.self) { letter in
-					Button {
-						print("\(letter) button was pressed")
-						appData.usedLetters.append(letter)
-						
-						stats.increment(key: "ButtonsPressed")
-						
-						if appData.gameLetters.contains(Character(letter)) {
-							
-							if appData.hapticFeedback == true {
-								Vibrations.heavyVibration()
-							}
-							
-							stats.increment(key: "CurrentMoney")
-							stats.increment(key: "MoneyObtained")
-							print("true")
-							appData.correctLetters.append(Character(letter))
-							
-							if checkLetters() == true {
-								stats.increment(key: "CurrentMoney", amount: 4)
-								stats.increment(key: "MoneyObtained", amount: 4)
-								stats.increment(key: "GamesWon")
-								stats.increment(key: "GamesPlayed")
-								appData.gameOver = 2
-								print("game won")
-							}
-							
-						} else {
-							
-							if appData.hapticFeedback == true {
-								Vibrations.lightVibration()
-							}
-							
-							print("false")
-							appData.incorrectLetters.append(Character(letter))
-							withAnimation{
-								if appData.lives.count != 1 {
-									appData.lives.remove(at: appData.lives.count-1)
-								} else if appData.lives.count == 1{
-									print("game over")
-									appData.gameOver = 1
-									
-									stats.increment(key: "GamesPlayed")
-									stats.increment(key: "GamesLost")
-								}
-							}
-						}
-						
-					} label: {
-						ZStack{
-							if appData.correctLetters.contains(Character(letter)) {
-								LetterButtonBackgroundView(color: .green)
-							} else if appData.incorrectLetters.contains(Character(letter)){
-								LetterButtonBackgroundView(color: .red)
-							} else {
-								LetterButtonBackgroundView(color: .accentColor)
-							}
-							LetterButtonView(letter: letter)
-							
-							
-						}
-						.padding(6)
-						
-					}
-					.disabled(appData.usedLetters.contains(letter))
-				}
-				
+		LazyVGrid(columns: columns){
+			ForEach(letters.allLetters, id: \.self) { letter in
 				Button {
+					print("\(letter) button was pressed")
+					appData.usedLetters.append(letter)
+					
+					stats.increment(key: "ButtonsPressed")
+					
+					if appData.gameLetters.contains(Character(letter)) {
+						
+						if appData.hapticFeedback == true {
+							Vibrations.heavyVibration()
+						}
+						
+						stats.increment(key: "CurrentMoney")
+						stats.increment(key: "MoneyObtained")
+						print("true")
+						appData.correctLetters.append(Character(letter))
+						
+						if checkLetters() == true {
+							stats.increment(key: "CurrentMoney", amount: 4)
+							stats.increment(key: "MoneyObtained", amount: 4)
+							stats.increment(key: "GamesWon")
+							stats.increment(key: "GamesPlayed")
+							appData.gameOver = 2
+							print("game won")
+						}
+						
+					} else {
+						
+						if appData.hapticFeedback == true {
+							Vibrations.lightVibration()
+						}
+						
+						print("false")
+						appData.incorrectLetters.append(Character(letter))
+						withAnimation{
+							if appData.lives.count != 1 {
+								appData.lives.remove(at: appData.lives.count-1)
+							} else if appData.lives.count == 1{
+								print("game over")
+								appData.gameOver = 1
+								
+								stats.increment(key: "GamesPlayed")
+								stats.increment(key: "GamesLost")
+							}
+						}
+					}
 					
 				} label: {
 					ZStack{
-						LetterButtonBackgroundView(color: .accentColor)
-						LetterButtonView(letter: "", symbol: "magnifyingglass")
+						if appData.correctLetters.contains(Character(letter)) {
+							LetterButtonBackgroundView(color: .green)
+						} else if appData.incorrectLetters.contains(Character(letter)){
+							LetterButtonBackgroundView(color: .red)
+						} else {
+							LetterButtonBackgroundView(color: .accentColor)
+						}
+						LetterButtonView(letter: letter)
+						
+						
 					}
+					.padding(6)
+					
 				}
+				.disabled(appData.usedLetters.contains(letter))
+			}
+			
+			Button {
 				
-				Button {
-					showHints.toggle()
-				} label: {
-					ZStack{
-						LetterButtonBackgroundView(color: .accentColor)
-						LetterButtonView(letter: "", symbol: "questionmark.circle")
+			} label: {
+				ZStack{
+					LetterButtonBackgroundView(color: .accentColor)
+					LetterButtonView(letter: "", symbol: "magnifyingglass")
+				}
+			}
+			
+			Button {
+				showHints.toggle()
+			} label: {
+				ZStack{
+					LetterButtonBackgroundView(color: .accentColor)
+					LetterButtonView(letter: "", symbol: "questionmark.circle")
+				}
+			}
+			.alert(stats.defaults.integer(forKey: "Hints") == 0 ? "You have no hints left..." : "Use a Hint? You have \(stats.defaults.integer(forKey: "Hints")) Left",isPresented: $showHints, actions: {
+				Button("Cancel", role: .cancel) {}
+				if stats.defaults.integer(forKey: "Hints") >= 1 {
+					Button("Use") {
+						print("hint used, letter was *")
+						stats.subtract(key: "Hints")
+					}
+				} else {
+					Button("Purchase") {
+						showingHintShop = true
 					}
 				}
-				.alert("Use a Hint? You have \(stats.defaults.integer(forKey: "Hints")) Left",isPresented: $showHints, actions: {
-					Button("No", role: .cancel) { print("hint cancelled") }
-					if stats.defaults.integer(forKey: "Hints") >= 1 {
-						Button("Yes") {
-							stats.subtract(key: "Hints")
-						}
-					} else {
-						Button("Go to Store") {
-							appData.showingShop = true
-						}
-					}
-				})
+			})
+			.sheet(isPresented: $showingHintShop) {
+				NavigationView{
+					HintView(stats: stats)
+						.navigationTitle("Purchase Hints")
+				}
 			}
 		}
 		

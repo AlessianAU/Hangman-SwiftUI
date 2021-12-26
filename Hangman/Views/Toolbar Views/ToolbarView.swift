@@ -59,7 +59,7 @@ struct ToolbarSubView: View {
 		}
 #if os(iOS)
 		.sheet(isPresented: $appData.showingShop) {
-			ShopView(stats: stats)
+			ShopView(stats: stats, appData: appData)
 		}
 #else
 		.popover(isPresented: $appData.showingShop) {

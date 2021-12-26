@@ -9,32 +9,31 @@ import SwiftUI
 
 struct ShopView: View {
 	@ObservedObject var stats: Statistics
+	@ObservedObject var appData: AppData
 	
     var body: some View {
 		NavigationView {
 			List {
+				Section {
 				Button {
 					stats.purchase(amount: 10)
 				} label: {
 					StatisticsLabel(imageName: "dollarsign.circle", label: "Spend 10", statisticAmount: 10)
 				}
-				Button {
-					stats.purchase(amount: 15)
-					stats.increment(key: "Hints")
-				} label: {
-					StatisticsLabel(imageName: "dollarsign.circle", label: "Hint X1", statisticAmount: 15)
+
 				}
+				Section {
 				NavigationLink {
 					Text("")
 				} label: {
 					ListLabel(imageName: "book", label: "Word Packs")
 				}
-				NavigationLink {
-					Text("")
+					NavigationLink() {
+					HintView(stats: stats)
 				} label: {
 					ListLabel(imageName: "questionmark.circle", label: "Hints")
 				}
-
+				}
 
 			}
 				.navigationBarTitle("Item Store")

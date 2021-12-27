@@ -16,8 +16,7 @@ struct PlatformView: View {
 			
 #if os(iOS)
 			NavigationView {
-				let extractedExpr = GameOverView(appData: appData, stats: stats)
-				extractedExpr
+				GameOverView(appData: appData, stats: stats)
 					.toolbar {
 						
 						ToolbarItemGroup(placement: .navigationBarTrailing) {

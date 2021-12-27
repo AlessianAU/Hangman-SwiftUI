@@ -45,7 +45,6 @@
 		B683CBA1276C5855008C8096 /* Vibrations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CB9F276C5804008C8096 /* Vibrations.swift */; };
 		B683CBA5276C66D4008C8096 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CBA4276C66D4008C8096 /* ToolbarView.swift */; };
 		B683CBA6276C6700008C8096 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CBA4276C66D4008C8096 /* ToolbarView.swift */; };
-		B694BF2E2776CF0F00F84DA3 /* TextFieldAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B694BF2D2776CF0F00F84DA3 /* TextFieldAlert.swift */; };
 		B6BB196F2771D9B9003B2DCF /* DebugOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB196E2771D9B9003B2DCF /* DebugOptions.swift */; };
 		B6BB19702771D9B9003B2DCF /* DebugOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BB196E2771D9B9003B2DCF /* DebugOptions.swift */; };
 		B6BB19732771DF8A003B2DCF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B6BB19722771DF89003B2DCF /* README.md */; };
@@ -56,6 +55,8 @@
 		B6D0B8F2276CAD7D00EEAF0F /* Stastistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D0B8F0276CAD7D00EEAF0F /* Stastistics.swift */; };
 		B6D6C0B22772B96C009C92AB /* ResetDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D6C0B12772B96C009C92AB /* ResetDataView.swift */; };
 		B6D6C0B32772B96C009C92AB /* ResetDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D6C0B12772B96C009C92AB /* ResetDataView.swift */; };
+		B6D702E4277869B400BB7795 /* GuessWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D702E32778696200BB7795 /* GuessWordView.swift */; };
+		B6D702E527786A0600BB7795 /* GuessWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D702E32778696200BB7795 /* GuessWordView.swift */; };
 		B6FBAC582769A3F3002FCC88 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBAC572769A3F3002FCC88 /* AppData.swift */; };
 		B6FBAC592769A3F3002FCC88 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBAC572769A3F3002FCC88 /* AppData.swift */; };
 /* End PBXBuildFile section */
@@ -84,7 +85,6 @@
 		B683CB9F276C5804008C8096 /* Vibrations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibrations.swift; sourceTree = "<group>"; };
 		B683CBA4276C66D4008C8096 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
 		B68B15A127606BA60013A443 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
-		B694BF2D2776CF0F00F84DA3 /* TextFieldAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlert.swift; sourceTree = "<group>"; };
 		B6A5E48E27604EC500150DD8 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		B6B3D3C6276099F700A8C689 /* Entitlements (macOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Entitlements (macOS).entitlements"; sourceTree = "<group>"; };
 		B6BB196E2771D9B9003B2DCF /* DebugOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugOptions.swift; sourceTree = "<group>"; };
@@ -92,6 +92,7 @@
 		B6C7A021276B542500BCE334 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B6D0B8F0276CAD7D00EEAF0F /* Stastistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stastistics.swift; sourceTree = "<group>"; };
 		B6D6C0B12772B96C009C92AB /* ResetDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetDataView.swift; sourceTree = "<group>"; };
+		B6D702E32778696200BB7795 /* GuessWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessWordView.swift; sourceTree = "<group>"; };
 		B6FBAC572769A3F3002FCC88 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,7 +138,7 @@
 		B65882F9276A9CAC007F3983 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				B694BF2D2776CF0F00F84DA3 /* TextFieldAlert.swift */,
+				B6D702E32778696200BB7795 /* GuessWordView.swift */,
 				B638C293275F4C9D00BAF610 /* Helpers.swift */,
 				B682DB512765B2A900FFAC75 /* DebugView.swift */,
 				B683CB9F276C5804008C8096 /* Vibrations.swift */,
@@ -359,6 +360,7 @@
 				B682DB8C2765B52800FFAC75 /* ContentView.swift in Sources */,
 				B67EDD35277185AD00DA1A91 /* ShopItems.swift in Sources */,
 				B683CBA5276C66D4008C8096 /* ToolbarView.swift in Sources */,
+				B6D702E4277869B400BB7795 /* GuessWordView.swift in Sources */,
 				B6BB196F2771D9B9003B2DCF /* DebugOptions.swift in Sources */,
 				B6C7A022276B542500BCE334 /* SettingsView.swift in Sources */,
 				B63F821B276D70BA005CF14A /* WordListModel.swift in Sources */,
@@ -367,7 +369,6 @@
 				B683CB9A276C4665008C8096 /* StatisticsView.swift in Sources */,
 				B682DB932765B53100FFAC75 /* Helpers.swift in Sources */,
 				B63F8221276D7404005CF14A /* Lists.swift in Sources */,
-				B694BF2E2776CF0F00F84DA3 /* TextFieldAlert.swift in Sources */,
 				B6D6C0B22772B96C009C92AB /* ResetDataView.swift in Sources */,
 				B62E80AF27700EF10049D47B /* ShopView.swift in Sources */,
 				B6588301276ABB7E007F3983 /* GameOverView.swift in Sources */,
@@ -390,6 +391,7 @@
 				B67EDD36277185AD00DA1A91 /* ShopItems.swift in Sources */,
 				B683CBA6276C6700008C8096 /* ToolbarView.swift in Sources */,
 				B6BB19702771D9B9003B2DCF /* DebugOptions.swift in Sources */,
+				B6D702E527786A0600BB7795 /* GuessWordView.swift in Sources */,
 				B6C7A023276B542500BCE334 /* SettingsView.swift in Sources */,
 				B63F821C276D70BA005CF14A /* WordListModel.swift in Sources */,
 				B682DB8F2765B52B00FFAC75 /* GameView.swift in Sources */,

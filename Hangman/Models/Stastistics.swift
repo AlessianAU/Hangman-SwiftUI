@@ -10,20 +10,20 @@ import Foundation
 class Statistics: ObservableObject {
 	@Published var defaults = UserDefaults.standard
 	
-	//	Increments UserDefaults item by amount
+	///	Increments UserDefaults item by amount
 	func increment(key: String, amount: Int? = 1) {
 		var num = defaults.integer(forKey: key)
 		num += amount!
 		defaults.set(num, forKey: key)
 	}
-	//  Subtracts UserDefaults item by amount
+	///  Subtracts UserDefaults item by amount
 	func subtract(key: String, amount: Int? = 1) {
 		var num = defaults.integer(forKey: key)
 		num -= amount!
 		defaults.set(num, forKey: key)
 	}
 	
-	//	Subtracts and amount of money then adds same amount to money spent
+	///	Subtracts and amount of money then adds same amount to money spent
 	func purchase(amount: Int) {
 		if amount <= defaults.integer(forKey: "CurrentMoney") {
 			
@@ -36,7 +36,7 @@ class Statistics: ObservableObject {
 			
 		}
 	}
-	//  Calculates the win and loss streaks
+	///  Calculates the win and loss streaks
 	func streak(win: Bool) {
 		if defaults.integer(forKey: win ? "CurrentWinStreak" : "CurrentLossStreak") == defaults.integer(forKey: win ? "LongestWinStreak" : "LongestLossStreak") {
 			increment(key: win ? "LongestWinStreak" : "LongestLossStreak")
@@ -44,13 +44,4 @@ class Statistics: ObservableObject {
 		increment(key: win ? "CurrentWinStreak" : "CurrentLossStreak")
 		defaults.set(0, forKey: win ? "CurrentLossStreak" : "CurrentWinnStreak")
 	}
-	
-	
-//	func streak(win: Bool) {
-//		increment(key:  "CurrentWinStreak" )
-//		if defaults.integer(forKey:  "CurrentWinStreak" ) >= defaults.integer(forKey:  "LongestWinStreak" ) {
-//			increment(key: "LongestWinStreak")
-//		}
-//		defaults.set(0, forKey:  "CurrentLossStreak" )
-//	}
 }

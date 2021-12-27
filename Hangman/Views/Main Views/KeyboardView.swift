@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct KeyboardView: View {
-	@Environment(\.colorScheme) var colorScheme
-	
 	@State private var letters = KeyboardLetters()
 	
 	@ObservedObject var appData: AppData

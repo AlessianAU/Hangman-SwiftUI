@@ -44,13 +44,6 @@ struct KeyboardView: View {
 						print("\(letter) button was pressed")
 						appData.usedLetters.append(letter)
 						
-						hideKeyboard()
-						DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-							withAnimation {
-								showingGuesser = false
-							}
-						}
-						
 						stats.increment(key: "ButtonsPressed")
 						
 						if appData.gameLetters.contains(Character(letter)) {

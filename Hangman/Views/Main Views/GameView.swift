@@ -22,10 +22,8 @@ struct GameView: View {
 				.ignoresSafeArea()
 				.onTapGesture {
 					hideKeyboard()
-					DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
 						withAnimation {
 							showingGuesser = false
-						}
 					}
 				}
 			VStack {

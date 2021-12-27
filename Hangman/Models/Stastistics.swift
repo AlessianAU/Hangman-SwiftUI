@@ -42,6 +42,6 @@ class Statistics: ObservableObject {
 			increment(key: win ? "LongestWinStreak" : "LongestLossStreak")
 		}
 		increment(key: win ? "CurrentWinStreak" : "CurrentLossStreak")
-		defaults.set(0, forKey: win ? "CurrentLossStreak" : "CurrentWinnStreak")
+		defaults.set(0, forKey: win ? "CurrentLossStreak" : "CurrentWinStreak")
 	}
 }

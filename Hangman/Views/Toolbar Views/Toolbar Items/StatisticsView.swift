@@ -13,8 +13,30 @@ struct StatisticsView: View {
 	var body: some View {
 #if os(iOS)
 		NavigationView {
-			StatisticsList(stats: stats)
-				.navigationBarTitle("Statistics")
+			TabView{
+				StatisticsList(stats: stats)
+					
+					.navigationViewStyle(.stack)
+				
+					.tabItem {
+						VStack{
+							Image(systemName: "textformat.123")
+							Text("Statistics")
+						}
+					}
+					.navigationBarTitle("Stats & Achievements")
+				
+				AchievementsView()
+					
+					.navigationViewStyle(.stack)
+				
+					.tabItem {
+						VStack{
+							Image(systemName: "crown")
+							Text("Achievements")
+						}
+					}
+			}
 		}
 #else
 		ZStack {

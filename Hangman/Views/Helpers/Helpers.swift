@@ -59,13 +59,14 @@ struct KeyboardLetters {
 	let allLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 }
 
-#if canImport(UIKit)
 extension View {
 	func hideKeyboard() {
+#if canImport(UIKit)
 		UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+#endif
 	}
 }
-#endif
+
 
 extension Array where Element: Hashable {
 	func difference(from other: [Element]) -> [Element] {

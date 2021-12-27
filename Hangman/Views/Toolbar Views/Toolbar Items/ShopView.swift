@@ -36,7 +36,9 @@ struct ShopView: View {
 				}
 
 			}
+			#if os(iOS)
 				.navigationBarTitle("Item Store")
+			#endif
 		}
     }
 }

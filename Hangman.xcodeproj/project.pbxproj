@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B60CBD85276C7ADE00A77007 /* PlatformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CBD84276C7ADE00A77007 /* PlatformView.swift */; };
 		B60CBD86276C7ADE00A77007 /* PlatformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CBD84276C7ADE00A77007 /* PlatformView.swift */; };
+		B60E4E1127796E43000E6E7E /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60E4E1027796E43000E6E7E /* AchievementsView.swift */; };
+		B60E4E1227796E43000E6E7E /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60E4E1027796E43000E6E7E /* AchievementsView.swift */; };
 		B623593A2777012100687A31 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62359392777012100687A31 /* HintView.swift */; };
 		B623593B2777012100687A31 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62359392777012100687A31 /* HintView.swift */; };
 		B62E80AF27700EF10049D47B /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62E80AE27700EF10049D47B /* ShopView.swift */; };
@@ -63,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		B60CBD84276C7ADE00A77007 /* PlatformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformView.swift; sourceTree = "<group>"; };
+		B60E4E1027796E43000E6E7E /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 		B62359392777012100687A31 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HintView.swift; path = "Hangman/Views/Toolbar Views/Toolbar Items/HintView.swift"; sourceTree = SOURCE_ROOT; };
 		B62E80AE27700EF10049D47B /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		B638C293275F4C9D00BAF610 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 				B6C7A021276B542500BCE334 /* SettingsView.swift */,
 				B683CB99276C4665008C8096 /* StatisticsView.swift */,
 				B62E80AE27700EF10049D47B /* ShopView.swift */,
+				B60E4E1027796E43000E6E7E /* AchievementsView.swift */,
 				B6BB19712771DB54003B2DCF /* Toolbar Sub Views */,
 			);
 			path = "Toolbar Items";
@@ -365,6 +369,7 @@
 				B6C7A022276B542500BCE334 /* SettingsView.swift in Sources */,
 				B63F821B276D70BA005CF14A /* WordListModel.swift in Sources */,
 				B682DB8E2765B52A00FFAC75 /* GameView.swift in Sources */,
+				B60E4E1127796E43000E6E7E /* AchievementsView.swift in Sources */,
 				B682DB902765B52D00FFAC75 /* KeyboardView.swift in Sources */,
 				B683CB9A276C4665008C8096 /* StatisticsView.swift in Sources */,
 				B682DB932765B53100FFAC75 /* Helpers.swift in Sources */,
@@ -396,6 +401,7 @@
 				B63F821C276D70BA005CF14A /* WordListModel.swift in Sources */,
 				B682DB8F2765B52B00FFAC75 /* GameView.swift in Sources */,
 				B623593B2777012100687A31 /* HintView.swift in Sources */,
+				B60E4E1227796E43000E6E7E /* AchievementsView.swift in Sources */,
 				B682DB912765B52E00FFAC75 /* KeyboardView.swift in Sources */,
 				B683CB9B276C4665008C8096 /* StatisticsView.swift in Sources */,
 				B682DB922765B53000FFAC75 /* Helpers.swift in Sources */,

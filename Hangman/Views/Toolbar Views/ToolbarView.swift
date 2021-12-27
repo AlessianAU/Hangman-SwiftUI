@@ -63,7 +63,7 @@ struct ToolbarSubView: View {
 		}
 #else
 		.popover(isPresented: $appData.showingShop) {
-			ShopView(stats: stats)
+			ShopView(stats: stats, appData: appData)
 		}
 #endif
 	}

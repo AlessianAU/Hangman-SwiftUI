@@ -28,7 +28,7 @@ class AppData: ObservableObject {
 	@Published var gameOver : Int = 0
 	
 	static func getLetters() -> Array<Character> {
-		let allWords = WordList.aquaticAnimals
+		let allWords = WordList.basicList
 		let randomWord : String! = allWords.randomElement()
 		let letters = Array(randomWord)
 		print(letters)

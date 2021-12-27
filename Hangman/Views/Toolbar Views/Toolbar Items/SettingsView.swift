@@ -12,6 +12,9 @@ struct SettingsView: View {
 	@ObservedObject var stats: Statistics
 	@State private var showingSheet = false
 	
+	@AppStorage("DebugActive") var debugActive = false
+	@AppStorage("HapticFeedback") var hapticFeedback = false
+	
 	var body: some View {
 		NavigationView {
 			List {
@@ -25,7 +28,7 @@ struct SettingsView: View {
 					
 #if os(iOS)
 					if UIDevice.current.userInterfaceIdiom == .phone {
-						Toggle(isOn: $appData.hapticFeedback) {
+						Toggle(isOn: $hapticFeedback) {
 							ListLabel(imageName: "iphone.radiowaves.left.and.right", label: "Haptic Feedback")
 						}
 					}
@@ -33,10 +36,10 @@ struct SettingsView: View {
 				}
 #if DEBUG
 				Section {
-					Toggle(isOn: $appData.debugActive) {
+					Toggle(isOn: $debugActive) {
 						ListLabel(imageName: "ladybug", label: "Debug Mode")
 					}
-						if appData.debugActive {
+						if debugActive {
 							NavigationLink {
 								DebugOptions(appData: appData, stats: stats)
 							} label: {

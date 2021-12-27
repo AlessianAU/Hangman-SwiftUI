@@ -56,7 +56,7 @@ struct GameView: View {
 				}
 				.frame(height: 60)
 				
-				if appData.debugViewActive == true {
+				if stats.defaults.bool(forKey: "DebugActive") == true {
 					DebugView(appData: appData, stats: stats)
 						.padding(.leading)
 				}

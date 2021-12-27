@@ -34,7 +34,7 @@ struct PlatformView: View {
 			
 			.navigationViewStyle(.stack)
 #else
-			GameView(appData: appData, stats: stats)
+			GameOverView(appData: appData, stats: stats)
 #endif
 		}
 		
@@ -49,9 +49,11 @@ struct PlatformView: View {
 		})
 		.toolbar {
 			ToolbarItemGroup(placement: .automatic) {
-				ToolbarMainView(appData: appData, stats: stats)
+					ToolbarMainView(appData: appData, stats: stats)
+					ToolbarSubView(appData: appData, stats: stats)
 			}
 		}
+		
 #endif
 	}
 }

@@ -15,13 +15,13 @@ struct GuessWordView: View {
 	
 	var body: some View {
 		HStack {
-			
 			TextField("Whats your guess?", text: $guess)
 				.textFieldStyle(.roundedBorder)
 				.onSubmit {
 					checkGuess()
 				}
 				.submitLabel(.done)
+				.disableAutocorrection(true)
 			
 				Button {
 					checkGuess()

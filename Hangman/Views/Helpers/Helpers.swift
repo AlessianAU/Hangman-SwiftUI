@@ -14,7 +14,7 @@ struct ButtonView: View {
 #if os(iOS)
 		let screen = UIScreen.main.bounds
 		ZStack{
-			RoundedRectangle(cornerRadius: 15)
+			RoundedRectangle(cornerRadius: 13)
 			Text(buttonLabel)
 				.font(.system(size: 25, weight: .medium))
 				.foregroundColor(.white)
@@ -23,7 +23,7 @@ struct ButtonView: View {
 		.padding()
 #else
 		ZStack{
-			RoundedRectangle(cornerRadius: 15)
+			RoundedRectangle(cornerRadius: 13)
 				.foregroundColor(.accentColor)
 			Text(buttonLabel)
 				.font(.system(size: 25, weight: .medium))

@@ -13,9 +13,6 @@ struct DebugOptions: View {
 	
     var body: some View {
 			List {
-				Toggle(isOn: $appData.debugViewActive) {
-					ListLabel(imageName: "ladybug", label: "Debug View")
-				}
 				Button {
 					var num = stats.defaults.integer(forKey: "CurrentMoney")
 					num += 10

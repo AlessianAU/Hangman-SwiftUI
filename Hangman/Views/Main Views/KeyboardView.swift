@@ -29,7 +29,7 @@ struct KeyboardView: View {
 	
 	var body: some View {
 		if showingGuesser == true {
-			GuessWordView(appData: appData, stats: stats)
+			GuessWordView(appData: appData, stats: stats, showingGuesser: $showingGuesser)
 				.focused($guesser)
 				.padding(.horizontal, 35)
 		}

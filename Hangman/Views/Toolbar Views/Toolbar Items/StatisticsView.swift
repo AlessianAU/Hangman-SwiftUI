@@ -12,30 +12,26 @@ struct StatisticsView: View {
 	
 	var body: some View {
 #if os(iOS)
-		NavigationView {
-			TabView{
+		TabView {
+			NavigationView {
 				StatisticsList(stats: stats)
-					
 					.navigationViewStyle(.stack)
-				
-					.tabItem {
-						VStack{
-							Image(systemName: "textformat.123")
-							Text("Statistics")
-						}
-					}
-					.navigationBarTitle("Stats & Achievements")
-				
-				AchievementsView()
-					
+			}
+			.tabItem {
+				VStack{
+					Image(systemName: "textformat.123")
+					Text("Statistics")
+				}
+			}
+			NavigationView {
+				AchievementsView(stats: stats)
 					.navigationViewStyle(.stack)
-				
-					.tabItem {
-						VStack{
-							Image(systemName: "crown")
-							Text("Achievements")
-						}
-					}
+			}
+			.tabItem {
+				VStack{
+					Image(systemName: "crown")
+					Text("Achievements")
+				}
 			}
 		}
 #else
@@ -47,12 +43,6 @@ struct StatisticsView: View {
 #endif
 	}
 }
-
-//struct StatisticsView_Previews: PreviewProvider {
-//	static var previews: some View {
-//		StatisticsView(showingStatistics: $showingStatistics)
-//	}
-//}
 
 struct StatisticsLabel: View {
 	var imageColor: Color = .accentColor
@@ -105,5 +95,6 @@ struct StatisticsList: View {
 				StatisticsLabel(imageName: "keyboard", label: "Total Buttons Pressed", statisticAmount: stats.defaults.integer(forKey: "ButtonsPressed"))
 			}
 		}
+		.navigationTitle("Statistics")
 	}
 }

@@ -12,6 +12,7 @@ struct GuessWordView: View {
 	@ObservedObject var stats: Statistics
 	
 	@State var guess: String = ""
+	@Binding var showingGuesser: Bool
 	
 	var body: some View {
 		HStack {
@@ -23,13 +24,25 @@ struct GuessWordView: View {
 				.submitLabel(.done)
 				.disableAutocorrection(true)
 			
+			if guess != "" {
 				Button {
 					checkGuess()
 				} label: {
 					Text("Submit")
 				}
+				.frame(width: 55)
+			} else {
+				Button {
+					showingGuesser = false
+				} label: {
+					Text("Cancel")
+				}
+				.frame(width: 55)
+			}
 		}
 	}
+	
+	///Checks to see if the guess is the same as the current word
 	func checkGuess() {
 		let guessLettersSet: Set<Character> = Set<Character>(guess.uppercased())
 		let gameLettersSet: Set<Character> = Set<Character>(appData.gameLetters)

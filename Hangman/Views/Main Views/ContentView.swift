@@ -10,13 +10,15 @@ import SwiftUI
 struct ContentView: View {
 	@StateObject var appData = AppData()
 	@StateObject var stats = Statistics()
+	@AppStorage("SelectedAppearance") var selectedAppearance = 0
 	
 	var body: some View {
 		PlatformView(appData: appData, stats: stats)
 			.onAppear(perform: {
-				stats.convertColor()
+				stats.hexToColor()
 			})
 			.tint(stats.color)
+			.preferredColorScheme(selectedAppearance == 0 ? nil : stats.detectColorScheme())
 	}
 }
 

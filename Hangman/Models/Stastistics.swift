@@ -12,21 +12,9 @@ class Statistics: ObservableObject {
 	@Published var defaults = UserDefaults.standard
 	
 	@Published var color: Color = .accentColor
-	
-//	@Published var lettersWhite: Bool = true
-//	
-//	/// Swaps the bool for the color of letters so @AppStorage doesnt have to be accessed on every view
-//	func changeLetterColor() {
-//		let lettersColor = defaults.bool(forKey: "LettersWhite")
-//		if lettersColor == true {
-//			lettersWhite = true
-//		} else {
-//			lettersWhite = false
-//		}
-//	}
-	
+		
 	///	Converts the color string saved in UserDefaults to a useable SwiftUI Color
-	func convertColor() {
+	func hexToColor() {
 		let selectedColor = defaults.string(forKey: "SelectedColor")
 		if (selectedColor != nil) {
 			let rgbArray = selectedColor!.components (separatedBy: ",")
@@ -73,6 +61,16 @@ class Statistics: ObservableObject {
 		defaults.set(0, forKey: win ? "CurrentLossStreak" : "CurrentWinStreak")
 	}
 	
-	
-	
+	///	Detects preferred colour scheme
+	func detectColorScheme() -> ColorScheme {
+		let selectedAppearance = defaults.integer(forKey: "SelectedAppearance")
+		var result: ColorScheme = .light
+		
+		if selectedAppearance == 2 {
+			result = .dark
+		} else if selectedAppearance == 1 {
+			result = .light
+		}
+		return result
+	}
 }

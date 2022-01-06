@@ -58,7 +58,7 @@ struct SettingsView: View {
 					Button {
 						showingSheet = true
 					} label: {
-						ListLabel(imageName: "trash", label: "Reset All Data...")
+						ListLabel(imageName: "trash", label: "Reset All Data...", destructive: true)
 							.foregroundColor(.red)
 					}
 					.sheet(isPresented: $showingSheet) {

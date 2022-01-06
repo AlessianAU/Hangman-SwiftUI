@@ -67,7 +67,7 @@ struct ResetButton: View {
 				print("Stats Reset")
 				showingSheet.toggle()
 				appData.showingSettings.toggle()
-				stats.convertColor()
+				stats.hexToColor()
 			}
 		}
 	}

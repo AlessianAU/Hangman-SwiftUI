@@ -40,20 +40,38 @@ struct ButtonView: View {
 }
 
 struct ListLabel: View {
-//	@State var imageColor: Color = stats.color
+	@AppStorage("SelectedColor") var selectedColors = ""
+	@State var color: Color = .accentColor
 	@State var imageName: String
 	@State var label: String
+	@State var destructive: Bool? = false
 	
 	var body: some View {
 		HStack{
 			Image(systemName: imageName)
 				.padding(6)
-//				.foregroundColor(imageColor)
+				.foregroundColor(destructive! ? .red : color)
 				.frame(width: 25)
 				.padding(.trailing, 10)
 			Text(label)
 		}
+		.onAppear(perform: {
+			convertColor()
+		})
 		.frame(height: 30)
+	}
+	
+	///Only reason this is here is because id have to put 'stats' into every instance of this struct and im lazy
+	func convertColor() {
+		let selectedColor = selectedColors
+		if (selectedColor != "") {
+			let rgbArray = selectedColor.components (separatedBy: ",")
+			if let red = Double(rgbArray[0]), let green = Double(rgbArray[1]), let blue = Double(rgbArray[2]) {
+				color = Color(.sRGB, red: red, green: green, blue: blue)
+			}
+		} else {
+			color = Color(0xFFB000)
+		}
 	}
 }
 
@@ -101,3 +119,5 @@ extension EnvironmentValues {
 		set { self[TintKey.self] = newValue }
 	}
 }
+
+

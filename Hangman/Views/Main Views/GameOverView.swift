@@ -32,9 +32,11 @@ struct GameOverView: View {
 							}
 							.font(.system(size: 40, weight: .heavy))
 						}
+						.padding(.bottom, 100)
+						Spacer()
 					}
 					.foregroundColor(.white)
-					.padding(.bottom, 100)
+					
 					Spacer()
 					Button {
 						

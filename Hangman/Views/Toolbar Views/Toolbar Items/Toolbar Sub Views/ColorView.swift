@@ -20,7 +20,7 @@ struct ColorView: View {
 	var body: some View {
 		List {
 			Section {
-				ColorPicker("Change Color", selection: Binding(get: {
+				ColorPicker("Accent Color", selection: Binding(get: {
 					stats.color
 				}, set: { newColor in
 					selectedColor = stats.uicolorToHex(color: newColor)

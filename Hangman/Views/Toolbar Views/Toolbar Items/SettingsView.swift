@@ -29,7 +29,7 @@ struct SettingsView: View {
 					NavigationLink {
 						ColorView(appData: appData, stats: stats)
 					} label: {
-						ListLabel(imageName: "paintpalette", label: "Accent Color")
+						ListLabel(imageName: "paintpalette", label: "Appearance")
 					}
 					
 #if os(iOS)

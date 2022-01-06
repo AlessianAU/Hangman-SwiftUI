@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ButtonView: View {
+	@ObservedObject var stats: Statistics
+	@AppStorage("LettersWhite") var lettersWhite: Bool = true
+	
 	var buttonLabel = String()
 	var body: some View {
 		
@@ -17,17 +20,17 @@ struct ButtonView: View {
 			RoundedRectangle(cornerRadius: 13)
 			Text(buttonLabel)
 				.font(.system(size: 25, weight: .medium))
-				.foregroundColor(.white)
+				.foregroundColor(lettersWhite ? .white : .black)
 		}
 		.frame(width: screen.width - 100, height: 60)
 		.padding()
 #else
 		ZStack{
 			RoundedRectangle(cornerRadius: 13)
-				.foregroundColor(.accentColor)
+				.foregroundColor(stats.color)
 			Text(buttonLabel)
 				.font(.system(size: 25, weight: .medium))
-				.foregroundColor(.white)
+				.foregroundColor(lettersWhite ? .white : .black)
 		}
 		.frame(width: 405, height: 60)
 		.padding(.bottom, 22)
@@ -37,7 +40,7 @@ struct ButtonView: View {
 }
 
 struct ListLabel: View {
-	@State var imageColor: Color = .accentColor
+//	@State var imageColor: Color = stats.color
 	@State var imageName: String
 	@State var label: String
 	
@@ -45,7 +48,7 @@ struct ListLabel: View {
 		HStack{
 			Image(systemName: imageName)
 				.padding(6)
-				.foregroundColor(imageColor)
+//				.foregroundColor(imageColor)
 				.frame(width: 25)
 				.padding(.trailing, 10)
 			Text(label)
@@ -73,5 +76,28 @@ extension Array where Element: Hashable {
 		let thisSet = Set(self)
 		let otherSet = Set(other)
 		return Array(thisSet.symmetricDifference(otherSet))
+	}
+}
+
+extension Color {
+  init(_ hex: UInt, alpha: Double = 1) {
+	self.init(
+	  .sRGB,
+	  red: Double((hex >> 16) & 0xFF) / 255,
+	  green: Double((hex >> 8) & 0xFF) / 255,
+	  blue: Double(hex & 0xFF) / 255,
+	  opacity: alpha
+	)
+  }
+}
+
+private struct TintKey: EnvironmentKey {
+	static let defaultValue: Color = Color.blue
+}
+
+extension EnvironmentValues {
+	var tintColor: Color {
+		get { self[TintKey.self] }
+		set { self[TintKey.self] = newValue }
 	}
 }

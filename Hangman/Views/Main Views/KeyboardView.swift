@@ -13,6 +13,8 @@ struct KeyboardView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
 	
+	@AppStorage("LettersWhite") var lettersWhite: Bool = true
+	
 	@State private var showHints = false
 	@State private var showingHintShop = false
 	@Binding var showingGuesser: Bool
@@ -39,6 +41,7 @@ struct KeyboardView: View {
 				ForEach(letters.allLetters, id: \.self) { letter in
 					
 					Button {
+						//MARK: Letter Functions
 						print("\(letter) button was pressed")
 						appData.usedLetters.append(letter)
 						
@@ -82,14 +85,27 @@ struct KeyboardView: View {
 						
 					} label: {
 						ZStack{
+							//MARK: Letter Labels
 							if appData.correctLetters.contains(Character(letter)) {
-								LetterButtonBackgroundView(color: .green)
+								ZStack {
+									LetterButtonBackgroundView(color: .green)
+									Image(systemName: "checkmark")
+										.foregroundColor(lettersWhite ? .black : .white)
+										.font(.system(size: 30, weight: .bold))
+										.opacity(0.5)
+								}
 							} else if appData.incorrectLetters.contains(Character(letter)){
-								LetterButtonBackgroundView(color: .red)
+								ZStack {
+									LetterButtonBackgroundView(color: .red)
+									Image(systemName: "xmark")
+										.foregroundColor(lettersWhite ? .black : .white)
+										.font(.system(size: 30, weight: .bold))
+										.opacity(0.5)
+								}
 							} else {
-								LetterButtonBackgroundView(color: .accentColor)
+								LetterButtonBackgroundView(color: stats.color)
 							}
-							LetterButtonView(letter: letter)
+							LetterButtonView( letter: letter)
 						}
 						.padding(6)
 						
@@ -98,6 +114,7 @@ struct KeyboardView: View {
 					
 				}
 				
+				//MARK: Misc Buttons
 				Button {
 					withAnimation {
 						showingGuesser = true
@@ -105,8 +122,8 @@ struct KeyboardView: View {
 					}
 				} label: {
 					ZStack{
-						LetterButtonBackgroundView(color: .accentColor)
-						LetterButtonView(letter: "", symbol: "magnifyingglass")
+						LetterButtonBackgroundView(color: stats.color)
+						LetterButtonView( letter: "", symbol: "magnifyingglass")
 					}
 				}
 				
@@ -114,7 +131,7 @@ struct KeyboardView: View {
 					showHints.toggle()
 				} label: {
 					ZStack{
-						LetterButtonBackgroundView(color: .accentColor)
+						LetterButtonBackgroundView(color: stats.color)
 						LetterButtonView(letter: "", symbol: "questionmark.circle")
 					}
 				}
@@ -145,6 +162,8 @@ struct KeyboardView: View {
 		.transition(.opacity)
 		.padding(.horizontal, 30)
 	}
+	
+	//MARK: Methods
 	//	checks if game is won
 	func checkLetters() -> Bool {
 		let gameLettersSet: Set<Character> = Set<Character>(appData.gameLetters)
@@ -166,6 +185,7 @@ struct KeyboardView: View {
 	}
 }
 
+//MARK: Letter Button Background
 struct LetterButtonBackgroundView: View {
 	let color: Color
 	
@@ -190,7 +210,11 @@ struct LetterButtonBackgroundView: View {
 	}
 }
 
+//MARK: Letter Button
 struct LetterButtonView: View {
+	
+	@AppStorage("LettersWhite") var lettersWhite: Bool = true
+	
 	var letter: String
 	var symbol: String?
 	var body: some View {
@@ -199,11 +223,11 @@ struct LetterButtonView: View {
 			Group{
 				if symbol != nil {
 					Image(systemName: symbol!)
-						.foregroundColor(.white)
+						.foregroundColor(lettersWhite ? .white : .black)
 						.font(.system(size: 40, weight: .medium))
 				} else {
 					Text(letter)
-						.foregroundColor(.white)
+						.foregroundColor(lettersWhite ? .white : .black)
 						.font(.system(size: 40, weight: .medium))
 				}
 			}
@@ -211,11 +235,11 @@ struct LetterButtonView: View {
 			Group{
 				if symbol != nil {
 					Image(systemName: symbol!)
-						.foregroundColor(.white)
+						.foregroundColor(lettersWhite ? .white : .black)
 						.font(.system(size: 25, weight: .medium))
 				} else {
 					Text(letter)
-						.foregroundColor(.white)
+						.foregroundColor(lettersWhite ? .white : .black)
 						.font(.system(size: 25, weight: .medium))
 				}
 			}

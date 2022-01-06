@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,8 +37,6 @@
 		B682DB932765B53100FFAC75 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B638C293275F4C9D00BAF610 /* Helpers.swift */; };
 		B682DB942765B55700FFAC75 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682DB512765B2A900FFAC75 /* DebugView.swift */; };
 		B682DB952765B55700FFAC75 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B682DB512765B2A900FFAC75 /* DebugView.swift */; };
-		B682DB962765B58C00FFAC75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B682DB6A2765B35500FFAC75 /* Assets.xcassets */; };
-		B682DB972765B58D00FFAC75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B682DB6A2765B35500FFAC75 /* Assets.xcassets */; };
 		B682DB982765B5C300FFAC75 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63DED76275E0FD500466F46 /* WordList.swift */; };
 		B682DB992765B5C300FFAC75 /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63DED76275E0FD500466F46 /* WordList.swift */; };
 		B683CB9A276C4665008C8096 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B683CB99276C4665008C8096 /* StatisticsView.swift */; };
@@ -59,6 +57,10 @@
 		B6D6C0B32772B96C009C92AB /* ResetDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D6C0B12772B96C009C92AB /* ResetDataView.swift */; };
 		B6D702E4277869B400BB7795 /* GuessWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D702E32778696200BB7795 /* GuessWordView.swift */; };
 		B6D702E527786A0600BB7795 /* GuessWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D702E32778696200BB7795 /* GuessWordView.swift */; };
+		B6E7682427852A03006EE030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E7682327852A03006EE030 /* Assets.xcassets */; };
+		B6E7682527852A03006EE030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E7682327852A03006EE030 /* Assets.xcassets */; };
+		B6E7682727852CB5006EE030 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7682627852CB5006EE030 /* ColorView.swift */; };
+		B6E7682827852CB5006EE030 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7682627852CB5006EE030 /* ColorView.swift */; };
 		B6FBAC582769A3F3002FCC88 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBAC572769A3F3002FCC88 /* AppData.swift */; };
 		B6FBAC592769A3F3002FCC88 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBAC572769A3F3002FCC88 /* AppData.swift */; };
 /* End PBXBuildFile section */
@@ -80,7 +82,6 @@
 		B67098B2275CBA2800CBA442 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B67EDD34277185AD00DA1A91 /* ShopItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopItems.swift; sourceTree = "<group>"; };
 		B682DB512765B2A900FFAC75 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
-		B682DB6A2765B35500FFAC75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B682DB782765B4B900FFAC75 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B682DB7D2765B4B900FFAC75 /* Hangman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hangman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B683CB98276C3DE9008C8096 /* Hangman--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Hangman--iOS--Info.plist"; sourceTree = "<group>"; };
@@ -96,6 +97,8 @@
 		B6D0B8F0276CAD7D00EEAF0F /* Stastistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stastistics.swift; sourceTree = "<group>"; };
 		B6D6C0B12772B96C009C92AB /* ResetDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetDataView.swift; sourceTree = "<group>"; };
 		B6D702E32778696200BB7795 /* GuessWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessWordView.swift; sourceTree = "<group>"; };
+		B6E7682327852A03006EE030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6E7682627852CB5006EE030 /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 		B6FBAC572769A3F3002FCC88 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				B67098AA275CBA2700CBA442 /* Hangman */,
+				B6E7682327852A03006EE030 /* Assets.xcassets */,
 				B6BB19722771DF89003B2DCF /* README.md */,
 				B67098A9275CBA2600CBA442 /* Products */,
 			);
@@ -187,7 +191,6 @@
 				B682DB9A2765B8C000FFAC75 /* WordLists */,
 				B667063B276ADDE100C25162 /* Entitlements */,
 				B67098B1275CBA2800CBA442 /* Preview Content */,
-				B682DB6A2765B35500FFAC75 /* Assets.xcassets */,
 			);
 			path = Hangman;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				B6D6C0B12772B96C009C92AB /* ResetDataView.swift */,
 				B6BB196E2771D9B9003B2DCF /* DebugOptions.swift */,
 				B63F8214276D6BB9005CF14A /* WordListView.swift */,
+				B6E7682627852CB5006EE030 /* ColorView.swift */,
 			);
 			path = "Toolbar Sub Views";
 			sourceTree = "<group>";
@@ -308,7 +312,7 @@
 				};
 			};
 			buildConfigurationList = B67098A3275CBA2600CBA442 /* Build configuration list for PBXProject "Hangman" */;
-			compatibilityVersion = "Xcode 11.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -331,8 +335,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6E7682427852A03006EE030 /* Assets.xcassets in Resources */,
 				B6BB19732771DF8A003B2DCF /* README.md in Resources */,
-				B682DB962765B58C00FFAC75 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,8 +344,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6E7682527852A03006EE030 /* Assets.xcassets in Resources */,
 				B6BB19742771DF8A003B2DCF /* README.md in Resources */,
-				B682DB972765B58D00FFAC75 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +372,7 @@
 				B6BB196F2771D9B9003B2DCF /* DebugOptions.swift in Sources */,
 				B6C7A022276B542500BCE334 /* SettingsView.swift in Sources */,
 				B63F821B276D70BA005CF14A /* WordListModel.swift in Sources */,
+				B6E7682727852CB5006EE030 /* ColorView.swift in Sources */,
 				B682DB8E2765B52A00FFAC75 /* GameView.swift in Sources */,
 				B60E4E1127796E43000E6E7E /* AchievementsView.swift in Sources */,
 				B682DB902765B52D00FFAC75 /* KeyboardView.swift in Sources */,
@@ -400,6 +405,7 @@
 				B6C7A023276B542500BCE334 /* SettingsView.swift in Sources */,
 				B63F821C276D70BA005CF14A /* WordListModel.swift in Sources */,
 				B682DB8F2765B52B00FFAC75 /* GameView.swift in Sources */,
+				B6E7682827852CB5006EE030 /* ColorView.swift in Sources */,
 				B623593B2777012100687A31 /* HintView.swift in Sources */,
 				B60E4E1227796E43000E6E7E /* AchievementsView.swift in Sources */,
 				B682DB912765B52E00FFAC75 /* KeyboardView.swift in Sources */,
@@ -536,7 +542,6 @@
 		B682DB872765B4B900FFAC75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = "Hangman/Entitlements/Entitlements (iOS).entitlements";
@@ -575,7 +580,6 @@
 		B682DB882765B4B900FFAC75 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = "Hangman/Entitlements/Entitlements (iOS).entitlements";
@@ -613,7 +617,6 @@
 		B682DB8A2765B4B900FFAC75 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Hangman/Entitlements/Entitlements (macOS).entitlements";
 				CODE_SIGN_IDENTITY = "-";
@@ -643,7 +646,6 @@
 		B682DB8B2765B4B900FFAC75 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Hangman/Entitlements/Entitlements (macOS).entitlements";
 				CODE_SIGN_IDENTITY = "-";

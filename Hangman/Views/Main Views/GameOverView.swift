@@ -11,7 +11,7 @@ struct GameOverView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
 	
-    var body: some View {
+	var body: some View {
 		if appData.gameOver == 0 {
 			GameView(appData: appData, stats: stats)
 		} else {
@@ -19,18 +19,21 @@ struct GameOverView: View {
 				Color.black
 					.ignoresSafeArea()
 				VStack {
-					Text(appData.gameOver == 2 ? "Correct" : "Game Over")
-						.font(.system(size: 45, weight: .bold))
-						.padding(.top, 50)
-					Spacer()
-					Text(appData.gameOver == 2 ? "The Word Was" : "The Word Was...")
-						.font(.system(size: 25))
-					HStack {
-						ForEach(appData.gameLetters, id: \.self) { letter in
-							Text(String(letter))
+					Group {
+						Text(appData.gameOver == 2 ? "Correct" : "Game Over")
+							.font(.system(size: 45, weight: .bold))
+							.padding(.top, 50)
+						Spacer()
+						Text(appData.gameOver == 2 ? "The Word Was" : "The Word Was...")
+							.font(.system(size: 25))
+						HStack {
+							ForEach(appData.gameLetters, id: \.self) { letter in
+								Text(String(letter))
+							}
+							.font(.system(size: 40, weight: .heavy))
 						}
-						.font(.system(size: 40, weight: .heavy))
 					}
+					.foregroundColor(.white)
 					.padding(.bottom, 100)
 					Spacer()
 					Button {
@@ -59,14 +62,12 @@ struct GameOverView: View {
 						appData.incorrectLetters.removeAll()
 						appData.lives = ["a","a","a","a","a","a","a","a"]
 					} label: {
-						ButtonView(buttonLabel: "New Word")
-							.foregroundColor(.accentColor)
+						ButtonView(stats: stats, buttonLabel: "New Word")
 					}
 				}
 			}
-			.foregroundColor(.white)
 		}
-    }
+	}
 }
 
 //struct GameOverView_Previews: PreviewProvider {

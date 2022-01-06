@@ -13,6 +13,10 @@ struct ContentView: View {
 	
 	var body: some View {
 		PlatformView(appData: appData, stats: stats)
+			.onAppear(perform: {
+				stats.convertColor()
+			})
+			.tint(stats.color)
 	}
 }
 

@@ -6,9 +6,37 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Statistics: ObservableObject {
 	@Published var defaults = UserDefaults.standard
+	
+	@Published var color: Color = .accentColor
+	
+//	@Published var lettersWhite: Bool = true
+//	
+//	/// Swaps the bool for the color of letters so @AppStorage doesnt have to be accessed on every view
+//	func changeLetterColor() {
+//		let lettersColor = defaults.bool(forKey: "LettersWhite")
+//		if lettersColor == true {
+//			lettersWhite = true
+//		} else {
+//			lettersWhite = false
+//		}
+//	}
+	
+	///	Converts the color string saved in UserDefaults to a useable SwiftUI Color
+	func convertColor() {
+		let selectedColor = defaults.string(forKey: "SelectedColor")
+		if (selectedColor != nil) {
+			let rgbArray = selectedColor!.components (separatedBy: ",")
+			if let red = Double(rgbArray[0]), let green = Double(rgbArray[1]), let blue = Double(rgbArray[2]) {
+				color = Color(.sRGB, red: red, green: green, blue: blue)
+			}
+		} else {
+			color = Color(0xFFB000)
+		}
+	}
 	
 	///	Increments UserDefaults item by amount
 	func increment(key: String, amount: Int? = 1) {
@@ -16,7 +44,7 @@ class Statistics: ObservableObject {
 		num += amount!
 		defaults.set(num, forKey: key)
 	}
-	///  Subtracts UserDefaults item by amount
+	/// Subtracts UserDefaults item by amount
 	func subtract(key: String, amount: Int? = 1) {
 		var num = defaults.integer(forKey: key)
 		num -= amount!
@@ -36,7 +64,7 @@ class Statistics: ObservableObject {
 			
 		}
 	}
-	///  Calculates the win and loss streaks
+	/// Calculates the win and loss streaks
 	func streak(win: Bool) {
 		if defaults.integer(forKey: win ? "CurrentWinStreak" : "CurrentLossStreak") == defaults.integer(forKey: win ? "LongestWinStreak" : "LongestLossStreak") {
 			increment(key: win ? "LongestWinStreak" : "LongestLossStreak")
@@ -44,4 +72,7 @@ class Statistics: ObservableObject {
 		increment(key: win ? "CurrentWinStreak" : "CurrentLossStreak")
 		defaults.set(0, forKey: win ? "CurrentLossStreak" : "CurrentWinStreak")
 	}
+	
+	
+	
 }

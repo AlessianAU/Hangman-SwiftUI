@@ -63,9 +63,11 @@ struct ResetButton: View {
 				stats.defaults.set(0, forKey: "MoneyObtained")
 				stats.defaults.set(0, forKey: "MoneySpent")
 				stats.defaults.set(0, forKey: "Hints")
+				stats.defaults.set("", forKey: "SelectedColor")
 				print("Stats Reset")
 				showingSheet.toggle()
 				appData.showingSettings.toggle()
+				stats.convertColor()
 			}
 		}
 	}

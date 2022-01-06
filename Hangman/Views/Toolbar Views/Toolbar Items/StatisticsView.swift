@@ -45,7 +45,7 @@ struct StatisticsView: View {
 }
 
 struct StatisticsLabel: View {
-	var imageColor: Color = .accentColor
+//	var imageColor: Color = .accentColor
 	var imageName: String
 	var label: String
 	var statisticAmount: Int
@@ -53,7 +53,7 @@ struct StatisticsLabel: View {
 	
 	var body: some View {
 		HStack{
-			ListLabel(imageColor: imageColor, imageName: imageName, label: label)
+			ListLabel(imageName: imageName, label: label)
 			
 			Spacer()
 			

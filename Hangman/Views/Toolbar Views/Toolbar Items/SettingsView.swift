@@ -26,6 +26,12 @@ struct SettingsView: View {
 						ListLabel(imageName: "book", label: "Word Packs")
 					}
 					
+					NavigationLink {
+						ColorView(appData: appData, stats: stats)
+					} label: {
+						ListLabel(imageName: "paintpalette", label: "Accent Color")
+					}
+					
 #if os(iOS)
 					if UIDevice.current.userInterfaceIdiom == .phone {
 						Toggle(isOn: $hapticFeedback) {
@@ -52,7 +58,7 @@ struct SettingsView: View {
 					Button {
 						showingSheet = true
 					} label: {
-						ListLabel(imageColor: .red,imageName: "trash", label: "Reset All Data...")
+						ListLabel(imageName: "trash", label: "Reset All Data...")
 							.foregroundColor(.red)
 					}
 					.sheet(isPresented: $showingSheet) {

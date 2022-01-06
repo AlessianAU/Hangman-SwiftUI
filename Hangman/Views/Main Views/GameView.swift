@@ -71,7 +71,7 @@ struct GameView: View {
 					print("new game button pressed")
 					showingAlert = true
 				} label: {
-					ButtonView(buttonLabel: "Give Up")
+					ButtonView(stats: stats, buttonLabel: "Give Up")
 				}
 				.alert("Are You Sure", isPresented: $showingAlert) {
 					Button("No", role: .cancel) { print("new game cancelled") }

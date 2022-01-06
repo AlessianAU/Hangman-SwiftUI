@@ -15,15 +15,13 @@ struct ColorView: View {
 	@AppStorage("LettersWhite") var letterColor = true
 	@AppStorage("SelectedAppearance") var selectedAppearance = 0
 	
-//	@State var color: Color = .yellow
-	
 	var body: some View {
 		List {
 			Section {
 				ColorPicker("Change Color", selection: Binding(get: {
 					stats.color
 				}, set: { newColor in
-					selectedColor = self.uicolorToHex(color: newColor)
+					selectedColor = stats.uicolorToHex(color: newColor)
 					stats.color = newColor
 					stats.hexToColor()
 				}), supportsOpacity: false)
@@ -45,19 +43,6 @@ struct ColorView: View {
 				}
 			}
 		}
-	}
-	
-	///	Converts UIColor to Hexidecimal to store in UserDefaults
-	func uicolorToHex(color: Color) -> String {
-		let uiColor = UIColor(color)
-		var red: CGFloat = 0
-		var green: CGFloat = 0
-		var blue: CGFloat = 0
-		var alpha: CGFloat = 0
-		
-		uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-		
-		return "\(red),\(green),\(blue),\(alpha)"
 	}
 }
 

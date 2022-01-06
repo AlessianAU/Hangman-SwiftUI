@@ -73,4 +73,17 @@ class Statistics: ObservableObject {
 		}
 		return result
 	}
+	
+	///	Converts UIColor to Hexidecimal to store in UserDefaults
+	func uicolorToHex(color: Color) -> String {
+		let uiColor = UIColor(color)
+		var red: CGFloat = 0
+		var green: CGFloat = 0
+		var blue: CGFloat = 0
+		var alpha: CGFloat = 0
+		
+		uiColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+		
+		return "\(red),\(green),\(blue),\(alpha)"
+	}
 }

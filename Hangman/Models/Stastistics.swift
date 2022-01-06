@@ -16,7 +16,7 @@ class Statistics: ObservableObject {
 	///	Converts the color string saved in UserDefaults to a useable SwiftUI Color
 	func hexToColor() {
 		let selectedColor = defaults.string(forKey: "SelectedColor")
-		if (selectedColor != nil) {
+		if (selectedColor != "") {
 			let rgbArray = selectedColor!.components (separatedBy: ",")
 			if let red = Double(rgbArray[0]), let green = Double(rgbArray[1]), let blue = Double(rgbArray[2]) {
 				color = Color(.sRGB, red: red, green: green, blue: blue)

@@ -15,6 +15,8 @@ struct ColorView: View {
 	@AppStorage("LettersWhite") var letterColor = true
 	@AppStorage("SelectedAppearance") var selectedAppearance = 0
 	
+	@State var showingAlert = false
+	
 	var body: some View {
 		List {
 			Section {
@@ -25,7 +27,27 @@ struct ColorView: View {
 					stats.color = newColor
 					stats.hexToColor()
 				}), supportsOpacity: false)
+					.swipeActions(edge: .trailing, allowsFullSwipe: false) {
+						Button {
+							showingAlert = true
+						} label: {
+							ZStack {
+								Image(systemName: "paintpalette")
+							}
+						}
+						.disabled(stats.defaults.string(forKey: "SelectedColor") == "")
+					}
+					.tint(Color(0xFFB000))
 			}
+		
+		.alert("Reset accent color to default color?",isPresented: $showingAlert) {
+			Button("Cancel", role: .cancel) {  }
+			Button("Reset Color") {
+				stats.defaults.set("", forKey: "SelectedColor")
+				stats.hexToColor()
+			}
+		}
+			
 			Section {
 				Toggle(letterColor ? "Letters are White" : "Letters are Black", isOn: $letterColor)
 			}

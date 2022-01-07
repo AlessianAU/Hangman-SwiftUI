@@ -89,18 +89,22 @@ struct KeyboardView: View {
 							if appData.correctLetters.contains(Character(letter)) {
 								ZStack {
 									LetterButtonBackgroundView(color: .green)
-									Image(systemName: "checkmark")
-										.foregroundColor(lettersWhite ? .black : .white)
-										.font(.system(size: 30, weight: .bold))
-										.opacity(0.5)
+									if stats.defaults.bool(forKey: "WithoutColor") == true {
+										Image(systemName: "checkmark")
+											.foregroundColor(lettersWhite ? .black : .white)
+											.font(.system(size: 30, weight: .bold))
+											.opacity(0.5)
+									}
 								}
 							} else if appData.incorrectLetters.contains(Character(letter)){
 								ZStack {
 									LetterButtonBackgroundView(color: .red)
-									Image(systemName: "xmark")
-										.foregroundColor(lettersWhite ? .black : .white)
-										.font(.system(size: 30, weight: .bold))
-										.opacity(0.5)
+									if stats.defaults.bool(forKey: "WithoutColor") == true {
+										Image(systemName: "xmark")
+											.foregroundColor(lettersWhite ? .black : .white)
+											.font(.system(size: 30, weight: .bold))
+											.opacity(0.5)
+									}
 								}
 							} else {
 								LetterButtonBackgroundView(color: stats.color)

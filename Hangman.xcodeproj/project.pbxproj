@@ -59,8 +59,8 @@
 		B6D702E527786A0600BB7795 /* GuessWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D702E32778696200BB7795 /* GuessWordView.swift */; };
 		B6E7682427852A03006EE030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E7682327852A03006EE030 /* Assets.xcassets */; };
 		B6E7682527852A03006EE030 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6E7682327852A03006EE030 /* Assets.xcassets */; };
-		B6E7682727852CB5006EE030 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7682627852CB5006EE030 /* ColorView.swift */; };
-		B6E7682827852CB5006EE030 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7682627852CB5006EE030 /* ColorView.swift */; };
+		B6E7682727852CB5006EE030 /* AppearanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7682627852CB5006EE030 /* AppearanceView.swift */; };
+		B6E7682827852CB5006EE030 /* AppearanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E7682627852CB5006EE030 /* AppearanceView.swift */; };
 		B6FBAC582769A3F3002FCC88 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBAC572769A3F3002FCC88 /* AppData.swift */; };
 		B6FBAC592769A3F3002FCC88 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FBAC572769A3F3002FCC88 /* AppData.swift */; };
 /* End PBXBuildFile section */
@@ -98,7 +98,7 @@
 		B6D6C0B12772B96C009C92AB /* ResetDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetDataView.swift; sourceTree = "<group>"; };
 		B6D702E32778696200BB7795 /* GuessWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessWordView.swift; sourceTree = "<group>"; };
 		B6E7682327852A03006EE030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B6E7682627852CB5006EE030 /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
+		B6E7682627852CB5006EE030 /* AppearanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceView.swift; sourceTree = "<group>"; };
 		B6FBAC572769A3F3002FCC88 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -240,7 +240,7 @@
 				B6D6C0B12772B96C009C92AB /* ResetDataView.swift */,
 				B6BB196E2771D9B9003B2DCF /* DebugOptions.swift */,
 				B63F8214276D6BB9005CF14A /* WordListView.swift */,
-				B6E7682627852CB5006EE030 /* ColorView.swift */,
+				B6E7682627852CB5006EE030 /* AppearanceView.swift */,
 			);
 			path = "Toolbar Sub Views";
 			sourceTree = "<group>";
@@ -372,7 +372,7 @@
 				B6BB196F2771D9B9003B2DCF /* DebugOptions.swift in Sources */,
 				B6C7A022276B542500BCE334 /* SettingsView.swift in Sources */,
 				B63F821B276D70BA005CF14A /* WordListModel.swift in Sources */,
-				B6E7682727852CB5006EE030 /* ColorView.swift in Sources */,
+				B6E7682727852CB5006EE030 /* AppearanceView.swift in Sources */,
 				B682DB8E2765B52A00FFAC75 /* GameView.swift in Sources */,
 				B60E4E1127796E43000E6E7E /* AchievementsView.swift in Sources */,
 				B682DB902765B52D00FFAC75 /* KeyboardView.swift in Sources */,
@@ -405,7 +405,7 @@
 				B6C7A023276B542500BCE334 /* SettingsView.swift in Sources */,
 				B63F821C276D70BA005CF14A /* WordListModel.swift in Sources */,
 				B682DB8F2765B52B00FFAC75 /* GameView.swift in Sources */,
-				B6E7682827852CB5006EE030 /* ColorView.swift in Sources */,
+				B6E7682827852CB5006EE030 /* AppearanceView.swift in Sources */,
 				B623593B2777012100687A31 /* HintView.swift in Sources */,
 				B60E4E1227796E43000E6E7E /* AchievementsView.swift in Sources */,
 				B682DB912765B52E00FFAC75 /* KeyboardView.swift in Sources */,

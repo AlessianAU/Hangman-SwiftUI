@@ -66,6 +66,8 @@ struct ResetButton: View {
 				stats.defaults.set("", forKey: "SelectedColor")
 				stats.defaults.set(0, forKey: "SelectedAppearance")
 				stats.defaults.set(true, forKey: "LettersWhite")
+				stats.defaults.set(false, forKey: "DebugActive")
+				stats.defaults.set(true, forKey: "HapticFeedback")
 				print("Game Reset")
 				showingSheet.toggle()
 				appData.showingSettings.toggle()

@@ -40,7 +40,7 @@ class Statistics: ObservableObject {
 	}
 	
 	///	Subtracts and amount of money then adds same amount to money spent
-	func purchase(amount: Int) {
+	func purchase(amount: Int, hintAmount: Int? = 0) {
 		if amount <= defaults.integer(forKey: "CurrentMoney") {
 			
 			var spent = defaults.integer(forKey: "MoneySpent")
@@ -50,6 +50,9 @@ class Statistics: ObservableObject {
 			defaults.set(current, forKey: "CurrentMoney")
 			defaults.set(spent, forKey: "MoneySpent")
 			
+			if hintAmount != 0 {
+				increment(key: "Hints", amount: hintAmount)
+			}
 		}
 	}
 	/// Calculates the win and loss streaks

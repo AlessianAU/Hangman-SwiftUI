@@ -12,22 +12,19 @@ struct HintView: View {
 	var body: some View {
 		List{
 			Button {
-				stats.purchase(amount: 15)
-				stats.increment(key: "Hints")
+				stats.purchase(amount: 15, hintAmount: 1)
 			} label: {
 				StatisticsLabel(imageName: "dollarsign.circle", label: "Hint X1", statisticAmount: 15)
 			}
 			
 			Button {
-				stats.purchase(amount: 40)
-				stats.increment(key: "Hints", amount: 3)
+				stats.purchase(amount: 40, hintAmount: 3)
 			} label: {
 				StatisticsLabel(imageName: "dollarsign.circle", label: "Hint X3", statisticAmount: 40)
 			}
 			
 			Button {
-				stats.purchase(amount: 75)
-				stats.increment(key: "Hints", amount: 6)
+				stats.purchase(amount: 75, hintAmount: 6)
 			} label: {
 				StatisticsLabel(imageName: "dollarsign.circle", label: "Hint X6", statisticAmount: 75)
 			}

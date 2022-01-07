@@ -27,7 +27,7 @@ struct SettingsView: View {
 					}
 					
 					NavigationLink {
-						ColorView(appData: appData, stats: stats)
+						AppearanceView(appData: appData, stats: stats)
 					} label: {
 						ListLabel(imageName: "paintpalette", label: "Appearance")
 					}

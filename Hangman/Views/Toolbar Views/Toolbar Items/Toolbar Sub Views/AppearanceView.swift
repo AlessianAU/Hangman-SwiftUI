@@ -91,5 +91,6 @@ struct AccessibilityView: View {
 				}
 			}
 		}
+		.navigationTitle("Accessibility")
 	}
 }

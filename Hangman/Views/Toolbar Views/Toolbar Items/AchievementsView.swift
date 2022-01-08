@@ -10,7 +10,6 @@ import SwiftUI
 struct AchievementsView: View {
 	@ObservedObject var stats: Statistics
 	
-	let screen = UIScreen.main.bounds
 	var body: some View {
 		HStack {
 			List {

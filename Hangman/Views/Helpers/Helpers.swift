@@ -108,16 +108,3 @@ extension Color {
 	)
   }
 }
-
-private struct TintKey: EnvironmentKey {
-	static let defaultValue: Color = Color.blue
-}
-
-extension EnvironmentValues {
-	var tintColor: Color {
-		get { self[TintKey.self] }
-		set { self[TintKey.self] = newValue }
-	}
-}
-
-

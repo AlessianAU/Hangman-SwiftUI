@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
 	@StateObject var appData = AppData()
 	@StateObject var stats = Statistics()
+	
 	@AppStorage("SelectedAppearance") var selectedAppearance = 0
 	
 	var body: some View {

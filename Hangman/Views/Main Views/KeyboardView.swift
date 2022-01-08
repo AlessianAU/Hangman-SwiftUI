@@ -14,6 +14,8 @@ struct KeyboardView: View {
 	@ObservedObject var stats: Statistics
 	
 	@AppStorage("LettersWhite") var lettersWhite: Bool = true
+	@Environment(\.accessibilityDifferentiateWithoutColor) var withoutColorSystem
+	@AppStorage("WithoutColor") var withoutColor: Bool = false
 	
 	@State private var showHints = false
 	@State private var showingHintShop = false
@@ -49,9 +51,9 @@ struct KeyboardView: View {
 						
 						if appData.gameLetters.contains(Character(letter)) {
 							
-							if appData.hapticFeedback == true {
+
 								Vibrations.heavyVibration()
-							}
+//
 							
 							stats.increment(key: "CurrentMoney")
 							stats.increment(key: "MoneyObtained")
@@ -67,9 +69,9 @@ struct KeyboardView: View {
 							
 						} else {
 							
-							if appData.hapticFeedback == true {
+							
 								Vibrations.lightVibration()
-							}
+							
 							
 							print("false")
 							appData.incorrectLetters.append(Character(letter))
@@ -89,7 +91,7 @@ struct KeyboardView: View {
 							if appData.correctLetters.contains(Character(letter)) {
 								ZStack {
 									LetterButtonBackgroundView(color: .green)
-									if stats.defaults.bool(forKey: "WithoutColor") == true {
+									if (withoutColorSystem || withoutColor) == true {
 										Image(systemName: "checkmark")
 											.foregroundColor(lettersWhite ? .black : .white)
 											.font(.system(size: 30, weight: .bold))
@@ -99,7 +101,7 @@ struct KeyboardView: View {
 							} else if appData.incorrectLetters.contains(Character(letter)){
 								ZStack {
 									LetterButtonBackgroundView(color: .red)
-									if stats.defaults.bool(forKey: "WithoutColor") == true {
+									if (withoutColorSystem || withoutColor) == true {
 										Image(systemName: "xmark")
 											.foregroundColor(lettersWhite ? .black : .white)
 											.font(.system(size: 30, weight: .bold))

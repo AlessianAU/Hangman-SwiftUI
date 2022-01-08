@@ -16,11 +16,6 @@ class AppData: ObservableObject {
 	
 	@Published var lives = ["a","a","a","a","a","a","a","a"]
 	
-	@Published var hapticFeedback : Bool = true
-	
-	@Published var debugActive : Bool = false
-	@Published var debugViewActive : Bool = false
-	
 	@Published var showingSettings : Bool = false
 	@Published var showingStatistics : Bool = false
 	@Published var showingShop : Bool = false

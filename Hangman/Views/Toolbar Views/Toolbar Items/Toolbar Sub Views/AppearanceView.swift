@@ -66,18 +66,30 @@ struct AppearanceView: View {
 			
 			Section{
 				NavigationLink("Accessibility") {
-					AccessibilityView()
+					AccessibilityView(stats: stats)
 				}
 			}
 		}
+		.navigationTitle("Appearance")
 	}
 }
 
 struct AccessibilityView: View {
+	@ObservedObject var stats: Statistics
+	
+	@Environment(\.accessibilityDifferentiateWithoutColor) var withoutColorSystem
 	@AppStorage("WithoutColor") var withoutColor: Bool = false
+
 	var body: some View {
 		List {
-			Toggle("Differenciate Without Color", isOn: $withoutColor)
+			Section {
+				Toggle("Differenciate Without Color", isOn: $withoutColor)
+					.disabled(withoutColorSystem == true)
+			} footer: {
+				if withoutColorSystem == true {
+				Text("This option is disabled as differenciate without color is enabled globally")
+				}
+			}
 		}
 	}
 }

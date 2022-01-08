@@ -51,7 +51,7 @@ struct KeyboardView: View {
 						
 						if appData.gameLetters.contains(Character(letter)) {
 							
-							if stats.defaults.bool(forKey: "HapticsEnabled") {
+							if stats.defaults.bool(forKey: "HapticFeedback") {
 								Vibrations.heavyVibration()
 							}
 							
@@ -69,7 +69,7 @@ struct KeyboardView: View {
 							
 						} else {
 							
-							if stats.defaults.bool(forKey: "HapticsEnabled") {
+							if stats.defaults.bool(forKey: "HapticFeedback") {
 								Vibrations.lightVibration()
 							}
 							

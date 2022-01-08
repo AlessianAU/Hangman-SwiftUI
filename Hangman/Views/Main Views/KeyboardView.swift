@@ -51,9 +51,9 @@ struct KeyboardView: View {
 						
 						if appData.gameLetters.contains(Character(letter)) {
 							
-
+							if stats.defaults.bool(forKey: "HapticsEnabled") {
 								Vibrations.heavyVibration()
-//
+							}
 							
 							stats.increment(key: "CurrentMoney")
 							stats.increment(key: "MoneyObtained")
@@ -69,9 +69,9 @@ struct KeyboardView: View {
 							
 						} else {
 							
-							
+							if stats.defaults.bool(forKey: "HapticsEnabled") {
 								Vibrations.lightVibration()
-							
+							}
 							
 							print("false")
 							appData.incorrectLetters.append(Character(letter))

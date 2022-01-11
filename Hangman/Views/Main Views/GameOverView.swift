@@ -11,6 +11,8 @@ struct GameOverView: View {
 	@ObservedObject var appData: AppData
 	@ObservedObject var stats: Statistics
 	
+	@State private var showingDefinition = false
+	
 	var body: some View {
 		if appData.gameOver == 0 {
 			GameView(appData: appData, stats: stats)
@@ -26,13 +28,25 @@ struct GameOverView: View {
 						Spacer()
 						Text(appData.gameOver == 2 ? "The Word Was" : "The Word Was...")
 							.font(.system(size: 25))
-						HStack {
-							ForEach(appData.gameLetters, id: \.self) { letter in
-								Text(String(letter))
-							}
+						Text(String(appData.gameLetters))
 							.font(.system(size: 40, weight: .heavy))
+						Button {
+							showingDefinition = true
+						} label: {
+							ZStack {
+								RoundedRectangle(cornerRadius: 10)
+									.foregroundColor(.gray)
+									.opacity(0.2)
+								Text("Definition")
+									.foregroundColor(.white)
+									.opacity(0.5)
+							}
 						}
-						.padding(.bottom, 100)
+						.frame(width: 100, height: 40)
+						.sheet(isPresented: $showingDefinition) {
+							DefinitionView(appData: appData)
+						}
+
 						Spacer()
 					}
 					.foregroundColor(.white)

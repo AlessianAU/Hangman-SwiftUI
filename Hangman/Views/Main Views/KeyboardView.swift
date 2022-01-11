@@ -37,6 +37,12 @@ struct KeyboardView: View {
 				.focused($guesser)
 				.padding(.horizontal, 35)
 		}
+		Button {
+			APICall.fetchWordDef(word_id: String(appData.gameLetters))
+		} label: {
+			Text("Button")
+		}
+
 		LazyVGrid(columns: columns){
 			if showingGuesser == true {
 			} else {

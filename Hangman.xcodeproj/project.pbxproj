@@ -11,10 +11,6 @@
 		B60CBD86276C7ADE00A77007 /* PlatformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CBD84276C7ADE00A77007 /* PlatformView.swift */; };
 		B60E4E1127796E43000E6E7E /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60E4E1027796E43000E6E7E /* AchievementsView.swift */; };
 		B60E4E1227796E43000E6E7E /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60E4E1027796E43000E6E7E /* AchievementsView.swift */; };
-		B61E246F278FD70500C0AA28 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E246E278FD70500C0AA28 /* Errors.swift */; };
-		B61E2470278FD70500C0AA28 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E246E278FD70500C0AA28 /* Errors.swift */; };
-		B61E2473278FD75300C0AA28 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E2472278FD75300C0AA28 /* Service.swift */; };
-		B61E2474278FD75300C0AA28 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E2472278FD75300C0AA28 /* Service.swift */; };
 		B623593A2777012100687A31 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62359392777012100687A31 /* HintView.swift */; };
 		B623593B2777012100687A31 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62359392777012100687A31 /* HintView.swift */; };
 		B62E80AF27700EF10049D47B /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62E80AE27700EF10049D47B /* ShopView.swift */; };
@@ -81,8 +77,6 @@
 /* Begin PBXFileReference section */
 		B60CBD84276C7ADE00A77007 /* PlatformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformView.swift; sourceTree = "<group>"; };
 		B60E4E1027796E43000E6E7E /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
-		B61E246E278FD70500C0AA28 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		B61E2472278FD75300C0AA28 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B62359392777012100687A31 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HintView.swift; path = "Hangman/Views/Toolbar Views/Toolbar Items/HintView.swift"; sourceTree = SOURCE_ROOT; };
 		B62E80AE27700EF10049D47B /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		B6328C78278D3C1E00762A99 /* DefinitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionViewModel.swift; sourceTree = "<group>"; };
@@ -140,15 +134,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B61E2471278FD70A00C0AA28 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				B61E246E278FD70500C0AA28 /* Errors.swift */,
-				B61E2472278FD75300C0AA28 /* Service.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
 		B62E80B227700FD70049D47B /* Toolbar Items */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,7 +204,6 @@
 				B6670637276ADD7D00C25162 /* HangmanApp.swift */,
 				B638C295275F4CD000BAF610 /* Views */,
 				B6FBAC5A2769A3FE002FCC88 /* Models */,
-				B61E2471278FD70A00C0AA28 /* Network */,
 				B682DB9A2765B8C000FFAC75 /* WordLists */,
 				B667063B276ADDE100C25162 /* Entitlements */,
 				B67098B1275CBA2800CBA442 /* Preview Content */,
@@ -411,11 +395,9 @@
 				B67EDD35277185AD00DA1A91 /* ShopItems.swift in Sources */,
 				B683CBA5276C66D4008C8096 /* ToolbarView.swift in Sources */,
 				B6D702E4277869B400BB7795 /* GuessWordView.swift in Sources */,
-				B61E2473278FD75300C0AA28 /* Service.swift in Sources */,
 				B6BB196F2771D9B9003B2DCF /* DebugOptions.swift in Sources */,
 				B6C7A022276B542500BCE334 /* SettingsView.swift in Sources */,
 				B6684524278D7C1E0045504C /* DefinitionView.swift in Sources */,
-				B61E246F278FD70500C0AA28 /* Errors.swift in Sources */,
 				B63F821B276D70BA005CF14A /* WordListModel.swift in Sources */,
 				B6E7682727852CB5006EE030 /* AppearanceView.swift in Sources */,
 				B682DB8E2765B52A00FFAC75 /* GameView.swift in Sources */,
@@ -449,11 +431,9 @@
 				B683CBA6276C6700008C8096 /* ToolbarView.swift in Sources */,
 				B6BB19702771D9B9003B2DCF /* DebugOptions.swift in Sources */,
 				B6D702E527786A0600BB7795 /* GuessWordView.swift in Sources */,
-				B61E2474278FD75300C0AA28 /* Service.swift in Sources */,
 				B6C7A023276B542500BCE334 /* SettingsView.swift in Sources */,
 				B63F821C276D70BA005CF14A /* WordListModel.swift in Sources */,
 				B6684525278D7C1E0045504C /* DefinitionView.swift in Sources */,
-				B61E2470278FD70500C0AA28 /* Errors.swift in Sources */,
 				B682DB8F2765B52B00FFAC75 /* GameView.swift in Sources */,
 				B6E7682827852CB5006EE030 /* AppearanceView.swift in Sources */,
 				B623593B2777012100687A31 /* HintView.swift in Sources */,
@@ -667,6 +647,7 @@
 		};
 		B67098B5275CBA2800CBA442 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6328C84278D43A300762A99 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

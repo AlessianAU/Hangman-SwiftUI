@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ResetDataView: View {
 	@ObservedObject var appData: AppData
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	@Binding var showingSheet: Bool
 	var body: some View {
 		VStack {
@@ -33,7 +33,7 @@ struct ResetDataView: View {
 			.padding()
 			.listStyle(.inset)
 			Spacer()
-			ResetButton(appData: appData, stats: stats, showingSheet: $showingSheet)
+			ResetButton(appData: appData, vm: vm, showingSheet: $showingSheet)
 				.padding(30)
 		}
 	}
@@ -41,7 +41,7 @@ struct ResetDataView: View {
 
 struct ResetButton: View {
 	@ObservedObject var appData: AppData
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	@Binding var showingSheet: Bool
 	@State private var showingAlert = false
 	var body: some View {
@@ -54,24 +54,25 @@ struct ResetButton: View {
 		.alert("Are You Sure? This is PERMINENT", isPresented: $showingAlert) {
 			Button("Cancel", role: .cancel) {}
 			Button("Reset", role: .destructive) {
-				stats.defaults.set(0, forKey: "ButtonsPressed")
-				stats.defaults.set(0, forKey: "GamesLost")
-				stats.defaults.set(0, forKey: "GamesWon")
-				stats.defaults.set(0, forKey: "CurrentWinStreak")
-				stats.defaults.set(0, forKey: "GamesPlayed")
-				stats.defaults.set(0, forKey: "CurrentMoney")
-				stats.defaults.set(0, forKey: "MoneyObtained")
-				stats.defaults.set(0, forKey: "MoneySpent")
-				stats.defaults.set(0, forKey: "Hints")
-				stats.defaults.set("", forKey: "SelectedColor")
-				stats.defaults.set(0, forKey: "SelectedAppearance")
-				stats.defaults.set(true, forKey: "LettersWhite")
-				stats.defaults.set(false, forKey: "DebugActive")
-				stats.defaults.set(true, forKey: "HapticFeedback")
+				vm.defaults.set(0, forKey: "ButtonsPressed")
+				vm.defaults.set(0, forKey: "GamesLost")
+				vm.defaults.set(0, forKey: "GamesWon")
+				vm.defaults.set(0, forKey: "CurrentWinStreak")
+				vm.defaults.set(0, forKey: "GamesPlayed")
+				vm.defaults.set(0, forKey: "CurrentMoney")
+				vm.defaults.set(0, forKey: "MoneyObtained")
+				vm.defaults.set(0, forKey: "MoneySpent")
+				vm.defaults.set(0, forKey: "Hints")
+				vm.defaults.set("", forKey: "SelectedColor")
+				vm.defaults.set(0, forKey: "SelectedAppearance")
+				vm.defaults.set(true, forKey: "LettersWhite")
+				vm.defaults.set(false, forKey: "DebugActive")
+				vm.defaults.set(true, forKey: "HapticFeedback")
+				appData.gameLetters = AppData.getLetters()
 				print("Game Reset")
 				showingSheet.toggle()
 				appData.showingSettings.toggle()
-				stats.hexToColor()
+				vm.hexToColor()
 			}
 		}
 	}

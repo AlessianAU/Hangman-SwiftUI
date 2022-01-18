@@ -9,24 +9,24 @@ import SwiftUI
 
 struct PlatformView: View {
 	@ObservedObject var appData: AppData
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	
 	var body: some View {
 		VStack {
 			
 #if os(iOS)
 			NavigationView {
-				GameOverView(appData: appData, stats: stats)
+				GameOverView(appData: appData, vm: vm)
 					.toolbar {
 						
 						ToolbarItemGroup(placement: .navigationBarTrailing) {
 							if appData.gameOver == 0 {
-								ToolbarMainView(appData: appData, stats: stats)
+								ToolbarMainView(appData: appData, vm: vm)
 							}
 						}
 						ToolbarItemGroup(placement: .navigationBarLeading) {
 							if appData.gameOver == 0 {
-								ToolbarSubView(appData: appData, stats: stats)
+								ToolbarSubView(appData: appData, vm: vm)
 							}
 						}
 					}
@@ -34,7 +34,7 @@ struct PlatformView: View {
 			
 			.navigationViewStyle(.stack)
 #else
-			GameOverView(appData: appData, stats: stats)
+			GameOverView(appData: appData, vm: vm)
 #endif
 		}
 		
@@ -49,8 +49,8 @@ struct PlatformView: View {
 		})
 		.toolbar {
 			ToolbarItemGroup(placement: .automatic) {
-					ToolbarMainView(appData: appData, stats: stats)
-					ToolbarSubView(appData: appData, stats: stats)
+					ToolbarMainView(appData: appData, vm: vm)
+					ToolbarSubView(appData: appData, vm: vm)
 			}
 		}
 		

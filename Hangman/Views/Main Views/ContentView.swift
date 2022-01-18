@@ -9,22 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
 	@StateObject var appData = AppData()
-	@StateObject var stats = Statistics()
+	@StateObject var vm = GlobalViewModel()
 	
 	@AppStorage("SelectedAppearance") var selectedAppearance = 0
 	
 	var body: some View {
-		PlatformView(appData: appData, stats: stats)
+		PlatformView(appData: appData, vm: vm)
 			.onAppear(perform: {
-				stats.hexToColor()
+				vm.hexToColor()
 			})
-			.tint(stats.color)
-			.preferredColorScheme(selectedAppearance == 0 ? nil : stats.detectColorScheme())
+			.tint(vm.color)
+			.preferredColorScheme(selectedAppearance == 0 ? nil : vm.colorScheme())
 	}
 }
 
 struct ContentView_Previews: PreviewProvider {
 	static var previews: some View {
-		ContentView().environmentObject(AppData()).environmentObject(Statistics())
+		ContentView().environmentObject(AppData()).environmentObject(GlobalViewModel())
 	}
 }

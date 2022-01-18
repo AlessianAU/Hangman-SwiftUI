@@ -11,7 +11,7 @@ struct GameView: View {
 	@Environment(\.colorScheme) var colorScheme
 	
 	@ObservedObject var appData: AppData
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	
 	@State private var showingAlert = false
 	@State private var showingGuesser = false
@@ -56,14 +56,14 @@ struct GameView: View {
 				}
 				.frame(height: 60)
 				
-				if stats.defaults.bool(forKey: "DebugActive") == true {
-					DebugView(appData: appData, stats: stats)
+				if vm.defaults.bool(forKey: "DebugActive") == true {
+					DebugView(appData: appData, vm: vm)
 						.padding(.leading)
 				}
 				
 				Spacer()
 				
-				KeyboardView(appData: appData, stats: stats, showingGuesser: $showingGuesser)
+				KeyboardView(appData: appData, vm: vm, showingGuesser: $showingGuesser)
 				
 				Spacer()
 				
@@ -71,7 +71,7 @@ struct GameView: View {
 					print("new game button pressed")
 					showingAlert = true
 				} label: {
-					ButtonView(stats: stats, buttonLabel: "Give Up")
+					ButtonView(vm: vm, buttonLabel: "Give Up")
 				}
 				.alert("Are You Sure", isPresented: $showingAlert) {
 					Button("No", role: .cancel) { print("new game cancelled") }

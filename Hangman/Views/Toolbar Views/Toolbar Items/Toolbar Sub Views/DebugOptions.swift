@@ -9,28 +9,28 @@ import SwiftUI
 
 struct DebugOptions: View {
 	@ObservedObject var appData: AppData
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	
     var body: some View {
 			List {
 				Button {
-					var num = stats.defaults.integer(forKey: "CurrentMoney")
+					var num = vm.defaults.integer(forKey: "CurrentMoney")
 					num += 10
-					stats.defaults.set(num, forKey: "CurrentMoney")
+					vm.defaults.set(num, forKey: "CurrentMoney")
 				} label: {
 					ListLabel(imageName: "dollarsign.circle", label: "Give Money x10")
 				}
 				Button {
-					var num = stats.defaults.integer(forKey: "CurrentMoney")
+					var num = vm.defaults.integer(forKey: "CurrentMoney")
 					num += 100
-					stats.defaults.set(num, forKey: "CurrentMoney")
+					vm.defaults.set(num, forKey: "CurrentMoney")
 				} label: {
 					ListLabel(imageName: "dollarsign.circle", label: "Give Money x100")
 				}
 				Button {
-					var num = stats.defaults.integer(forKey: "CurrentMoney")
+					var num = vm.defaults.integer(forKey: "CurrentMoney")
 					num += 1000
-					stats.defaults.set(num, forKey: "CurrentMoney")
+					vm.defaults.set(num, forKey: "CurrentMoney")
 				} label: {
 					ListLabel(imageName: "dollarsign.circle", label: "Give Money x1000")
 				}

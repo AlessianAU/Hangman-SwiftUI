@@ -8,23 +8,23 @@
 import SwiftUI
 
 struct HintView: View {
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	var body: some View {
 		List{
 			Button {
-				stats.purchase(amount: 15, hintAmount: 1)
+				vm.purchase(amount: 15, hintAmount: 1)
 			} label: {
 				StatisticsLabel(imageName: "dollarsign.circle", label: "Hint X1", statisticAmount: 15)
 			}
 			
 			Button {
-				stats.purchase(amount: 40, hintAmount: 3)
+				vm.purchase(amount: 40, hintAmount: 3)
 			} label: {
 				StatisticsLabel(imageName: "dollarsign.circle", label: "Hint X3", statisticAmount: 40)
 			}
 			
 			Button {
-				stats.purchase(amount: 75, hintAmount: 6)
+				vm.purchase(amount: 75, hintAmount: 6)
 			} label: {
 				StatisticsLabel(imageName: "dollarsign.circle", label: "Hint X6", statisticAmount: 75)
 			}

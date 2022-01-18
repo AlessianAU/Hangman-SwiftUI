@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ShopView: View {
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	@ObservedObject var appData: AppData
 	
     var body: some View {
@@ -16,7 +16,7 @@ struct ShopView: View {
 			List {
 				Section {
 				Button {
-					stats.purchase(amount: 10)
+					vm.purchase(amount: 10)
 				} label: {
 					StatisticsLabel(imageName: "dollarsign.circle", label: "Spend 10", statisticAmount: 10)
 				}
@@ -29,7 +29,7 @@ struct ShopView: View {
 					ListLabel(imageName: "book", label: "Word Packs")
 				}
 					NavigationLink() {
-					HintView(stats: stats)
+					HintView(vm: vm)
 				} label: {
 					ListLabel(imageName: "questionmark.circle", label: "Hints")
 				}

@@ -11,14 +11,18 @@
 		B60CBD86276C7ADE00A77007 /* PlatformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60CBD84276C7ADE00A77007 /* PlatformView.swift */; };
 		B60E4E1127796E43000E6E7E /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60E4E1027796E43000E6E7E /* AchievementsView.swift */; };
 		B60E4E1227796E43000E6E7E /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60E4E1027796E43000E6E7E /* AchievementsView.swift */; };
+		B61E246F278FD70500C0AA28 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E246E278FD70500C0AA28 /* Errors.swift */; };
+		B61E2470278FD70500C0AA28 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E246E278FD70500C0AA28 /* Errors.swift */; };
+		B61E2473278FD75300C0AA28 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E2472278FD75300C0AA28 /* Service.swift */; };
+		B61E2474278FD75300C0AA28 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61E2472278FD75300C0AA28 /* Service.swift */; };
 		B623593A2777012100687A31 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62359392777012100687A31 /* HintView.swift */; };
 		B623593B2777012100687A31 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62359392777012100687A31 /* HintView.swift */; };
 		B62E80AF27700EF10049D47B /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62E80AE27700EF10049D47B /* ShopView.swift */; };
 		B62E80B027700EF10049D47B /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62E80AE27700EF10049D47B /* ShopView.swift */; };
-		B6328C79278D3C1E00762A99 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6328C78278D3C1E00762A99 /* APICall.swift */; };
-		B6328C7A278D3C1E00762A99 /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6328C78278D3C1E00762A99 /* APICall.swift */; };
-		B6328C7C278D3C5A00762A99 /* DictionaryWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6328C7B278D3C5A00762A99 /* DictionaryWord.swift */; };
-		B6328C7D278D3C5A00762A99 /* DictionaryWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6328C7B278D3C5A00762A99 /* DictionaryWord.swift */; };
+		B6328C79278D3C1E00762A99 /* DefinitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6328C78278D3C1E00762A99 /* DefinitionViewModel.swift */; };
+		B6328C7A278D3C1E00762A99 /* DefinitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6328C78278D3C1E00762A99 /* DefinitionViewModel.swift */; };
+		B6328C7C278D3C5A00762A99 /* DefinitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6328C7B278D3C5A00762A99 /* DefinitionModel.swift */; };
+		B6328C7D278D3C5A00762A99 /* DefinitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6328C7B278D3C5A00762A99 /* DefinitionModel.swift */; };
 		B6328C85278D43A300762A99 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B6328C84278D43A300762A99 /* Secrets.xcconfig */; };
 		B6328C86278D43A300762A99 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B6328C84278D43A300762A99 /* Secrets.xcconfig */; };
 		B6328C89278D56AB00762A99 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B6328C88278D56AB00762A99 /* Alamofire */; };
@@ -60,8 +64,8 @@
 		B6BB19742771DF8A003B2DCF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B6BB19722771DF89003B2DCF /* README.md */; };
 		B6C7A022276B542500BCE334 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7A021276B542500BCE334 /* SettingsView.swift */; };
 		B6C7A023276B542500BCE334 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C7A021276B542500BCE334 /* SettingsView.swift */; };
-		B6D0B8F1276CAD7D00EEAF0F /* Stastistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D0B8F0276CAD7D00EEAF0F /* Stastistics.swift */; };
-		B6D0B8F2276CAD7D00EEAF0F /* Stastistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D0B8F0276CAD7D00EEAF0F /* Stastistics.swift */; };
+		B6D0B8F1276CAD7D00EEAF0F /* GlobalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D0B8F0276CAD7D00EEAF0F /* GlobalViewModel.swift */; };
+		B6D0B8F2276CAD7D00EEAF0F /* GlobalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D0B8F0276CAD7D00EEAF0F /* GlobalViewModel.swift */; };
 		B6D6C0B22772B96C009C92AB /* ResetDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D6C0B12772B96C009C92AB /* ResetDataView.swift */; };
 		B6D6C0B32772B96C009C92AB /* ResetDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D6C0B12772B96C009C92AB /* ResetDataView.swift */; };
 		B6D702E4277869B400BB7795 /* GuessWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D702E32778696200BB7795 /* GuessWordView.swift */; };
@@ -77,10 +81,12 @@
 /* Begin PBXFileReference section */
 		B60CBD84276C7ADE00A77007 /* PlatformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformView.swift; sourceTree = "<group>"; };
 		B60E4E1027796E43000E6E7E /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
+		B61E246E278FD70500C0AA28 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		B61E2472278FD75300C0AA28 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		B62359392777012100687A31 /* HintView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HintView.swift; path = "Hangman/Views/Toolbar Views/Toolbar Items/HintView.swift"; sourceTree = SOURCE_ROOT; };
 		B62E80AE27700EF10049D47B /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
-		B6328C78278D3C1E00762A99 /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
-		B6328C7B278D3C5A00762A99 /* DictionaryWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryWord.swift; sourceTree = "<group>"; };
+		B6328C78278D3C1E00762A99 /* DefinitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionViewModel.swift; sourceTree = "<group>"; };
+		B6328C7B278D3C5A00762A99 /* DefinitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionModel.swift; sourceTree = "<group>"; };
 		B6328C84278D43A300762A99 /* Secrets.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		B638C293275F4C9D00BAF610 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		B63DED76275E0FD500466F46 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
@@ -107,7 +113,7 @@
 		B6BB196E2771D9B9003B2DCF /* DebugOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugOptions.swift; sourceTree = "<group>"; };
 		B6BB19722771DF89003B2DCF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		B6C7A021276B542500BCE334 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		B6D0B8F0276CAD7D00EEAF0F /* Stastistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stastistics.swift; sourceTree = "<group>"; };
+		B6D0B8F0276CAD7D00EEAF0F /* GlobalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalViewModel.swift; sourceTree = "<group>"; };
 		B6D6C0B12772B96C009C92AB /* ResetDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetDataView.swift; sourceTree = "<group>"; };
 		B6D702E32778696200BB7795 /* GuessWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessWordView.swift; sourceTree = "<group>"; };
 		B6E7682327852A03006EE030 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,6 +140,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B61E2471278FD70A00C0AA28 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B61E246E278FD70500C0AA28 /* Errors.swift */,
+				B61E2472278FD75300C0AA28 /* Service.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		B62E80B227700FD70049D47B /* Toolbar Items */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,7 +178,7 @@
 				B638C293275F4C9D00BAF610 /* Helpers.swift */,
 				B682DB512765B2A900FFAC75 /* DebugView.swift */,
 				B683CB9F276C5804008C8096 /* Vibrations.swift */,
-				B6328C78278D3C1E00762A99 /* APICall.swift */,
+				B6328C78278D3C1E00762A99 /* DefinitionViewModel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -204,6 +219,7 @@
 				B6670637276ADD7D00C25162 /* HangmanApp.swift */,
 				B638C295275F4CD000BAF610 /* Views */,
 				B6FBAC5A2769A3FE002FCC88 /* Models */,
+				B61E2471278FD70A00C0AA28 /* Network */,
 				B682DB9A2765B8C000FFAC75 /* WordLists */,
 				B667063B276ADDE100C25162 /* Entitlements */,
 				B67098B1275CBA2800CBA442 /* Preview Content */,
@@ -266,10 +282,10 @@
 			isa = PBXGroup;
 			children = (
 				B6FBAC572769A3F3002FCC88 /* AppData.swift */,
-				B6D0B8F0276CAD7D00EEAF0F /* Stastistics.swift */,
+				B6D0B8F0276CAD7D00EEAF0F /* GlobalViewModel.swift */,
 				B63F821A276D70BA005CF14A /* WordListModel.swift */,
 				B67EDD34277185AD00DA1A91 /* ShopItems.swift */,
-				B6328C7B278D3C5A00762A99 /* DictionaryWord.swift */,
+				B6328C7B278D3C5A00762A99 /* DefinitionModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -386,7 +402,7 @@
 				B682DB952765B55700FFAC75 /* DebugView.swift in Sources */,
 				B6FBAC582769A3F3002FCC88 /* AppData.swift in Sources */,
 				B6670638276ADD7D00C25162 /* HangmanApp.swift in Sources */,
-				B6D0B8F1276CAD7D00EEAF0F /* Stastistics.swift in Sources */,
+				B6D0B8F1276CAD7D00EEAF0F /* GlobalViewModel.swift in Sources */,
 				B60CBD85276C7ADE00A77007 /* PlatformView.swift in Sources */,
 				B682DB982765B5C300FFAC75 /* WordList.swift in Sources */,
 				B623593A2777012100687A31 /* HintView.swift in Sources */,
@@ -395,9 +411,11 @@
 				B67EDD35277185AD00DA1A91 /* ShopItems.swift in Sources */,
 				B683CBA5276C66D4008C8096 /* ToolbarView.swift in Sources */,
 				B6D702E4277869B400BB7795 /* GuessWordView.swift in Sources */,
+				B61E2473278FD75300C0AA28 /* Service.swift in Sources */,
 				B6BB196F2771D9B9003B2DCF /* DebugOptions.swift in Sources */,
 				B6C7A022276B542500BCE334 /* SettingsView.swift in Sources */,
 				B6684524278D7C1E0045504C /* DefinitionView.swift in Sources */,
+				B61E246F278FD70500C0AA28 /* Errors.swift in Sources */,
 				B63F821B276D70BA005CF14A /* WordListModel.swift in Sources */,
 				B6E7682727852CB5006EE030 /* AppearanceView.swift in Sources */,
 				B682DB8E2765B52A00FFAC75 /* GameView.swift in Sources */,
@@ -408,9 +426,9 @@
 				B63F8221276D7404005CF14A /* Lists.swift in Sources */,
 				B6D6C0B22772B96C009C92AB /* ResetDataView.swift in Sources */,
 				B62E80AF27700EF10049D47B /* ShopView.swift in Sources */,
-				B6328C7C278D3C5A00762A99 /* DictionaryWord.swift in Sources */,
+				B6328C7C278D3C5A00762A99 /* DefinitionModel.swift in Sources */,
 				B6588301276ABB7E007F3983 /* GameOverView.swift in Sources */,
-				B6328C79278D3C1E00762A99 /* APICall.swift in Sources */,
+				B6328C79278D3C1E00762A99 /* DefinitionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +440,7 @@
 				B682DB942765B55700FFAC75 /* DebugView.swift in Sources */,
 				B6FBAC592769A3F3002FCC88 /* AppData.swift in Sources */,
 				B6670639276ADD7D00C25162 /* HangmanApp.swift in Sources */,
-				B6D0B8F2276CAD7D00EEAF0F /* Stastistics.swift in Sources */,
+				B6D0B8F2276CAD7D00EEAF0F /* GlobalViewModel.swift in Sources */,
 				B60CBD86276C7ADE00A77007 /* PlatformView.swift in Sources */,
 				B682DB992765B5C300FFAC75 /* WordList.swift in Sources */,
 				B683CBA1276C5855008C8096 /* Vibrations.swift in Sources */,
@@ -431,9 +449,11 @@
 				B683CBA6276C6700008C8096 /* ToolbarView.swift in Sources */,
 				B6BB19702771D9B9003B2DCF /* DebugOptions.swift in Sources */,
 				B6D702E527786A0600BB7795 /* GuessWordView.swift in Sources */,
+				B61E2474278FD75300C0AA28 /* Service.swift in Sources */,
 				B6C7A023276B542500BCE334 /* SettingsView.swift in Sources */,
 				B63F821C276D70BA005CF14A /* WordListModel.swift in Sources */,
 				B6684525278D7C1E0045504C /* DefinitionView.swift in Sources */,
+				B61E2470278FD70500C0AA28 /* Errors.swift in Sources */,
 				B682DB8F2765B52B00FFAC75 /* GameView.swift in Sources */,
 				B6E7682827852CB5006EE030 /* AppearanceView.swift in Sources */,
 				B623593B2777012100687A31 /* HintView.swift in Sources */,
@@ -444,9 +464,9 @@
 				B63F8222276D7404005CF14A /* Lists.swift in Sources */,
 				B6D6C0B32772B96C009C92AB /* ResetDataView.swift in Sources */,
 				B62E80B027700EF10049D47B /* ShopView.swift in Sources */,
-				B6328C7D278D3C5A00762A99 /* DictionaryWord.swift in Sources */,
+				B6328C7D278D3C5A00762A99 /* DefinitionModel.swift in Sources */,
 				B6588302276ABB7E007F3983 /* GameOverView.swift in Sources */,
-				B6328C7A278D3C1E00762A99 /* APICall.swift in Sources */,
+				B6328C7A278D3C1E00762A99 /* DefinitionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DebugView: View {
 	@ObservedObject var appData: AppData
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	
 	var body: some View {
 		VStack{
@@ -37,7 +37,7 @@ struct DebugView: View {
 				Spacer()
 			}
 			HStack {
-				Text("Hints Left \(stats.defaults.integer(forKey: "Hints"))")
+				Text("Hints Left \(vm.defaults.integer(forKey: "Hints"))")
 				Spacer()
 			}
 		}.padding()

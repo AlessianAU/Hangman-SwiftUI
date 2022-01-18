@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WordListView: View {
 	@ObservedObject var appData: AppData
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	
 	var body: some View {
 		VStack{

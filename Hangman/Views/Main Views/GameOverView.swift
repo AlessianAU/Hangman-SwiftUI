@@ -9,13 +9,13 @@ import SwiftUI
 
 struct GameOverView: View {
 	@ObservedObject var appData: AppData
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	
 	@State private var showingDefinition = false
 	
 	var body: some View {
 		if appData.gameOver == 0 {
-			GameView(appData: appData, stats: stats)
+			GameView(appData: appData, vm: vm)
 		} else {
 			ZStack{
 				Color.black
@@ -55,13 +55,13 @@ struct GameOverView: View {
 					Button {
 						
 						if appData.gameOver == 1 {
-							stats.increment(key: "GamesPlayed")
-							stats.increment(key: "GamesLost")
-							stats.streak(win: false)
+							vm.increaseDefaults(key: "GamesPlayed")
+							vm.increaseDefaults(key: "GamesLost")
+							vm.streak(win: false)
 						} else {
-							stats.increment(key: "GamesPlayed")
-							stats.increment(key: "GamesWon")
-							stats.streak(win: true)
+							vm.increaseDefaults(key: "GamesPlayed")
+							vm.increaseDefaults(key: "GamesWon")
+							vm.streak(win: true)
 						}
 						
 						
@@ -78,7 +78,7 @@ struct GameOverView: View {
 						appData.incorrectLetters.removeAll()
 						appData.lives = ["a","a","a","a","a","a","a","a"]
 					} label: {
-						ButtonView(stats: stats, buttonLabel: "New Word")
+						ButtonView(vm: vm, buttonLabel: "New Word")
 					}
 				}
 			}

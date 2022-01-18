@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GuessWordView: View {
 	@ObservedObject var appData: AppData
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	
 	@State var guess: String = ""
 	@Binding var showingGuesser: Bool
@@ -24,21 +24,12 @@ struct GuessWordView: View {
 				.submitLabel(.done)
 				.disableAutocorrection(true)
 			
-			if guess != "" {
-				Button {
-					checkGuess()
-				} label: {
-					Text("Submit")
-				}
-				.frame(width: 55)
-			} else {
-				Button {
-					showingGuesser = false
-				} label: {
-					Text("Cancel")
-				}
-				.frame(width: 55)
+			Button {
+				checkGuess()
+			} label: {
+				Text("Submit")
 			}
+			.frame(width: 55)
 		}
 	}
 	
@@ -51,8 +42,8 @@ struct GuessWordView: View {
 			appData.gameOver = 2
 			guessLettersSet.forEach { letter in
 				if appData.correctLetters.contains(letter) {} else {
-					stats.increment(key: "MoneyObtained", amount: 3)
-					stats.increment(key: "CurrentMoney", amount: 3)
+					vm.increaseDefaults(key: "MoneyObtained", amount: 3)
+					vm.increaseDefaults(key: "CurrentMoney", amount: 3)
 				}
 			}
 		} else {

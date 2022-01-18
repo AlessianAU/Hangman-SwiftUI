@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ButtonView: View {
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	@AppStorage("LettersWhite") var lettersWhite: Bool = true
 	
 	var buttonLabel = String()
@@ -27,7 +27,7 @@ struct ButtonView: View {
 #else
 		ZStack{
 			RoundedRectangle(cornerRadius: 13)
-				.foregroundColor(stats.color)
+				.foregroundColor(vm.color)
 			Text(buttonLabel)
 				.font(.system(size: 25, weight: .medium))
 				.foregroundColor(lettersWhite ? .white : .black)
@@ -47,7 +47,7 @@ struct ListLabel: View {
 	@State var destructive: Bool? = false
 	
 	var body: some View {
-		HStack{
+		HStack {
 			Image(systemName: imageName)
 				.padding(6)
 				.foregroundColor(destructive! ? .red : color)

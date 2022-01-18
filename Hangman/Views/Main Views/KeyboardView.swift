@@ -11,7 +11,10 @@ struct KeyboardView: View {
 	@State private var letters = KeyboardLetters()
 	
 	@ObservedObject var appData: AppData
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
+	
+	@ObservedObject var definition = DefinitionViewModel()
+	
 	
 	@AppStorage("LettersWhite") var lettersWhite: Bool = true
 	@Environment(\.accessibilityDifferentiateWithoutColor) var withoutColorSystem
@@ -22,7 +25,7 @@ struct KeyboardView: View {
 	@Binding var showingGuesser: Bool
 	@FocusState var guesser: Bool
 	
-	let columns = [
+	private let columns = [
 		GridItem(),
 		GridItem(),
 		GridItem(),
@@ -33,12 +36,12 @@ struct KeyboardView: View {
 	
 	var body: some View {
 		if showingGuesser == true {
-			GuessWordView(appData: appData, stats: stats, showingGuesser: $showingGuesser)
+			GuessWordView(appData: appData, vm: vm, showingGuesser: $showingGuesser)
 				.focused($guesser)
 				.padding(.horizontal, 35)
 		}
 		Button {
-			APICall.fetchWordDef(word_id: String(appData.gameLetters))
+			definition.fetchData()
 		} label: {
 			Text("Button")
 		}
@@ -53,29 +56,29 @@ struct KeyboardView: View {
 						print("\(letter) button was pressed")
 						appData.usedLetters.append(letter)
 						
-						stats.increment(key: "ButtonsPressed")
+						vm.increaseDefaults(key: "ButtonsPressed")
 						
 						if appData.gameLetters.contains(Character(letter)) {
 							
-							if stats.defaults.bool(forKey: "HapticFeedback") {
+							if vm.defaults.bool(forKey: "HapticFeedback") {
 								Vibrations.heavyVibration()
 							}
 							
-							stats.increment(key: "CurrentMoney")
-							stats.increment(key: "MoneyObtained")
+							vm.increaseDefaults(key: "CurrentMoney")
+							vm.increaseDefaults(key: "MoneyObtained")
 							print("true")
 							appData.correctLetters.append(Character(letter))
 							
 							if checkLetters() == true {
-								stats.increment(key: "CurrentMoney", amount: 4)
-								stats.increment(key: "MoneyObtained", amount: 4)
+								vm.increaseDefaults(key: "CurrentMoney", amount: 4)
+								vm.increaseDefaults(key: "MoneyObtained", amount: 4)
 								appData.gameOver = 2
 								print("game won")
 							}
 							
 						} else {
 							
-							if stats.defaults.bool(forKey: "HapticFeedback") {
+							if vm.defaults.bool(forKey: "HapticFeedback") {
 								Vibrations.lightVibration()
 							}
 							
@@ -115,7 +118,7 @@ struct KeyboardView: View {
 									}
 								}
 							} else {
-								LetterButtonBackgroundView(color: stats.color)
+								LetterButtonBackgroundView(color: vm.color)
 							}
 							LetterButtonView( letter: letter)
 						}
@@ -134,7 +137,7 @@ struct KeyboardView: View {
 					}
 				} label: {
 					ZStack{
-						LetterButtonBackgroundView(color: stats.color)
+						LetterButtonBackgroundView(color: vm.color)
 						LetterButtonView( letter: "", symbol: "magnifyingglass")
 					}
 				}
@@ -143,16 +146,16 @@ struct KeyboardView: View {
 					showHints.toggle()
 				} label: {
 					ZStack{
-						LetterButtonBackgroundView(color: stats.color)
+						LetterButtonBackgroundView(color: vm.color)
 						LetterButtonView(letter: "", symbol: "questionmark.circle")
 					}
 				}
-				.alert(stats.defaults.integer(forKey: "Hints") == 0 ? "You have no hints left..." : "Use a Hint? You have \(stats.defaults.integer(forKey: "Hints")) Left",isPresented: $showHints, actions: {
+				.alert(vm.defaults.integer(forKey: "Hints") == 0 ? "You have no hints left..." : "Use a Hint? You have \(vm.defaults.integer(forKey: "Hints")) Left",isPresented: $showHints, actions: {
 					Button("Cancel", role: .cancel) {}
-					if stats.defaults.integer(forKey: "Hints") >= 1 {
+					if vm.defaults.integer(forKey: "Hints") >= 1 {
 						Button("Use") {
 							print("hint used")
-							stats.subtract(key: "Hints")
+							vm.decreaseDefaults(key: "Hints")
 							if useHint() == true {
 								appData.gameOver = 2
 							}
@@ -165,7 +168,7 @@ struct KeyboardView: View {
 				})
 				.sheet(isPresented: $showingHintShop) {
 					NavigationView{
-						HintView(stats: stats)
+						HintView(vm: vm)
 							.navigationTitle("Purchase Hints")
 					}
 				}

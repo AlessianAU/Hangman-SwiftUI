@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class Statistics: ObservableObject {
+class GlobalViewModel: ObservableObject {
 	@Published var defaults = UserDefaults.standard
 	
 	@Published var color: Color = .accentColor
@@ -27,13 +27,13 @@ class Statistics: ObservableObject {
 	}
 	
 	///	Increments UserDefaults item by amount
-	func increment(key: String, amount: Int? = 1) {
+	func increaseDefaults(key: String, amount: Int? = 1) {
 		var num = defaults.integer(forKey: key)
 		num += amount!
 		defaults.set(num, forKey: key)
 	}
 	/// Subtracts UserDefaults item by amount
-	func subtract(key: String, amount: Int? = 1) {
+	func decreaseDefaults(key: String, amount: Int? = 1) {
 		var num = defaults.integer(forKey: key)
 		num -= amount!
 		defaults.set(num, forKey: key)
@@ -51,21 +51,21 @@ class Statistics: ObservableObject {
 			defaults.set(spent, forKey: "MoneySpent")
 			
 			if hintAmount != 0 {
-				increment(key: "Hints", amount: hintAmount)
+				increaseDefaults(key: "Hints", amount: hintAmount)
 			}
 		}
 	}
 	/// Calculates the win and loss streaks
 	func streak(win: Bool) {
 		if defaults.integer(forKey: win ? "CurrentWinStreak" : "CurrentLossStreak") == defaults.integer(forKey: win ? "LongestWinStreak" : "LongestLossStreak") {
-			increment(key: win ? "LongestWinStreak" : "LongestLossStreak")
+			increaseDefaults(key: win ? "LongestWinStreak" : "LongestLossStreak")
 		}
-		increment(key: win ? "CurrentWinStreak" : "CurrentLossStreak")
+		increaseDefaults(key: win ? "CurrentWinStreak" : "CurrentLossStreak")
 		defaults.set(0, forKey: win ? "CurrentLossStreak" : "CurrentWinStreak")
 	}
 	
 	///	Detects preferred colour scheme
-	func detectColorScheme() -> ColorScheme {
+	func colorScheme() -> ColorScheme {
 		let selectedAppearance = defaults.integer(forKey: "SelectedAppearance")
 		var result: ColorScheme = .light
 		

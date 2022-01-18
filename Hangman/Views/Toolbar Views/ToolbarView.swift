@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ToolbarMainView: View {
 	@ObservedObject var appData: AppData
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	
 	var body: some View {
 		
@@ -20,11 +20,11 @@ struct ToolbarMainView: View {
 		}
 #if os(iOS)
 		.sheet(isPresented: $appData.showingStatistics) {
-			StatisticsView(stats: stats)
+			StatisticsView(vm: vm)
 		}
 #else
 		.popover(isPresented: $appData.showingStatistics) {
-			StatisticsView(stats: stats)
+			StatisticsView(vm: vm)
 		}
 #endif
 		
@@ -35,11 +35,11 @@ struct ToolbarMainView: View {
 		}
 #if os(iOS)
 		.sheet(isPresented: $appData.showingSettings) {
-			SettingsView(appData: appData, stats: stats)
+			SettingsView(appData: appData, vm: vm)
 		}
 #else
 		.popover(isPresented: $appData.showingSettings) {
-			SettingsView(appData: appData, stats: stats)
+			SettingsView(appData: appData, vm: vm)
 		}
 #endif
 	}
@@ -47,23 +47,23 @@ struct ToolbarMainView: View {
 
 struct ToolbarSubView: View {
 	@ObservedObject var appData: AppData
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	
 	var body: some View {
 		Button{
 			appData.showingShop.toggle()
 		} label: {
 			Image(systemName: "dollarsign.circle")
-			Text(String(stats.defaults.integer(forKey: "CurrentMoney")))
+			Text(String(vm.defaults.integer(forKey: "CurrentMoney")))
 				.offset(x: -5)
 		}
 #if os(iOS)
 		.sheet(isPresented: $appData.showingShop) {
-			ShopView(stats: stats, appData: appData)
+			ShopView(vm: vm, appData: appData)
 		}
 #else
 		.popover(isPresented: $appData.showingShop) {
-			ShopView(stats: stats, appData: appData)
+			ShopView(vm: vm, appData: appData)
 		}
 #endif
 	}

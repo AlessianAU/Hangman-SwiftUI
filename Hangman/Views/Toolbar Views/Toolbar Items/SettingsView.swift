@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
 	@ObservedObject var appData: AppData
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	@State private var showingSheet = false
 	
 	@AppStorage("DebugActive") var debugActive = false
@@ -21,13 +21,13 @@ struct SettingsView: View {
 				Section {
 					
 					NavigationLink {
-						WordListView(appData: appData, stats: stats)
+						WordListView(appData: appData, vm: vm)
 					} label: {
 						ListLabel(imageName: "book", label: "Word Packs")
 					}
 					
 					NavigationLink {
-						AppearanceView(appData: appData, stats: stats)
+						AppearanceView(appData: appData, vm: vm)
 					} label: {
 						ListLabel(imageName: "paintpalette", label: "Appearance")
 					}
@@ -47,7 +47,7 @@ struct SettingsView: View {
 					}
 						if debugActive {
 							NavigationLink {
-								DebugOptions(appData: appData, stats: stats)
+								DebugOptions(appData: appData, vm: vm)
 							} label: {
 								ListLabel(imageName: "ant", label: "Debug Options")
 						}
@@ -62,7 +62,7 @@ struct SettingsView: View {
 							.foregroundColor(.red)
 					}
 					.sheet(isPresented: $showingSheet) {
-						ResetDataView(appData: appData, stats: stats, showingSheet: $showingSheet)
+						ResetDataView(appData: appData, vm: vm, showingSheet: $showingSheet)
 					}
 				}
 				

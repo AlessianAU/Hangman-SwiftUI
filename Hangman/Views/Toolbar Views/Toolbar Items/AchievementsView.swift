@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AchievementsView: View {
-	@ObservedObject var stats: Statistics
+	@ObservedObject var vm: GlobalViewModel
 	
 	var body: some View {
 		HStack {
@@ -39,7 +39,7 @@ struct AchievementsView: View {
 
 struct AchievementsView_Previews: PreviewProvider {
 	static var previews: some View {
-		let stats = Statistics()
-		AchievementsView(stats: stats)
+		let vm = GlobalViewModel()
+		AchievementsView(vm: vm)
 	}
 }

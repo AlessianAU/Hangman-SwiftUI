@@ -538,7 +538,6 @@
 		};
 		B67098B5275CBA2800CBA442 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6328C84278D43A300762A99 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

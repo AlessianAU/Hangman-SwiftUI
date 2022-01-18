@@ -19,7 +19,7 @@ class DefinitionViewModel: ObservableObject {
 	//		let language = "en-gb"
 	
 	let app_id = Bundle.main.object(forInfoDictionaryKey: "API_ID")
-	let app_key = Bundle.main.object(forInfoDictionaryKey: "API_KEY") as? String
+	let app_key = Bundle.main.object(forInfoDictionaryKey: "API_KEY") 
 	///You need to add your own API key & ID for this
 	
 	init() {

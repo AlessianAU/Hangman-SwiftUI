@@ -19,8 +19,6 @@
 		B6328C7A278D3C1E00762A99 /* DefinitionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6328C78278D3C1E00762A99 /* DefinitionViewModel.swift */; };
 		B6328C7C278D3C5A00762A99 /* DefinitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6328C7B278D3C5A00762A99 /* DefinitionModel.swift */; };
 		B6328C7D278D3C5A00762A99 /* DefinitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6328C7B278D3C5A00762A99 /* DefinitionModel.swift */; };
-		B6328C85278D43A300762A99 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B6328C84278D43A300762A99 /* Secrets.xcconfig */; };
-		B6328C86278D43A300762A99 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B6328C84278D43A300762A99 /* Secrets.xcconfig */; };
 		B6328C89278D56AB00762A99 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B6328C88278D56AB00762A99 /* Alamofire */; };
 		B63F8215276D6BB9005CF14A /* WordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63F8214276D6BB9005CF14A /* WordListView.swift */; };
 		B63F8216276D6BB9005CF14A /* WordListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63F8214276D6BB9005CF14A /* WordListView.swift */; };
@@ -81,7 +79,6 @@
 		B62E80AE27700EF10049D47B /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		B6328C78278D3C1E00762A99 /* DefinitionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionViewModel.swift; sourceTree = "<group>"; };
 		B6328C7B278D3C5A00762A99 /* DefinitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionModel.swift; sourceTree = "<group>"; };
-		B6328C84278D43A300762A99 /* Secrets.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		B638C293275F4C9D00BAF610 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		B63DED76275E0FD500466F46 /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
 		B63F8214276D6BB9005CF14A /* WordListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListView.swift; sourceTree = "<group>"; };
@@ -163,7 +160,6 @@
 				B638C293275F4C9D00BAF610 /* Helpers.swift */,
 				B682DB512765B2A900FFAC75 /* DebugView.swift */,
 				B683CB9F276C5804008C8096 /* Vibrations.swift */,
-				B6328C78278D3C1E00762A99 /* DefinitionViewModel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -184,7 +180,6 @@
 				B67098AA275CBA2700CBA442 /* Hangman */,
 				B6E7682327852A03006EE030 /* Assets.xcassets */,
 				B6BB19722771DF89003B2DCF /* README.md */,
-				B6328C84278D43A300762A99 /* Secrets.xcconfig */,
 				B67098A9275CBA2600CBA442 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -267,6 +262,7 @@
 			children = (
 				B6FBAC572769A3F3002FCC88 /* AppData.swift */,
 				B6D0B8F0276CAD7D00EEAF0F /* GlobalViewModel.swift */,
+				B6328C78278D3C1E00762A99 /* DefinitionViewModel.swift */,
 				B63F821A276D70BA005CF14A /* WordListModel.swift */,
 				B67EDD34277185AD00DA1A91 /* ShopItems.swift */,
 				B6328C7B278D3C5A00762A99 /* DefinitionModel.swift */,
@@ -361,7 +357,6 @@
 			files = (
 				B6E7682427852A03006EE030 /* Assets.xcassets in Resources */,
 				B6BB19732771DF8A003B2DCF /* README.md in Resources */,
-				B6328C85278D43A300762A99 /* Secrets.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +366,6 @@
 			files = (
 				B6E7682527852A03006EE030 /* Assets.xcassets in Resources */,
 				B6BB19742771DF8A003B2DCF /* README.md in Resources */,
-				B6328C86278D43A300762A99 /* Secrets.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,7 +578,6 @@
 		};
 		B67098B4275CBA2800CBA442 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6328C84278D43A300762A99 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -647,7 +640,6 @@
 		};
 		B67098B5275CBA2800CBA442 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6328C84278D43A300762A99 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
